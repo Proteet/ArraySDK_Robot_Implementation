@@ -239,11 +239,11 @@ namespace SDK_Example
         string strVolt = " V";
         string strdB = " dB";
 
-        string strDepth = "Depth: ";
-        string strFrequency = "Freq: ";
-        string strFocus = "Focus: ";
-        string strHighVolt = "High Volt:  ";
-        string strZoom = "ZoomFactor: ";
+        string strDepth = "";
+        string strFrequency = "";
+        string strFocus = "";
+        string strHighVolt = "";
+        string strZoom = "";
         string strMainGain = "Brightness:  ";
         string strCfmGain = "CFM Gain:  ";
         string strDynamic = "Contrast:  ";
@@ -375,7 +375,7 @@ namespace SDK_Example
             toolStripStatusLabel.Text = "CFM....................... " + strVersion;
             for (int i = 0; i < astrSC.Length; i++)
             {
-                cboxSCSize.Items.Add(astrSC[i]);
+                // cboxSCSize.Items.Add(astrSC[i]);
             }
             // double-buffered
             this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
@@ -442,6 +442,7 @@ namespace SDK_Example
             }
 
             SetSelectedProbe();
+            StartScan();
         }
 
         /// <summary>
@@ -472,21 +473,25 @@ namespace SDK_Example
 
         void EnableIdle()
         {
+            /*
             gBoxImaging.Enabled = false;
             gboxGain.Enabled = false;
             gboxImage.Enabled = false;
             gBoxCineloop.Enabled = false;
             gBoxTgc.Enabled = false;
+            */
             bIdle = true;
         }
 
         void DisableIdle()
         {
+            /*
             gBoxImaging.Enabled = true;
             gboxGain.Enabled = true;
             gboxImage.Enabled = true;
             gBoxCineloop.Enabled = true;
             gBoxTgc.Enabled = true;
+            */
             bIdle = false;
         }
 
@@ -558,7 +563,7 @@ namespace SDK_Example
             /// Initialise the rest 
             iOffsetScale = this.uctrlScan.Location.Y - this.uctrlDepth.Location.Y;
             InitControlPlusMinus();
-            cboxSCSize.Text = astrSC[iIndexSC];
+            // cboxSCSize.Text = astrSC[iIndexSC];
 
             if (ScanConv != null)
             {
@@ -679,34 +684,39 @@ namespace SDK_Example
             if (aiFreq != null)
             {
                 if (bSoftCFMData)
+                {
                     labelFrequency.Text = strPRF + aiPRF[bytPrfIndex].ToString() + strHz;
+                }
                 else
-
-                    labelFrequency.Text = strFrequency + aiFreq[bytFreqIndex].ToString() + strHz;
+                {
+                    double kiloHertz = Convert.ToDouble(aiFreq[bytFreqIndex]) / 1000;
+                    labelFrequency.Text = strFrequency + kiloHertz.ToString() + " kHz";
+                    // labelFrequency.Text = strFrequency + aiFreq[bytFreqIndex].ToString() + strHz;
+                }
             }
             if (aiFocus != null)
                 labelFocus.Text = strFocus + aiFocus[bytFocusIndex].ToString() + strMM;
             labelHighVolt.Text = strHighVolt + abytHighVoltage[iHighIndex].ToString() + strVolt;
 
-            strMainGain = "Main Gain:  ";
+            strMainGain = "";
             strCfmGain = "CFM Gain:  ";
-            strDynamic = "Dynamic:  ";
+            strDynamic = "";
 
             double dblMainGain = sbytMainGainValue / 6.4;//---- +128 -> 20dB => 6.4 -> 1dB
-            if (bSoftCFMData)
+            if (bSoftCFMData) {
                 labelMainGain.Text = strCfmGain + bytCfmGain.ToString();
-            else
+            } else {
                 labelMainGain.Text = strMainGain + dblMainGain.ToString("0.00") + strdB;
-
+            }
             labelDynamic.Text = strDynamic + abytDynamicValue[iDynamicIndex].ToString() + strdB;
 
 
-            labelZoom.Text = strZoom + fltZoomFactor.ToString("0.00");
+            // labelZoom.Text = strZoom + fltZoomFactor.ToString("0.00");
             if (MyHwControls != null)
             {
-                labelFR.Text = strFR + MyHwControls.GetProbeFrameRate().ToString();
-                if (bIdle == false) //---- cannot get the property if there is no probe
-                    labelCompound.Text = strCompound + MyHwControls.CompoundAngle.ToString();
+                // labelFR.Text = strFR + MyHwControls.GetProbeFrameRate().ToString();
+                // if (bIdle == false) //---- cannot get the property if there is no probe
+                    // labelCompound.Text = strCompound + MyHwControls.CompoundAngle.ToString();
             }
 
             labelSteering.Text = strSteering + iSteering.ToString();
@@ -723,12 +733,12 @@ namespace SDK_Example
             labelFrequency.Text = strFrequency;
             labelFocus.Text = strFocus;
             labelHighVolt.Text = strHighVolt;
-            labelZoom.Text = strZoom;
+            // labelZoom.Text = strZoom;
             labelMainGain.Text = strMainGain;
             labelDynamic.Text = strDynamic;
-            labelFR.Text = strFR;
+            // labelFR.Text = strFR;
             labelSteering.Text = strSteering;
-            labelCompound.Text = strCompound;
+            // labelCompound.Text = strCompound;
             labelImagesPer.Text = strImagesPer;
 
         }
@@ -1448,13 +1458,13 @@ namespace SDK_Example
             {
                 butCompound.BackColor = Color.OrangeRed;
                 HWControls.EnableCompound();
-                labelCompound.Visible = true;
+                // labelCompound.Visible = true;
             }
             else
             {
                 butCompound.BackColor = Color.LightSteelBlue;
                 HWControls.DisableCompound();
-                labelCompound.Visible = false;
+                // labelCompound.Visible = false;
             }
 
         }
@@ -1693,7 +1703,7 @@ namespace SDK_Example
             switch (eCtrl)
             {
                 case ControlEnum.buttonScan:
-                    buttonScan.Text = formText;
+                    // buttonScan.Text = formText;
                     break;
                 case ControlEnum.buttonCine:
                     buttonCine.Text = formText;
@@ -2889,7 +2899,7 @@ namespace SDK_Example
                 StopScan();
                 bInitDone = false;
             }
-            iIndexSC = cboxSCSize.SelectedIndex;
+            // iIndexSC = cboxSCSize.SelectedIndex;
             ResizeForm(iIndexSC);
         }
         void ResizeForm(int i)
@@ -2898,8 +2908,9 @@ namespace SDK_Example
             uctrlGrayScale.Visible = false;
             this.uctrlScan.Size = new Size(aiWidth[i], aiHeigth[i]);
             this.uctrlDepth.Size = new Size(30, aiHeigth[i]);
-            this.panelLabel.Location = new Point(aiWidth[i] + 140, 47);
-            this.panelSwitch.Location = new Point(aiWidth[i] + 140, 275);
+            // this.panelLabel.Location = new Point(aiWidth[i] + 140, 47);
+            // this.panelSwitch.Location = new Point(aiWidth[i] + 140, 275);
+            /*
             this.gboxSave.Location = new Point(aiWidth[i] + 293, 35);
             this.gBoxCineloop.Location = new Point(aiWidth[i] + 293, 140);
             this.gBoxTgc.Location = new Point(aiWidth[i] + 293, 290);
@@ -2910,6 +2921,7 @@ namespace SDK_Example
             this.gboxGain.Location = new Point(490, aiHeigth[i] + 57);
             this.gboxAngle.Location = new Point(630, aiHeigth[i] + 57);
             this.gboxImagesPer.Location = new Point(720, aiHeigth[i] + 57);
+            */
             this.Size = new Size(aiWidth[i] + 508, aiHeigth[i] + 256);
         }
 
@@ -4029,7 +4041,7 @@ namespace SDK_Example
                 file.WriteLine("Probe ID " + HWControls.GetProbeID());
                 file.WriteLine(" Width " + aiWidth[iIndexSC]);
                 file.WriteLine(" Height " + aiHeigth[iIndexSC]);
-                file.WriteLine(labelZoom.Text);
+                // file.WriteLine(labelZoom.Text);
                 file.WriteLine("# Images: " + ByteArrayList.Count);
 
             }
@@ -4382,5 +4394,30 @@ namespace SDK_Example
             
         } // end partial class formScan2D : Form
         #endregion
+
+        private void LabelHighVolt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UctrlPMHighVoltage_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void LabelMainGain_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LabelDepth_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LabelImagesPer_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }///namespace SDK_EXAMPLE
