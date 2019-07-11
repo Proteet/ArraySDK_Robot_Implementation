@@ -1,51 +1,15 @@
-C:\Users\W540\Desktop\ArraySDK_originalwithrobot\ArraySDK_Example\obj\Debug\SDK_Example.FormMessage.resources
-C:\Users\W540\Desktop\ArraySDK_originalwithrobot\ArraySDK_Example\obj\Debug\SDK_Example.FormProbes.resources
-C:\Users\W540\Desktop\ArraySDK_originalwithrobot\ArraySDK_Example\obj\Debug\SDK_Example.formScan2D.resources
-C:\Users\W540\Desktop\ArraySDK_originalwithrobot\ArraySDK_Example\obj\Debug\ArraySDK_Example.Properties.Resources.resources
-C:\Users\W540\Desktop\ArraySDK_originalwithrobot\ArraySDK_Example\obj\Debug\SDK_Example.UserControlDepth.resources
-C:\Users\W540\Desktop\ArraySDK_originalwithrobot\ArraySDK_Example\obj\Debug\SDK_Example.UserControlGrayScale.resources
-C:\Users\W540\Desktop\ArraySDK_originalwithrobot\ArraySDK_Example\obj\Debug\SDK_Example.UserControlPlusMinus.resources
-C:\Users\W540\Desktop\ArraySDK_originalwithrobot\ArraySDK_Example\obj\Debug\SDK_Example.UserControlScan.resources
-C:\Users\W540\Desktop\ArraySDK_originalwithrobot\ArraySDK_Example\obj\Debug\ArraySDK_Example.csproj.GenerateResource.cache
-C:\Users\W540\Desktop\ArraySDK_originalwithrobot\ArraySDK_Example\obj\Debug\ArraySDK_Example.csproj.CoreCompileInputs.cache
-C:\Users\W540\Desktop\ArraySDK_originalwithrobot\ArraySDK_Example\obj\Debug\ArraySDK_Example.csprojAssemblyReference.cache
-C:\Users\W540\Desktop\ArraySDK_originalwithrobot\ArraySDK_Example\bin\Debug\ArraySDK_Example.exe.config
-C:\Users\W540\Desktop\ArraySDK_originalwithrobot\ArraySDK_Example\bin\Debug\ArraySDK_Example.exe
-C:\Users\W540\Desktop\ArraySDK_originalwithrobot\ArraySDK_Example\bin\Debug\ArraySDK_Example.pdb
-C:\Users\W540\Desktop\ArraySDK_originalwithrobot\ArraySDK_Example\obj\Debug\ArraySDK_Example.csproj.CopyComplete
-C:\Users\W540\Desktop\ArraySDK_originalwithrobot\ArraySDK_Example\obj\Debug\ArraySDK_Example.exe
-C:\Users\W540\Desktop\ArraySDK_originalwithrobot\ArraySDK_Example\obj\Debug\ArraySDK_Example.pdb
-C:\Users\Jeff\Desktop\DRIVERS+robotSDK-20190710T195028Z-001\DRIVERS+robotSDK\ArraySDK_originalwithrobot\ArraySDK_Example\bin\Debug\ArraySDK_Example.exe.config
-C:\Users\Jeff\Desktop\DRIVERS+robotSDK-20190710T195028Z-001\DRIVERS+robotSDK\ArraySDK_originalwithrobot\ArraySDK_Example\bin\Debug\ArraySDK_Example.exe
-C:\Users\Jeff\Desktop\DRIVERS+robotSDK-20190710T195028Z-001\DRIVERS+robotSDK\ArraySDK_originalwithrobot\ArraySDK_Example\bin\Debug\ArraySDK_Example.pdb
-C:\Users\Jeff\Desktop\DRIVERS+robotSDK-20190710T195028Z-001\DRIVERS+robotSDK\ArraySDK_originalwithrobot\ArraySDK_Example\obj\Debug\ArraySDK_Example.csprojAssemblyReference.cache
-C:\Users\Jeff\Desktop\DRIVERS+robotSDK-20190710T195028Z-001\DRIVERS+robotSDK\ArraySDK_originalwithrobot\ArraySDK_Example\obj\Debug\SDK_Example.FormMessage.resources
-C:\Users\Jeff\Desktop\DRIVERS+robotSDK-20190710T195028Z-001\DRIVERS+robotSDK\ArraySDK_originalwithrobot\ArraySDK_Example\obj\Debug\SDK_Example.FormProbes.resources
-C:\Users\Jeff\Desktop\DRIVERS+robotSDK-20190710T195028Z-001\DRIVERS+robotSDK\ArraySDK_originalwithrobot\ArraySDK_Example\obj\Debug\SDK_Example.formScan2D.resources
-C:\Users\Jeff\Desktop\DRIVERS+robotSDK-20190710T195028Z-001\DRIVERS+robotSDK\ArraySDK_originalwithrobot\ArraySDK_Example\obj\Debug\ArraySDK_Example.Properties.Resources.resources
-C:\Users\Jeff\Desktop\DRIVERS+robotSDK-20190710T195028Z-001\DRIVERS+robotSDK\ArraySDK_originalwithrobot\ArraySDK_Example\obj\Debug\SDK_Example.UserControlDepth.resources
-C:\Users\Jeff\Desktop\DRIVERS+robotSDK-20190710T195028Z-001\DRIVERS+robotSDK\ArraySDK_originalwithrobot\ArraySDK_Example\obj\Debug\SDK_Example.UserControlGrayScale.resources
-C:\Users\Jeff\Desktop\DRIVERS+robotSDK-20190710T195028Z-001\DRIVERS+robotSDK\ArraySDK_originalwithrobot\ArraySDK_Example\obj\Debug\SDK_Example.UserControlPlusMinus.resources
-C:\Users\Jeff\Desktop\DRIVERS+robotSDK-20190710T195028Z-001\DRIVERS+robotSDK\ArraySDK_originalwithrobot\ArraySDK_Example\obj\Debug\SDK_Example.UserControlScan.resources
-C:\Users\Jeff\Desktop\DRIVERS+robotSDK-20190710T195028Z-001\DRIVERS+robotSDK\ArraySDK_originalwithrobot\ArraySDK_Example\obj\Debug\ArraySDK_Example.csproj.GenerateResource.cache
-C:\Users\Jeff\Desktop\DRIVERS+robotSDK-20190710T195028Z-001\DRIVERS+robotSDK\ArraySDK_originalwithrobot\ArraySDK_Example\obj\Debug\ArraySDK_Example.csproj.CoreCompileInputs.cache
-C:\Users\Jeff\Desktop\DRIVERS+robotSDK-20190710T195028Z-001\DRIVERS+robotSDK\ArraySDK_originalwithrobot\ArraySDK_Example\obj\Debug\ArraySDK_Example.csproj.CopyComplete
-C:\Users\Jeff\Desktop\DRIVERS+robotSDK-20190710T195028Z-001\DRIVERS+robotSDK\ArraySDK_originalwithrobot\ArraySDK_Example\obj\Debug\ArraySDK_Example.exe
-C:\Users\Jeff\Desktop\DRIVERS+robotSDK-20190710T195028Z-001\DRIVERS+robotSDK\ArraySDK_originalwithrobot\ArraySDK_Example\obj\Debug\ArraySDK_Example.pdb
-C:\Users\Jeff\Desktop\GUI Controller\ArraySDK_Robot\ArraySDK_Example\bin\Debug\ArraySDK_Example.exe.config
-C:\Users\Jeff\Desktop\GUI Controller\ArraySDK_Robot\ArraySDK_Example\bin\Debug\ArraySDK_Example.exe
-C:\Users\Jeff\Desktop\GUI Controller\ArraySDK_Robot\ArraySDK_Example\bin\Debug\ArraySDK_Example.pdb
-C:\Users\Jeff\Desktop\GUI Controller\ArraySDK_Robot\ArraySDK_Example\obj\Debug\ArraySDK_Example.csprojAssemblyReference.cache
-C:\Users\Jeff\Desktop\GUI Controller\ArraySDK_Robot\ArraySDK_Example\obj\Debug\SDK_Example.FormMessage.resources
-C:\Users\Jeff\Desktop\GUI Controller\ArraySDK_Robot\ArraySDK_Example\obj\Debug\SDK_Example.FormProbes.resources
-C:\Users\Jeff\Desktop\GUI Controller\ArraySDK_Robot\ArraySDK_Example\obj\Debug\SDK_Example.formScan2D.resources
-C:\Users\Jeff\Desktop\GUI Controller\ArraySDK_Robot\ArraySDK_Example\obj\Debug\ArraySDK_Example.Properties.Resources.resources
-C:\Users\Jeff\Desktop\GUI Controller\ArraySDK_Robot\ArraySDK_Example\obj\Debug\SDK_Example.UserControlDepth.resources
-C:\Users\Jeff\Desktop\GUI Controller\ArraySDK_Robot\ArraySDK_Example\obj\Debug\SDK_Example.UserControlGrayScale.resources
-C:\Users\Jeff\Desktop\GUI Controller\ArraySDK_Robot\ArraySDK_Example\obj\Debug\SDK_Example.UserControlPlusMinus.resources
-C:\Users\Jeff\Desktop\GUI Controller\ArraySDK_Robot\ArraySDK_Example\obj\Debug\SDK_Example.UserControlScan.resources
-C:\Users\Jeff\Desktop\GUI Controller\ArraySDK_Robot\ArraySDK_Example\obj\Debug\ArraySDK_Example.csproj.GenerateResource.cache
-C:\Users\Jeff\Desktop\GUI Controller\ArraySDK_Robot\ArraySDK_Example\obj\Debug\ArraySDK_Example.csproj.CoreCompileInputs.cache
-C:\Users\Jeff\Desktop\GUI Controller\ArraySDK_Robot\ArraySDK_Example\obj\Debug\ArraySDK_Example.csproj.CopyComplete
-C:\Users\Jeff\Desktop\GUI Controller\ArraySDK_Robot\ArraySDK_Example\obj\Debug\ArraySDK_Example.exe
-C:\Users\Jeff\Desktop\GUI Controller\ArraySDK_Robot\ArraySDK_Example\obj\Debug\ArraySDK_Example.pdb
+C:\Users\ritaq\Documents\Uscan_Files\ArraySDKNov2017\ArraySDK_Example\bin\Debug\ArraySDK_Example.exe.config
+C:\Users\ritaq\Documents\Uscan_Files\ArraySDKNov2017\ArraySDK_Example\obj\Debug\SDK_Example.FormMessage.resources
+C:\Users\ritaq\Documents\Uscan_Files\ArraySDKNov2017\ArraySDK_Example\obj\Debug\SDK_Example.FormProbes.resources
+C:\Users\ritaq\Documents\Uscan_Files\ArraySDKNov2017\ArraySDK_Example\obj\Debug\SDK_Example.formScan2D.resources
+C:\Users\ritaq\Documents\Uscan_Files\ArraySDKNov2017\ArraySDK_Example\obj\Debug\ArraySDK_Example.Properties.Resources.resources
+C:\Users\ritaq\Documents\Uscan_Files\ArraySDKNov2017\ArraySDK_Example\obj\Debug\SDK_Example.UserControlDepth.resources
+C:\Users\ritaq\Documents\Uscan_Files\ArraySDKNov2017\ArraySDK_Example\obj\Debug\SDK_Example.UserControlGrayScale.resources
+C:\Users\ritaq\Documents\Uscan_Files\ArraySDKNov2017\ArraySDK_Example\obj\Debug\SDK_Example.UserControlPlusMinus.resources
+C:\Users\ritaq\Documents\Uscan_Files\ArraySDKNov2017\ArraySDK_Example\obj\Debug\SDK_Example.UserControlScan.resources
+C:\Users\ritaq\Documents\Uscan_Files\ArraySDKNov2017\ArraySDK_Example\obj\Debug\ArraySDK_Example.csproj.GenerateResource.Cache
+C:\Users\ritaq\Documents\Uscan_Files\ArraySDKNov2017\ArraySDK_Example\bin\Debug\ArraySDK_Example.exe
+C:\Users\ritaq\Documents\Uscan_Files\ArraySDKNov2017\ArraySDK_Example\bin\Debug\ArraySDK_Example.pdb
+C:\Users\ritaq\Documents\Uscan_Files\ArraySDKNov2017\ArraySDK_Example\obj\Debug\ArraySDK_Example.csprojResolveAssemblyReference.cache
+C:\Users\ritaq\Documents\Uscan_Files\ArraySDKNov2017\ArraySDK_Example\obj\Debug\ArraySDK_Example.exe
+C:\Users\ritaq\Documents\Uscan_Files\ArraySDKNov2017\ArraySDK_Example\obj\Debug\ArraySDK_Example.pdb
