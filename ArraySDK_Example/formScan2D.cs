@@ -3978,8 +3978,8 @@ namespace SDK_Example
             {
                 // create subfolders for *.bmp, *.jpeg, *.raw
                 Directory.CreateDirectory(bmpPath);
-                Directory.CreateDirectory(jpgPath);
-                Directory.CreateDirectory(rawPath);
+                // Directory.CreateDirectory(jpgPath);
+                // Directory.CreateDirectory(rawPath);
 
             }
             catch (Exception e)
@@ -4240,7 +4240,7 @@ namespace SDK_Example
                 // christine should we be using previous image??
                 // ImageBuilding.Build2D(ref bmpOut1, bytRawImage, null, ScanConv);// build
 
-                bmpOut1.Save(jpgFileName, ImageFormat.Jpeg);
+                // bmpOut1.Save(jpgFileName, ImageFormat.Jpeg);
 
                 bmpOut1.Save(bmpFileName, ImageFormat.Bmp);
             }
