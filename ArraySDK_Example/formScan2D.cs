@@ -4098,6 +4098,7 @@ namespace SDK_Example
             {
 
                 //---- erase old File
+                /*
                 writer = new FileStream(rawFileName, FileMode.OpenOrCreate);
                 bwrtFile = new BinaryWriter(writer);
                 int max = (int)uiNbOfLines;
@@ -4114,6 +4115,7 @@ namespace SDK_Example
                         l++;
                     }
                 }
+                */
 
                 SaveBmpFromRaw(imageIndex,
                                Path.ChangeExtension(bmpFileName, ".bmp"),
