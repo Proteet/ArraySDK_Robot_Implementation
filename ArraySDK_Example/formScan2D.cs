@@ -62,6 +62,8 @@ namespace SDK_Example
         uint uiNbOfLines = 0;
         int iCfmSamples = 0;
 
+   
+
         /// <summary>
         /// pass by reference to the dll
         /// </summary>
@@ -263,6 +265,7 @@ namespace SDK_Example
 
         // store also the step count when the image was taken
         int curStepPos;
+        int prevStepPos = 0;
         int[] cineStepCount;
         //for the homing function, counting maximum steps
         bool homeCountSteps = false;
@@ -1505,15 +1508,19 @@ namespace SDK_Example
                 {
                     Array.Copy(bytRawImage, bytRawImagePrevious, uiNbOfLines * ScanConverter.MAX_SAMPLES);
                     Array.Copy(bytRawImageRef, bytRawImage, uiNbOfLines * ScanConverter.MAX_SAMPLES);
-                    AddToCine(bytRawImage);//B
-                    ApplyTgc(bytRawImage);//B
-                                          //if (bImgExt == true)
-                                          //{
-                                          //    imgControl.ApplyLUT(bytRawImage);   
-                                          //}
-
+                    Console.WriteLine("Previous Step Position: " + prevStepPos);
+                    if (prevStepPos < curStepPos) { 
+                        AddToCine(bytRawImage); //B
+                        prevStepPos++;
+                    }
+                    ApplyTgc(bytRawImage);      //B
+                                                //if (bImgExt == true)
+                                                //{
+                                                //    imgControl.ApplyLUT(bytRawImage);   
+                                                //}
 
                     //TO DO: data/image processing
+                    
                     Thread.Sleep(1);
                     if (Scan2D.CFMData == true)
                     {
@@ -1535,7 +1542,9 @@ namespace SDK_Example
 
                 }
 
-                DoRefresh();
+                if (curStepPos % 250 == 0) {
+                    DoRefresh();
+                }
                 bIsBusy = false;
             }
             Thread.Sleep(1);
@@ -3510,12 +3519,14 @@ namespace SDK_Example
                         if (RobotState == RobotStateEnum.homing && homeCountSteps)
                         {
                             ++maxSteps;
+                            Console.WriteLine("Max Steps: " + maxSteps);
                         }
                         else if (RobotState == RobotStateEnum.scanning)
                         {
                             ++posStepCount;
                             //labelPosition.Text = posStepCount.ToString();
                             takePicture = true;
+                            Console.WriteLine("Step Counts: " + posStepCount);
                         }
                         else if (RobotState == RobotStateEnum.rewinding)
                         {
@@ -3598,7 +3609,7 @@ namespace SDK_Example
 
                 writeResponseCodes();
 
-                StopScan();
+                // StopScan();
 
                 RobotState = RobotStateEnum.emergencyStopped;
 
@@ -3617,6 +3628,19 @@ namespace SDK_Example
                 RobotState = RobotStateEnum.rewinding;
                 SetButtonForRobotState(RobotState);
 
+                MaxCine = maxSteps;
+                /// Cineloop
+                ByteArrayList.Clear();
+                ByteArrayList.Capacity = MaxCine;
+                ushortArrayList.Clear();
+                ushortArrayList.Capacity = MaxCine;
+                ByteUniArrayList.Clear();
+                ByteUniArrayList.Capacity = MaxCine;
+                ushortUniArrayList.Clear();
+                ushortUniArrayList.Capacity = MaxCine;
+                //for UScanGuide Labeling? 
+                cineImageTimes = new DateTime[MaxCine];
+                cineStepCount = new int[MaxCine];
 
             }
 
@@ -3673,6 +3697,9 @@ namespace SDK_Example
                     // clear out old scans
                     ByteArrayList.Clear();
 
+                    // Resets prevStepPos to the current position
+                    prevStepPos = curStepPos;
+
                     StartRobot();
                     StartScan();
                     break;
@@ -3698,14 +3725,14 @@ namespace SDK_Example
                     SetButtonForRobotState(RobotState);
 
                     StopRobot();
-                    StopScan();
+                    // StopScan();
                     break;
                 case RobotStateEnum.rewinding:
 
                     RobotState = RobotStateEnum.emergencyStopped;
                     SetButtonForRobotState(RobotState);
 
-                    StopRobot();
+                    // StopRobot();
 
                     break;
                 default:
