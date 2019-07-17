@@ -4046,31 +4046,47 @@ namespace SDK_Example
             using (System.IO.StreamWriter file =
                 new System.IO.StreamWriter(filePath))
             {
-                file.WriteLine(" Index " + iIndexSC);
-                file.WriteLine(" Depth " + iDepth);
-                file.WriteLine(labelFrequency.Text);
-                file.WriteLine(labelHighVolt.Text);
-                file.WriteLine(labelFocus.Text);
-                file.WriteLine(labelMainGain.Text);
-                file.WriteLine(labelDynamic.Text);
+                file.WriteLine("Index " + iIndexSC);
+                file.WriteLine("Depth " + iDepth);
 
-                file.WriteLine("TGC:");
-                file.WriteLine("Tgc Near: " + asbytTgcValue[0]);
-                file.WriteLine("Tgc Middle " + asbytTgcValue[1]);
-                file.WriteLine("Tgc Far: " + asbytTgcValue[2]);
+                // Main button settings 
+                String freq = Regex.Replace(labelFrequency.Text, "[^0-9.+-]", "");
+                String highVolt = Regex.Replace(labelHighVolt.Text, "[^0-9.+-]", "");
+                String focus = Regex.Replace(labelFocus.Text, "[^0-9.+-]", "");
+                String mainGain = Regex.Replace(labelMainGain.Text, "[^0-9.+-]", "");
+                String dynamic = Regex.Replace(labelDynamic.Text, "[^0-9.+-]", "");
 
-                file.WriteLine(" Doubler " + ScanConverter.Doubler);
-                file.WriteLine(" Compound " + ScanConv.Compound);
-                file.WriteLine(" Compound Angle " + MyHwControls.CompoundAngle);
-                file.WriteLine(" Steering " + iSteering);
-                file.WriteLine(" Number of Lines " + uiNbOfLines);
+                file.WriteLine("Frequency: " + freq);
+                file.WriteLine("High_Voltage: " + highVolt);
+                file.WriteLine("Focus: " + focus);
+                file.WriteLine("Main_Gain: " + mainGain);
+                file.WriteLine("Dynamic: " + dynamic);
 
-                file.WriteLine("Probe ID " + HWControls.GetProbeID());
-                file.WriteLine(" Width " + aiWidth[iIndexSC]);
-                file.WriteLine(" Height " + aiHeigth[iIndexSC]);
-                // file.WriteLine(labelZoom.Text);
-                file.WriteLine("# Images: " + ByteArrayList.Count);
+                // TGC values
+                file.WriteLine("TGC_Near: " + asbytTgcValue[0]);
+                file.WriteLine("TGC_Middle: " + asbytTgcValue[1]);
+                file.WriteLine("TGC_Far: " + asbytTgcValue[2]);
 
+                // Misc settings
+                file.WriteLine("Doubler: " + ScanConverter.Doubler);
+                file.WriteLine("Compound: " + ScanConv.Compound);
+                file.WriteLine("Compound Angle: " + MyHwControls.CompoundAngle);
+                file.WriteLine("Steering: " + iSteering);
+                file.WriteLine("Number of Lines: " + uiNbOfLines);
+
+                // Image description
+                file.WriteLine("Probe ID: " + HWControls.GetProbeID());
+                file.WriteLine("Width: " + aiWidth[iIndexSC]);
+                file.WriteLine("Height: " + aiHeigth[iIndexSC]);
+                file.WriteLine("Number_Images: " + ByteArrayList.Count);
+
+                // Sweep angle
+                int stepsPerTick = 5;
+                double degreesPerStep = 180.0 / 3102;
+                double sweepAngle = maxSteps * stepsPerTick * degreesPerStep;
+                int sweepAngleRounded = (int) Math.Round(sweepAngle);
+
+                file.WriteLine("Sweep_Angle: " + sweepAngleRounded);
             }
 
         }
