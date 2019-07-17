@@ -1542,7 +1542,7 @@ namespace SDK_Example
 
                 }
 
-                if (curStepPos % 250 == 0) {
+                if (curStepPos % 2 == 0 || RobotState == RobotStateEnum.readyToScan) {
                     DoRefresh();
                 }
                 bIsBusy = false;
