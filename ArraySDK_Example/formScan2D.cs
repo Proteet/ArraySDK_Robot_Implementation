@@ -4088,6 +4088,9 @@ namespace SDK_Example
                 int sweepAngleRounded = (int) Math.Round(sweepAngle);
 
                 file.WriteLine("Sweep_Angle: " + sweepAngleRounded);
+
+                // Radius in cm
+                file.WriteLine("Radius: " + textRadius.Text);
             }
 
         }
@@ -4462,6 +4465,26 @@ namespace SDK_Example
         }
 
         private void LabelImagesPer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UctrlPMDepth_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LabelFocus_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LabelTgc3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextRadius_TextChanged(object sender, EventArgs e)
         {
 
         }
