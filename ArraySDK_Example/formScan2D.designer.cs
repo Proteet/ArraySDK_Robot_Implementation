@@ -31,7 +31,7 @@
             this.labelProbeName = new System.Windows.Forms.Label();
             this.labelDepth = new System.Windows.Forms.Label();
             this.labelFrequency = new System.Windows.Forms.Label();
-            this.labelImagesPer = new System.Windows.Forms.Label();
+            // this.labelImagesPer = new System.Windows.Forms.Label();
             this.labelRobotSpeed = new System.Windows.Forms.Label();
             this.labelMainGain = new System.Windows.Forms.Label();
             this.labelHighVolt = new System.Windows.Forms.Label();
@@ -66,7 +66,7 @@
             this.uctrlPMDynamic = new SDK_Example.UserControlPlusMinus();
             this.uctrlPMGalGain = new SDK_Example.UserControlPlusMinus();
             this.uctrlPMDepth = new SDK_Example.UserControlPlusMinus();
-            this.uctrlImagesPer = new SDK_Example.UserControlPlusMinus();
+            // this.uctrlImagesPer = new SDK_Example.UserControlPlusMinus();
             this.uctrlPMSteering = new SDK_Example.UserControlPlusMinus();
             this.uctrlGrayScale = new SDK_Example.UserControlGrayScale();
             this.uctrlDepth = new SDK_Example.UserControlDepth();
@@ -123,6 +123,7 @@
             // 
             // labelImagesPer
             // 
+            /*
             this.labelImagesPer.AutoSize = true;
             this.labelImagesPer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelImagesPer.Location = new System.Drawing.Point(1065, 644);
@@ -131,6 +132,7 @@
             this.labelImagesPer.TabIndex = 49;
             this.labelImagesPer.Text = "ImagesPer";
             this.labelImagesPer.Click += new System.EventHandler(this.LabelImagesPer_Click);
+             */
             // 
             // labelRobotSpeed
             // 
@@ -526,7 +528,8 @@
             this.uctrlPMDepth.TabIndex = 19;
             // 
             // uctrlImagesPer
-            // 
+            //
+            /*
             this.uctrlImagesPer.BackColor = System.Drawing.Color.LightSteelBlue;
             this.uctrlImagesPer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uctrlImagesPer.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -536,6 +539,7 @@
             this.uctrlImagesPer.Name = "uctrlImagesPer";
             this.uctrlImagesPer.Size = new System.Drawing.Size(57, 100);
             this.uctrlImagesPer.TabIndex = 0;
+             */
             // 
             // uctrlPMSteering
             // 
@@ -674,7 +678,7 @@
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1166, 749);
             this.Controls.Add(this.butCfmMode);
-            this.Controls.Add(this.labelImagesPer);
+            // this.Controls.Add(this.labelImagesPer);
             this.Controls.Add(this.butRFMode);
             this.Controls.Add(this.buttonLoad);
             this.Controls.Add(this.butDoubler);
@@ -696,7 +700,7 @@
             this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.labelTgc3);
             this.Controls.Add(this.buttonCine);
-            this.Controls.Add(this.uctrlImagesPer);
+            // this.Controls.Add(this.uctrlImagesPer);
             this.Controls.Add(this.labelTgc2);
             this.Controls.Add(this.labelPosition);
             this.Controls.Add(this.labelTgc1);
@@ -752,7 +756,7 @@
         private UserControlDepth uctrlDepth;
         private System.Windows.Forms.Label labelDepth;
         private System.Windows.Forms.Label labelFrequency;
-        private System.Windows.Forms.Label labelImagesPer;
+        // private System.Windows.Forms.Label labelImagesPer;
         private System.Windows.Forms.Label labelMainGain;
         private System.Windows.Forms.Label labelHighVolt;
         private System.Windows.Forms.Button buttonCine;
@@ -784,7 +788,7 @@
         private System.Windows.Forms.Label labelRobotSpeed;
         private System.Windows.Forms.TrackBar trackBarRobotSpeed;
         public System.Windows.Forms.Button buttonProbe2; //not used
-        private UserControlPlusMinus uctrlImagesPer;
+        // private UserControlPlusMinus uctrlImagesPer;
         private System.Windows.Forms.Button buttonRobotScan;
         private UserControlPlusMinus uctrlPMDepth;
         private UserControlPlusMinus uctrlPMFrequency;

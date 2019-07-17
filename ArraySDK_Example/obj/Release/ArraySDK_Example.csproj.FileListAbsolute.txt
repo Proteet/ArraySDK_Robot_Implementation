@@ -47,3 +47,4 @@ C:\Users\Jeff\Documents\GUI Controller\Build_Off_Original\ArraySDK_Original\Arra
 C:\Users\Jeff\Documents\GUI Controller\Build_Off_Original\ArraySDK_Original\ArraySDK_Example\obj\Release\ArraySDK_Example.csproj.CopyComplete
 C:\Users\Jeff\Documents\GUI Controller\Build_Off_Original\ArraySDK_Original\ArraySDK_Example\obj\Release\ArraySDK_Example.exe
 C:\Users\Jeff\Documents\GUI Controller\Build_Off_Original\ArraySDK_Original\ArraySDK_Example\obj\Release\ArraySDK_Example.pdb
+C:\Users\Jeff\Documents\GUI Controller\Build_Off_Original\ArraySDK_Original\ArraySDK_Example\bin\Release\ArraySDK_Example.xml

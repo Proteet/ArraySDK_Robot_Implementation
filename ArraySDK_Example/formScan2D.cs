@@ -742,7 +742,7 @@ namespace SDK_Example
             // labelFR.Text = strFR;
             labelSteering.Text = strSteering;
             // labelCompound.Text = strCompound;
-            labelImagesPer.Text = strImagesPer;
+            // labelImagesPer.Text = strImagesPer;
 
         }
 
@@ -792,7 +792,7 @@ namespace SDK_Example
             uctrlPMGalGain.Init("Main", MainGainPlus, MainGainMinus);
             uctrlPMDynamic.Init("Dyn", DynamicPlus, DynamicMinus);
             uctrlPMSteering.Init("Steering", SteeringPlus, SteeringMinus);
-            uctrlImagesPer.Init("ImagesPer", ImagPlus, ImagMinus);
+            // uctrlImagesPer.Init("ImagesPer", ImagPlus, ImagMinus);
 
         }
 
@@ -3935,6 +3935,7 @@ namespace SDK_Example
         private void buttonSaveCine_Click(object sender, EventArgs e)
         {
             DoSaveRobotScan();
+            StartScan(); 
         }
 
 
@@ -4091,7 +4092,7 @@ namespace SDK_Example
 
         }
 
-
+        /// <summary>
         /// Save the raw  .dat with the minimum charateristics to retrieve 
         /// the images: depth, up/down, left/right, size of ScanConverter, (Index of ScanConverter), ProbeID
         /// Essentially copied from DoSaveRaw since I only need one for all the entire 3D scan
