@@ -37,7 +37,7 @@
             // 
             this.labelName.AutoEllipsis = true;
             this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(0, 43);
+            this.labelName.Location = new System.Drawing.Point(15, 50);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(60, 13);
             this.labelName.TabIndex = 2;
@@ -48,7 +48,7 @@
             this.butPlus.BackColor = System.Drawing.Color.LightSteelBlue;
             this.butPlus.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
             this.butPlus.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butPlus.Location = new System.Drawing.Point(5, 3);
+            this.butPlus.Location = new System.Drawing.Point(14, 3);
             this.butPlus.Name = "butPlus";
             this.butPlus.Size = new System.Drawing.Size(33, 28);
             this.butPlus.TabIndex = 3;
@@ -61,7 +61,7 @@
             this.butMinus.BackColor = System.Drawing.Color.LightSteelBlue;
             this.butMinus.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
             this.butMinus.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butMinus.Location = new System.Drawing.Point(5, 65);
+            this.butMinus.Location = new System.Drawing.Point(14, 84);
             this.butMinus.Name = "butMinus";
             this.butMinus.Size = new System.Drawing.Size(33, 28);
             this.butMinus.TabIndex = 4;
@@ -82,7 +82,7 @@
             this.ForeColor = System.Drawing.Color.Black;
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "UserControlPlusMinus";
-            this.Size = new System.Drawing.Size(45, 100);
+            this.Size = new System.Drawing.Size(65, 120);
             this.ResumeLayout(false);
 
         }
