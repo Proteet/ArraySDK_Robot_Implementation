@@ -722,7 +722,7 @@ namespace SDK_Example
                     // labelCompound.Text = strCompound + MyHwControls.CompoundAngle.ToString();
             }
 
-            labelSteering.Text = strSteering + iSteering.ToString();
+            // labelSteering.Text = strSteering + iSteering.ToString();
             //UScanGuide: need to update imagesper and position
 
         }
@@ -740,7 +740,7 @@ namespace SDK_Example
             labelMainGain.Text = strMainGain;
             labelDynamic.Text = strDynamic;
             // labelFR.Text = strFR;
-            labelSteering.Text = strSteering;
+            // labelSteering.Text = strSteering;
             // labelCompound.Text = strCompound;
             // labelImagesPer.Text = strImagesPer;
 
@@ -791,7 +791,7 @@ namespace SDK_Example
             uctrlPMHighVoltage.Init("HV", HighPlus, HighMinus);
             uctrlPMGalGain.Init("Main", MainGainPlus, MainGainMinus);
             uctrlPMDynamic.Init("Dyn", DynamicPlus, DynamicMinus);
-            uctrlPMSteering.Init("Steering", SteeringPlus, SteeringMinus);
+            // uctrlPMSteering.Init("Steering", SteeringPlus, SteeringMinus);
             // uctrlImagesPer.Init("ImagesPer", ImagPlus, ImagMinus);
 
         }
@@ -2931,7 +2931,8 @@ namespace SDK_Example
             this.gboxAngle.Location = new Point(630, aiHeigth[i] + 57);
             this.gboxImagesPer.Location = new Point(720, aiHeigth[i] + 57);
             */
-            this.Size = new Size(aiWidth[i] + 508, aiHeigth[i] + 256);
+            // this.Size = new Size(aiWidth[i] + 508, aiHeigth[i] + 256);
+            this.Size = new Size(1182, 788);
         }
 
         #endregion
