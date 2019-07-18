@@ -427,7 +427,7 @@ namespace SDK_Example
                 if (FormProbes.mycolProbesName.Count != 0)
                 {
                     int i = 0;
-                    buttonProbe1.Text = FormProbes.mycolProbesName[i++];
+                    // buttonProbe1.Text = FormProbes.mycolProbesName[i++];
                     if (FormProbes.mycolProbesName.Count > 1)
                     {
                         buttonProbe2.Text = FormProbes.mycolProbesName[i++];
@@ -439,7 +439,7 @@ namespace SDK_Example
                 }
                 else
                 {
-                    buttonProbe1.Text = strNotConnected;
+                    // buttonProbe1.Text = strNotConnected;
                     buttonProbe2.Text = strNotConnected;
                 }
             }
@@ -1722,13 +1722,13 @@ namespace SDK_Example
                     trackBarCine.Value = iCineCounter;
                     break;
                 case ControlEnum.buttonProbe1:
-                    buttonProbe1.Text = formText;
+                    // buttonProbe1.Text = formText;
                     break;
                 case ControlEnum.buttonProbe2:
                     buttonProbe2.Text = formText;
                     break;
                 case ControlEnum.Probe1Enabled:
-                    buttonProbe1.Enabled = true;
+                    // buttonProbe1.Enabled = true;
                     break;
                 case ControlEnum.Probe2Enabled:
                     buttonProbe2.Enabled = true;
@@ -2990,7 +2990,7 @@ namespace SDK_Example
             if (FormProbes.mycolProbesName.Count != 0)
             {
                 int i = 0;
-                formScan2D.MyFormScan2D.buttonProbe1.Text = FormProbes.mycolProbesName[i++];
+                // formScan2D.MyFormScan2D.buttonProbe1.Text = FormProbes.mycolProbesName[i++];
                 if (FormProbes.mycolProbesName.Count > 1)
                 {
                     buttonProbe2.Text = FormProbes.mycolProbesName[i++];
@@ -3002,7 +3002,7 @@ namespace SDK_Example
             }
             else
             {
-                buttonProbe1.Text = strNotConnected;
+                // buttonProbe1.Text = strNotConnected;
                 buttonProbe2.Text = strNotConnected;
             }
 
@@ -3010,8 +3010,10 @@ namespace SDK_Example
 
         private void buttonProbe1_Click(object sender, EventArgs e)
         {
+            /*
             if (buttonProbe1.Text != strNotConnected)
                 SwitchProbe(0);
+             */
         }
 
         private void buttonProbe2_Click(object sender, EventArgs e)

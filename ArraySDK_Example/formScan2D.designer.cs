@@ -55,7 +55,6 @@
             this.butCfmMode = new System.Windows.Forms.Button();
             this.butDoubler = new System.Windows.Forms.Button();
             this.butCompound = new System.Windows.Forms.Button();
-            this.buttonProbe1 = new System.Windows.Forms.Button();
             this.buttonProbe2 = new System.Windows.Forms.Button();
             this.buttonRobotScan = new System.Windows.Forms.Button();
             this.butManRev = new System.Windows.Forms.Button();
@@ -366,9 +365,9 @@
             this.butDoubler.BackColor = System.Drawing.Color.LightSteelBlue;
             this.butDoubler.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butDoubler.ForeColor = System.Drawing.Color.Black;
-            this.butDoubler.Location = new System.Drawing.Point(415, 654);
+            this.butDoubler.Location = new System.Drawing.Point(415, 633);
             this.butDoubler.Name = "butDoubler";
-            this.butDoubler.Size = new System.Drawing.Size(170, 30);
+            this.butDoubler.Size = new System.Drawing.Size(170, 55);
             this.butDoubler.TabIndex = 51;
             this.butDoubler.Text = "Doubler";
             this.butDoubler.UseVisualStyleBackColor = false;
@@ -379,26 +378,13 @@
             this.butCompound.BackColor = System.Drawing.Color.LightSteelBlue;
             this.butCompound.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butCompound.ForeColor = System.Drawing.Color.Black;
-            this.butCompound.Location = new System.Drawing.Point(415, 612);
+            this.butCompound.Location = new System.Drawing.Point(415, 568);
             this.butCompound.Name = "butCompound";
-            this.butCompound.Size = new System.Drawing.Size(170, 30);
+            this.butCompound.Size = new System.Drawing.Size(170, 55);
             this.butCompound.TabIndex = 50;
             this.butCompound.Text = "Compound";
             this.butCompound.UseVisualStyleBackColor = false;
             this.butCompound.Click += new System.EventHandler(this.butCompound_Click);
-            // 
-            // buttonProbe1
-            // 
-            this.buttonProbe1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.buttonProbe1.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonProbe1.ForeColor = System.Drawing.Color.Black;
-            this.buttonProbe1.Location = new System.Drawing.Point(415, 568);
-            this.buttonProbe1.Name = "buttonProbe1";
-            this.buttonProbe1.Size = new System.Drawing.Size(170, 30);
-            this.buttonProbe1.TabIndex = 47;
-            this.buttonProbe1.Text = "Probe1";
-            this.buttonProbe1.UseVisualStyleBackColor = false;
-            this.buttonProbe1.Click += new System.EventHandler(this.buttonProbe1_Click);
             // 
             // buttonProbe2
             // 
@@ -633,7 +619,6 @@
             this.Controls.Add(this.butDoubler);
             this.Controls.Add(this.buttonSaveCine);
             this.Controls.Add(this.butCompound);
-            this.Controls.Add(this.buttonProbe1);
             this.Controls.Add(this.trackBarCine);
             this.Controls.Add(this.labelFocus);
             this.Controls.Add(this.labelDynamic);
@@ -721,7 +706,7 @@
         private System.Windows.Forms.Label labelTgc1;
         private System.Windows.Forms.Label labelTgc3;
         private UserControlGrayScale uctrlGrayScale;
-        public System.Windows.Forms.Button buttonProbe1;
+        // public System.Windows.Forms.Button buttonProbe1;
         private System.Windows.Forms.Label labelFocus;
         public System.Windows.Forms.Button butCompound;
         // private System.Windows.Forms.Label labelSteering;
