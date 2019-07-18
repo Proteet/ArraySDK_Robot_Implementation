@@ -3310,7 +3310,7 @@ namespace SDK_Example
                     return;
             }
             else
-            {
+            {   
                 // check for response 
                 if (checkForQueryResponse())
                 {
@@ -3781,6 +3781,7 @@ namespace SDK_Example
                     buttonRobotScan.BackColor = Color.Red;
                     break;
                 case RobotStateEnum.rewinding:
+                    StartScan();
                     buttonRobotScan.Enabled = true;
                     buttonRobotScan.Text = "Abort Rewind";
                     buttonRobotScan.BackColor = Color.Gray;

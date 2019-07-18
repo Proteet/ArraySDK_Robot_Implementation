@@ -158,6 +158,7 @@
             this.labelHighVolt.Size = new System.Drawing.Size(71, 16);
             this.labelHighVolt.TabIndex = 34;
             this.labelHighVolt.Text = "High Volt";
+            this.labelHighVolt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelHighVolt.Click += new System.EventHandler(this.LabelHighVolt_Click);
             // 
             // trackBarCine
