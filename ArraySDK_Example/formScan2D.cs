@@ -500,7 +500,7 @@ namespace SDK_Example
 
         void SetSelectedProbe()
         {
-            buttonProbe1.Enabled = buttonProbe2.Enabled = butRFMode.Enabled = true;
+            // buttonProbe1.Enabled = buttonProbe2.Enabled = butRFMode.Enabled = true;
 
             /// Initialize Capture, ImageBuilding and ScanConverter classes
             ScanConv = new ScanConverter();
@@ -660,11 +660,12 @@ namespace SDK_Example
         /// </summary>
         void UpdateButtons()
         {
+            /*
             if (bSoftRFData)
-                butRFMode.BackColor = Color.OrangeRed;
+                // butRFMode.BackColor = Color.OrangeRed;
             else
-                butRFMode.BackColor = Color.LightSteelBlue;
-
+                // butRFMode.BackColor = Color.LightSteelBlue;
+            */
             if (bSoftCFMData == true)
             {
                 butCfmMode.BackColor = Color.OrangeRed;
@@ -996,7 +997,7 @@ namespace SDK_Example
 
             if (bInitDone == true)
             {
-                buttonProbe1.Enabled = buttonProbe2.Enabled = butRFMode.Enabled = false;
+                // buttonProbe1.Enabled = buttonProbe2.Enabled = butRFMode.Enabled = false;
 
                 ShowDisplayControls();
                 MyMarshalToForm(ControlEnum.buttonScan, "Freeze");
@@ -1733,7 +1734,7 @@ namespace SDK_Example
                     buttonProbe2.Enabled = true;
                     break;
                 case ControlEnum.RFModeEnabled:
-                    butRFMode.Enabled = true;
+                    // butRFMode.Enabled = true;
                     break;
                 case ControlEnum.CfmModeEnabled:
                     butCfmMode.Enabled = true;
@@ -2302,7 +2303,7 @@ namespace SDK_Example
             RebuildAll();
             SetUItoCFM(bSoftCFMData);
 
-            butRFMode.BackColor = Color.LightSteelBlue;
+            // butRFMode.BackColor = Color.LightSteelBlue;
 
         }
 

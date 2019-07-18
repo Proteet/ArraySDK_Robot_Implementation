@@ -53,7 +53,6 @@
             this.trackBarRobotSpeed = new System.Windows.Forms.TrackBar();
             this.labelFocus = new System.Windows.Forms.Label();
             this.butCfmMode = new System.Windows.Forms.Button();
-            this.butRFMode = new System.Windows.Forms.Button();
             this.butDoubler = new System.Windows.Forms.Button();
             this.butCompound = new System.Windows.Forms.Button();
             this.buttonProbe1 = new System.Windows.Forms.Button();
@@ -110,7 +109,7 @@
             // labelDepth
             // 
             this.labelDepth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDepth.Location = new System.Drawing.Point(95, 678);
+            this.labelDepth.Location = new System.Drawing.Point(95, 688);
             this.labelDepth.Name = "labelDepth";
             this.labelDepth.Size = new System.Drawing.Size(60, 16);
             this.labelDepth.TabIndex = 26;
@@ -122,7 +121,7 @@
             // 
             this.labelFrequency.AutoSize = true;
             this.labelFrequency.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFrequency.Location = new System.Drawing.Point(172, 678);
+            this.labelFrequency.Location = new System.Drawing.Point(172, 688);
             this.labelFrequency.Name = "labelFrequency";
             this.labelFrequency.Size = new System.Drawing.Size(81, 16);
             this.labelFrequency.TabIndex = 27;
@@ -141,7 +140,7 @@
             // labelMainGain
             // 
             this.labelMainGain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMainGain.Location = new System.Drawing.Point(597, 678);
+            this.labelMainGain.Location = new System.Drawing.Point(597, 688);
             this.labelMainGain.Name = "labelMainGain";
             this.labelMainGain.Size = new System.Drawing.Size(73, 16);
             this.labelMainGain.TabIndex = 32;
@@ -153,7 +152,7 @@
             // 
             this.labelHighVolt.AutoSize = true;
             this.labelHighVolt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHighVolt.Location = new System.Drawing.Point(345, 678);
+            this.labelHighVolt.Location = new System.Drawing.Point(345, 688);
             this.labelHighVolt.Name = "labelHighVolt";
             this.labelHighVolt.Size = new System.Drawing.Size(71, 16);
             this.labelHighVolt.TabIndex = 34;
@@ -254,7 +253,7 @@
             // 
             this.labelDynamic.AutoSize = true;
             this.labelDynamic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDynamic.Location = new System.Drawing.Point(690, 678);
+            this.labelDynamic.Location = new System.Drawing.Point(690, 688);
             this.labelDynamic.Name = "labelDynamic";
             this.labelDynamic.Size = new System.Drawing.Size(68, 16);
             this.labelDynamic.TabIndex = 44;
@@ -342,7 +341,7 @@
             // 
             this.labelFocus.AutoSize = true;
             this.labelFocus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFocus.Location = new System.Drawing.Point(257, 678);
+            this.labelFocus.Location = new System.Drawing.Point(257, 688);
             this.labelFocus.Name = "labelFocus";
             this.labelFocus.Size = new System.Drawing.Size(50, 16);
             this.labelFocus.TabIndex = 46;
@@ -362,25 +361,12 @@
             this.butCfmMode.UseVisualStyleBackColor = false;
             this.butCfmMode.Click += new System.EventHandler(this.butCfmMode_Click);
             // 
-            // butRFMode
-            // 
-            this.butRFMode.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.butRFMode.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butRFMode.ForeColor = System.Drawing.Color.Black;
-            this.butRFMode.Location = new System.Drawing.Point(415, 664);
-            this.butRFMode.Name = "butRFMode";
-            this.butRFMode.Size = new System.Drawing.Size(170, 30);
-            this.butRFMode.TabIndex = 52;
-            this.butRFMode.Text = "RF";
-            this.butRFMode.UseVisualStyleBackColor = false;
-            this.butRFMode.Click += new System.EventHandler(this.butRFMode_Click);
-            // 
             // butDoubler
             // 
             this.butDoubler.BackColor = System.Drawing.Color.LightSteelBlue;
             this.butDoubler.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butDoubler.ForeColor = System.Drawing.Color.Black;
-            this.butDoubler.Location = new System.Drawing.Point(415, 632);
+            this.butDoubler.Location = new System.Drawing.Point(415, 654);
             this.butDoubler.Name = "butDoubler";
             this.butDoubler.Size = new System.Drawing.Size(170, 30);
             this.butDoubler.TabIndex = 51;
@@ -393,7 +379,7 @@
             this.butCompound.BackColor = System.Drawing.Color.LightSteelBlue;
             this.butCompound.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butCompound.ForeColor = System.Drawing.Color.Black;
-            this.butCompound.Location = new System.Drawing.Point(415, 600);
+            this.butCompound.Location = new System.Drawing.Point(415, 612);
             this.butCompound.Name = "butCompound";
             this.butCompound.Size = new System.Drawing.Size(170, 30);
             this.butCompound.TabIndex = 50;
@@ -533,7 +519,7 @@
             this.uctrlPMDynamic.Location = new System.Drawing.Point(680, 568);
             this.uctrlPMDynamic.Margin = new System.Windows.Forms.Padding(0);
             this.uctrlPMDynamic.Name = "uctrlPMDynamic";
-            this.uctrlPMDynamic.Size = new System.Drawing.Size(65, 110);
+            this.uctrlPMDynamic.Size = new System.Drawing.Size(65, 120);
             this.uctrlPMDynamic.TabIndex = 23;
             // 
             // uctrlPMHighVoltage
@@ -545,7 +531,7 @@
             this.uctrlPMHighVoltage.Location = new System.Drawing.Point(333, 568);
             this.uctrlPMHighVoltage.Margin = new System.Windows.Forms.Padding(0);
             this.uctrlPMHighVoltage.Name = "uctrlPMHighVoltage";
-            this.uctrlPMHighVoltage.Size = new System.Drawing.Size(65, 110);
+            this.uctrlPMHighVoltage.Size = new System.Drawing.Size(65, 120);
             this.uctrlPMHighVoltage.TabIndex = 23;
             this.uctrlPMHighVoltage.Load += new System.EventHandler(this.UctrlPMHighVoltage_Load);
             // 
@@ -558,7 +544,7 @@
             this.uctrlPMGalGain.Location = new System.Drawing.Point(600, 568);
             this.uctrlPMGalGain.Margin = new System.Windows.Forms.Padding(0);
             this.uctrlPMGalGain.Name = "uctrlPMGalGain";
-            this.uctrlPMGalGain.Size = new System.Drawing.Size(65, 110);
+            this.uctrlPMGalGain.Size = new System.Drawing.Size(65, 120);
             this.uctrlPMGalGain.TabIndex = 22;
             // 
             // uctrlPMFocus
@@ -570,7 +556,7 @@
             this.uctrlPMFocus.Location = new System.Drawing.Point(253, 568);
             this.uctrlPMFocus.Margin = new System.Windows.Forms.Padding(0);
             this.uctrlPMFocus.Name = "uctrlPMFocus";
-            this.uctrlPMFocus.Size = new System.Drawing.Size(65, 110);
+            this.uctrlPMFocus.Size = new System.Drawing.Size(65, 120);
             this.uctrlPMFocus.TabIndex = 22;
             // 
             // uctrlPMFrequency
@@ -582,7 +568,7 @@
             this.uctrlPMFrequency.Location = new System.Drawing.Point(173, 568);
             this.uctrlPMFrequency.Margin = new System.Windows.Forms.Padding(0);
             this.uctrlPMFrequency.Name = "uctrlPMFrequency";
-            this.uctrlPMFrequency.Size = new System.Drawing.Size(65, 110);
+            this.uctrlPMFrequency.Size = new System.Drawing.Size(65, 120);
             this.uctrlPMFrequency.TabIndex = 20;
             // 
             // uctrlPMDepth
@@ -594,7 +580,7 @@
             this.uctrlPMDepth.Location = new System.Drawing.Point(93, 568);
             this.uctrlPMDepth.Margin = new System.Windows.Forms.Padding(0);
             this.uctrlPMDepth.Name = "uctrlPMDepth";
-            this.uctrlPMDepth.Size = new System.Drawing.Size(65, 110);
+            this.uctrlPMDepth.Size = new System.Drawing.Size(65, 120);
             this.uctrlPMDepth.TabIndex = 19;
             this.uctrlPMDepth.Load += new System.EventHandler(this.UctrlPMDepth_Load);
             // 
@@ -643,7 +629,6 @@
             this.ClientSize = new System.Drawing.Size(1166, 749);
             this.Controls.Add(this.textRadius);
             this.Controls.Add(this.butCfmMode);
-            this.Controls.Add(this.butRFMode);
             this.Controls.Add(this.buttonLoad);
             this.Controls.Add(this.butDoubler);
             this.Controls.Add(this.buttonSaveCine);
@@ -744,7 +729,7 @@
         private UserControlPlusMinus uctrlPMDynamic;
         private UserControlPlusMinus uctrlPMGalGain;
         // private UserControlPlusMinus uctrlPMSteering;
-        public System.Windows.Forms.Button butRFMode;
+        // public System.Windows.Forms.Button butRFMode;
         public System.Windows.Forms.Button butCfmMode;
         private System.Windows.Forms.Label labelRobotSpeed;
         private System.Windows.Forms.TrackBar trackBarRobotSpeed;
