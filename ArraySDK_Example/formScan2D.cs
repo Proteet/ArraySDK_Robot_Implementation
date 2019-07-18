@@ -605,7 +605,7 @@ namespace SDK_Example
                     aiDepth[i] = MyHwControls.ValidDepth(aiDepth[i]);
                 }
 
-                iDepthIndex = 0;
+                iDepthIndex = 2;
                 iDepth = aiDepth[iDepthIndex];
 
                 ///Get the array of frequencies and focus
