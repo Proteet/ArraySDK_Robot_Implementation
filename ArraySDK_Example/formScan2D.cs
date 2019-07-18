@@ -4072,12 +4072,12 @@ namespace SDK_Example
                 // Misc settings
                 file.WriteLine("Doubler: " + ScanConverter.Doubler);
                 file.WriteLine("Compound: " + ScanConv.Compound);
-                file.WriteLine("Compound Angle: " + MyHwControls.CompoundAngle);
+                file.WriteLine("Compound_Angle: " + MyHwControls.CompoundAngle);
                 file.WriteLine("Steering: " + iSteering);
                 file.WriteLine("Number of Lines: " + uiNbOfLines);
 
                 // Image description
-                file.WriteLine("Probe ID: " + HWControls.GetProbeID());
+                file.WriteLine("Probe_ID: " + HWControls.GetProbeID());
                 file.WriteLine("Width: " + aiWidth[iIndexSC]);
                 file.WriteLine("Height: " + aiHeigth[iIndexSC]);
                 file.WriteLine("Number_Images: " + ByteArrayList.Count);
