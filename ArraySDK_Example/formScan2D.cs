@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.IO.Ports;
@@ -2912,6 +2909,8 @@ namespace SDK_Example
             // iIndexSC = cboxSCSize.SelectedIndex;
             ResizeForm(iIndexSC);
         }
+
+        // Currently resize form doesn't change size of the application, keep it this way for now
         void ResizeForm(int i)
         {
             //Added boxes for UScanGuide here
@@ -2933,7 +2932,7 @@ namespace SDK_Example
             this.gboxImagesPer.Location = new Point(720, aiHeigth[i] + 57);
             */
             // this.Size = new Size(aiWidth[i] + 508, aiHeigth[i] + 256);
-            this.Size = new Size(1182, 788);
+            // this.Size = new Size(1182, 788);
         }
 
         #endregion
@@ -4490,6 +4489,11 @@ namespace SDK_Example
         }
 
         private void TextRadius_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LabelTgc_Click(object sender, EventArgs e)
         {
 
         }

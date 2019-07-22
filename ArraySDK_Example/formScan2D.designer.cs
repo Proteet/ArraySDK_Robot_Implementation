@@ -1,4 +1,6 @@
-﻿namespace SDK_Example
+﻿using System.Drawing;
+
+namespace SDK_Example
 {
     partial class formScan2D
     {
@@ -28,6 +30,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.labelImaging = new System.Windows.Forms.Label();
+            this.labelTgc = new System.Windows.Forms.Label();
             this.textRadius = new System.Windows.Forms.TextBox();
             this.labelProbeName = new System.Windows.Forms.Label();
             this.labelDepth = new System.Windows.Forms.Label();
@@ -64,6 +68,8 @@
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonSaveCine = new System.Windows.Forms.Button();
             this.buttonLoad = new System.Windows.Forms.Button();
+            this.labelSaveReview = new System.Windows.Forms.Label();
+            this.labelRobotCtrls = new System.Windows.Forms.Label();
             this.uctrlPMDynamic = new SDK_Example.UserControlPlusMinus();
             this.uctrlPMHighVoltage = new SDK_Example.UserControlPlusMinus();
             this.uctrlPMGalGain = new SDK_Example.UserControlPlusMinus();
@@ -81,6 +87,29 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBarRobotSpeed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // labelImaging
+            // 
+            this.labelImaging.AutoSize = true;
+            this.labelImaging.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelImaging.Location = new System.Drawing.Point(66, 565);
+            this.labelImaging.Name = "labelImaging";
+            this.labelImaging.Size = new System.Drawing.Size(60, 13);
+            this.labelImaging.TabIndex = 54;
+            this.labelImaging.Text = "IMAGING";
+            this.labelImaging.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelTgc
+            // 
+            this.labelTgc.AutoSize = true;
+            this.labelTgc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTgc.Location = new System.Drawing.Point(772, 565);
+            this.labelTgc.Name = "labelTgc";
+            this.labelTgc.Size = new System.Drawing.Size(32, 13);
+            this.labelTgc.TabIndex = 54;
+            this.labelTgc.Text = "TGC";
+            this.labelTgc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelTgc.Click += new System.EventHandler(this.LabelTgc_Click);
             // 
             // textRadius
             // 
@@ -108,7 +137,7 @@
             // labelDepth
             // 
             this.labelDepth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDepth.Location = new System.Drawing.Point(95, 688);
+            this.labelDepth.Location = new System.Drawing.Point(71, 708);
             this.labelDepth.Name = "labelDepth";
             this.labelDepth.Size = new System.Drawing.Size(60, 16);
             this.labelDepth.TabIndex = 26;
@@ -120,7 +149,7 @@
             // 
             this.labelFrequency.AutoSize = true;
             this.labelFrequency.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFrequency.Location = new System.Drawing.Point(172, 688);
+            this.labelFrequency.Location = new System.Drawing.Point(148, 708);
             this.labelFrequency.Name = "labelFrequency";
             this.labelFrequency.Size = new System.Drawing.Size(81, 16);
             this.labelFrequency.TabIndex = 27;
@@ -139,7 +168,7 @@
             // labelMainGain
             // 
             this.labelMainGain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMainGain.Location = new System.Drawing.Point(597, 688);
+            this.labelMainGain.Location = new System.Drawing.Point(573, 708);
             this.labelMainGain.Name = "labelMainGain";
             this.labelMainGain.Size = new System.Drawing.Size(73, 16);
             this.labelMainGain.TabIndex = 32;
@@ -151,7 +180,7 @@
             // 
             this.labelHighVolt.AutoSize = true;
             this.labelHighVolt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHighVolt.Location = new System.Drawing.Point(345, 688);
+            this.labelHighVolt.Location = new System.Drawing.Point(321, 708);
             this.labelHighVolt.Name = "labelHighVolt";
             this.labelHighVolt.Size = new System.Drawing.Size(71, 16);
             this.labelHighVolt.TabIndex = 34;
@@ -162,7 +191,7 @@
             // trackBarCine
             // 
             this.trackBarCine.BackColor = System.Drawing.Color.Black;
-            this.trackBarCine.Location = new System.Drawing.Point(775, 458);
+            this.trackBarCine.Location = new System.Drawing.Point(775, 470);
             this.trackBarCine.Maximum = 512;
             this.trackBarCine.Name = "trackBarCine";
             this.trackBarCine.Size = new System.Drawing.Size(360, 45);
@@ -175,7 +204,7 @@
             this.buttonPrevious.BackColor = System.Drawing.Color.LightSteelBlue;
             this.buttonPrevious.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPrevious.ForeColor = System.Drawing.Color.Black;
-            this.buttonPrevious.Location = new System.Drawing.Point(785, 384);
+            this.buttonPrevious.Location = new System.Drawing.Point(785, 396);
             this.buttonPrevious.Name = "buttonPrevious";
             this.buttonPrevious.Size = new System.Drawing.Size(110, 60);
             this.buttonPrevious.TabIndex = 4;
@@ -188,7 +217,7 @@
             this.buttonNext.BackColor = System.Drawing.Color.LightSteelBlue;
             this.buttonNext.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNext.ForeColor = System.Drawing.Color.Black;
-            this.buttonNext.Location = new System.Drawing.Point(1025, 384);
+            this.buttonNext.Location = new System.Drawing.Point(1025, 396);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(110, 60);
             this.buttonNext.TabIndex = 3;
@@ -201,7 +230,7 @@
             this.buttonCine.BackColor = System.Drawing.Color.LightSteelBlue;
             this.buttonCine.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCine.ForeColor = System.Drawing.Color.Black;
-            this.buttonCine.Location = new System.Drawing.Point(905, 384);
+            this.buttonCine.Location = new System.Drawing.Point(905, 396);
             this.buttonCine.Name = "buttonCine";
             this.buttonCine.Size = new System.Drawing.Size(110, 60);
             this.buttonCine.TabIndex = 2;
@@ -217,9 +246,9 @@
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel,
             this.toolStripStatusLabelFpga});
-            this.statusStrip.Location = new System.Drawing.Point(0, 727);
+            this.statusStrip.Location = new System.Drawing.Point(0, 758);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(1166, 22);
+            this.statusStrip.Size = new System.Drawing.Size(1170, 22);
             this.statusStrip.TabIndex = 35;
             this.statusStrip.Text = "statusStrip";
             // 
@@ -242,7 +271,7 @@
             // 
             this.labelFileName.AutoSize = true;
             this.labelFileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFileName.Location = new System.Drawing.Point(244, 13);
+            this.labelFileName.Location = new System.Drawing.Point(215, 18);
             this.labelFileName.Name = "labelFileName";
             this.labelFileName.Size = new System.Drawing.Size(75, 16);
             this.labelFileName.TabIndex = 39;
@@ -252,7 +281,7 @@
             // 
             this.labelDynamic.AutoSize = true;
             this.labelDynamic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDynamic.Location = new System.Drawing.Point(690, 688);
+            this.labelDynamic.Location = new System.Drawing.Point(666, 708);
             this.labelDynamic.Name = "labelDynamic";
             this.labelDynamic.Size = new System.Drawing.Size(68, 16);
             this.labelDynamic.TabIndex = 44;
@@ -261,7 +290,7 @@
             // labelTgc3
             // 
             this.labelTgc3.AutoSize = true;
-            this.labelTgc3.Location = new System.Drawing.Point(942, 655);
+            this.labelTgc3.Location = new System.Drawing.Point(947, 681);
             this.labelTgc3.Name = "labelTgc3";
             this.labelTgc3.Size = new System.Drawing.Size(22, 13);
             this.labelTgc3.TabIndex = 56;
@@ -271,7 +300,7 @@
             // labelTgc2
             // 
             this.labelTgc2.AutoSize = true;
-            this.labelTgc2.Location = new System.Drawing.Point(934, 600);
+            this.labelTgc2.Location = new System.Drawing.Point(939, 626);
             this.labelTgc2.Name = "labelTgc2";
             this.labelTgc2.Size = new System.Drawing.Size(38, 13);
             this.labelTgc2.TabIndex = 55;
@@ -280,7 +309,7 @@
             // labelTgc1
             // 
             this.labelTgc1.AutoSize = true;
-            this.labelTgc1.Location = new System.Drawing.Point(938, 546);
+            this.labelTgc1.Location = new System.Drawing.Point(943, 572);
             this.labelTgc1.Name = "labelTgc1";
             this.labelTgc1.Size = new System.Drawing.Size(30, 13);
             this.labelTgc1.TabIndex = 54;
@@ -290,7 +319,7 @@
             // tBarTgc1
             // 
             this.tBarTgc1.BackColor = System.Drawing.Color.Black;
-            this.tBarTgc1.Location = new System.Drawing.Point(770, 562);
+            this.tBarTgc1.Location = new System.Drawing.Point(775, 588);
             this.tBarTgc1.Maximum = 15;
             this.tBarTgc1.Minimum = -15;
             this.tBarTgc1.Name = "tBarTgc1";
@@ -302,7 +331,7 @@
             // tBarTgc2
             // 
             this.tBarTgc2.BackColor = System.Drawing.Color.Black;
-            this.tBarTgc2.Location = new System.Drawing.Point(770, 616);
+            this.tBarTgc2.Location = new System.Drawing.Point(775, 642);
             this.tBarTgc2.Maximum = 15;
             this.tBarTgc2.Minimum = -15;
             this.tBarTgc2.Name = "tBarTgc2";
@@ -314,7 +343,7 @@
             // tBarTgc3
             // 
             this.tBarTgc3.BackColor = System.Drawing.Color.Black;
-            this.tBarTgc3.Location = new System.Drawing.Point(769, 671);
+            this.tBarTgc3.Location = new System.Drawing.Point(774, 697);
             this.tBarTgc3.Maximum = 15;
             this.tBarTgc3.Minimum = -15;
             this.tBarTgc3.Name = "tBarTgc3";
@@ -340,7 +369,7 @@
             // 
             this.labelFocus.AutoSize = true;
             this.labelFocus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFocus.Location = new System.Drawing.Point(257, 688);
+            this.labelFocus.Location = new System.Drawing.Point(233, 708);
             this.labelFocus.Name = "labelFocus";
             this.labelFocus.Size = new System.Drawing.Size(50, 16);
             this.labelFocus.TabIndex = 46;
@@ -365,7 +394,7 @@
             this.butDoubler.BackColor = System.Drawing.Color.LightSteelBlue;
             this.butDoubler.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butDoubler.ForeColor = System.Drawing.Color.Black;
-            this.butDoubler.Location = new System.Drawing.Point(415, 633);
+            this.butDoubler.Location = new System.Drawing.Point(391, 653);
             this.butDoubler.Name = "butDoubler";
             this.butDoubler.Size = new System.Drawing.Size(170, 55);
             this.butDoubler.TabIndex = 51;
@@ -378,7 +407,7 @@
             this.butCompound.BackColor = System.Drawing.Color.LightSteelBlue;
             this.butCompound.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butCompound.ForeColor = System.Drawing.Color.Black;
-            this.butCompound.Location = new System.Drawing.Point(415, 568);
+            this.butCompound.Location = new System.Drawing.Point(391, 588);
             this.butCompound.Name = "butCompound";
             this.butCompound.Size = new System.Drawing.Size(170, 55);
             this.butCompound.TabIndex = 50;
@@ -462,7 +491,7 @@
             this.buttonSave.BackColor = System.Drawing.Color.LightSteelBlue;
             this.buttonSave.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSave.ForeColor = System.Drawing.Color.Black;
-            this.buttonSave.Location = new System.Drawing.Point(785, 318);
+            this.buttonSave.Location = new System.Drawing.Point(785, 330);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(110, 60);
             this.buttonSave.TabIndex = 2;
@@ -475,7 +504,7 @@
             this.buttonSaveCine.BackColor = System.Drawing.Color.LightSteelBlue;
             this.buttonSaveCine.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.buttonSaveCine.ForeColor = System.Drawing.Color.Black;
-            this.buttonSaveCine.Location = new System.Drawing.Point(1025, 318);
+            this.buttonSaveCine.Location = new System.Drawing.Point(1025, 330);
             this.buttonSaveCine.Name = "buttonSaveCine";
             this.buttonSaveCine.Size = new System.Drawing.Size(110, 60);
             this.buttonSaveCine.TabIndex = 2;
@@ -488,7 +517,7 @@
             this.buttonLoad.BackColor = System.Drawing.Color.LightSteelBlue;
             this.buttonLoad.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLoad.ForeColor = System.Drawing.Color.Black;
-            this.buttonLoad.Location = new System.Drawing.Point(905, 318);
+            this.buttonLoad.Location = new System.Drawing.Point(905, 330);
             this.buttonLoad.Name = "buttonLoad";
             this.buttonLoad.Size = new System.Drawing.Size(110, 60);
             this.buttonLoad.TabIndex = 3;
@@ -496,13 +525,35 @@
             this.buttonLoad.UseVisualStyleBackColor = false;
             this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
             // 
+            // labelSaveReview
+            // 
+            this.labelSaveReview.AutoSize = true;
+            this.labelSaveReview.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSaveReview.Location = new System.Drawing.Point(772, 307);
+            this.labelSaveReview.Name = "labelSaveReview";
+            this.labelSaveReview.Size = new System.Drawing.Size(94, 13);
+            this.labelSaveReview.TabIndex = 58;
+            this.labelSaveReview.Text = "SAVE/REVIEW";
+            this.labelSaveReview.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelRobotCtrls
+            // 
+            this.labelRobotCtrls.AutoSize = true;
+            this.labelRobotCtrls.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRobotCtrls.Location = new System.Drawing.Point(772, 29);
+            this.labelRobotCtrls.Name = "labelRobotCtrls";
+            this.labelRobotCtrls.Size = new System.Drawing.Size(121, 13);
+            this.labelRobotCtrls.TabIndex = 59;
+            this.labelRobotCtrls.Text = "ROBOT CONTROLS";
+            this.labelRobotCtrls.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // uctrlPMDynamic
             // 
             this.uctrlPMDynamic.BackColor = System.Drawing.Color.LightSteelBlue;
             this.uctrlPMDynamic.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uctrlPMDynamic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uctrlPMDynamic.ForeColor = System.Drawing.Color.Black;
-            this.uctrlPMDynamic.Location = new System.Drawing.Point(680, 568);
+            this.uctrlPMDynamic.Location = new System.Drawing.Point(656, 588);
             this.uctrlPMDynamic.Margin = new System.Windows.Forms.Padding(0);
             this.uctrlPMDynamic.Name = "uctrlPMDynamic";
             this.uctrlPMDynamic.Size = new System.Drawing.Size(65, 120);
@@ -514,7 +565,7 @@
             this.uctrlPMHighVoltage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uctrlPMHighVoltage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uctrlPMHighVoltage.ForeColor = System.Drawing.Color.Black;
-            this.uctrlPMHighVoltage.Location = new System.Drawing.Point(333, 568);
+            this.uctrlPMHighVoltage.Location = new System.Drawing.Point(309, 588);
             this.uctrlPMHighVoltage.Margin = new System.Windows.Forms.Padding(0);
             this.uctrlPMHighVoltage.Name = "uctrlPMHighVoltage";
             this.uctrlPMHighVoltage.Size = new System.Drawing.Size(65, 120);
@@ -527,7 +578,7 @@
             this.uctrlPMGalGain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uctrlPMGalGain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uctrlPMGalGain.ForeColor = System.Drawing.Color.Black;
-            this.uctrlPMGalGain.Location = new System.Drawing.Point(600, 568);
+            this.uctrlPMGalGain.Location = new System.Drawing.Point(576, 588);
             this.uctrlPMGalGain.Margin = new System.Windows.Forms.Padding(0);
             this.uctrlPMGalGain.Name = "uctrlPMGalGain";
             this.uctrlPMGalGain.Size = new System.Drawing.Size(65, 120);
@@ -539,7 +590,7 @@
             this.uctrlPMFocus.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uctrlPMFocus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uctrlPMFocus.ForeColor = System.Drawing.Color.Black;
-            this.uctrlPMFocus.Location = new System.Drawing.Point(253, 568);
+            this.uctrlPMFocus.Location = new System.Drawing.Point(229, 588);
             this.uctrlPMFocus.Margin = new System.Windows.Forms.Padding(0);
             this.uctrlPMFocus.Name = "uctrlPMFocus";
             this.uctrlPMFocus.Size = new System.Drawing.Size(65, 120);
@@ -551,7 +602,7 @@
             this.uctrlPMFrequency.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uctrlPMFrequency.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uctrlPMFrequency.ForeColor = System.Drawing.Color.Black;
-            this.uctrlPMFrequency.Location = new System.Drawing.Point(173, 568);
+            this.uctrlPMFrequency.Location = new System.Drawing.Point(149, 588);
             this.uctrlPMFrequency.Margin = new System.Windows.Forms.Padding(0);
             this.uctrlPMFrequency.Name = "uctrlPMFrequency";
             this.uctrlPMFrequency.Size = new System.Drawing.Size(65, 120);
@@ -563,7 +614,7 @@
             this.uctrlPMDepth.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uctrlPMDepth.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uctrlPMDepth.ForeColor = System.Drawing.Color.Black;
-            this.uctrlPMDepth.Location = new System.Drawing.Point(93, 568);
+            this.uctrlPMDepth.Location = new System.Drawing.Point(69, 588);
             this.uctrlPMDepth.Margin = new System.Windows.Forms.Padding(0);
             this.uctrlPMDepth.Name = "uctrlPMDepth";
             this.uctrlPMDepth.Size = new System.Drawing.Size(65, 120);
@@ -574,7 +625,7 @@
             // 
             this.uctrlGrayScale.BackColor = System.Drawing.Color.Black;
             this.uctrlGrayScale.Enabled = false;
-            this.uctrlGrayScale.Location = new System.Drawing.Point(613, 47);
+            this.uctrlGrayScale.Location = new System.Drawing.Point(584, 52);
             this.uctrlGrayScale.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uctrlGrayScale.Name = "uctrlGrayScale";
             this.uctrlGrayScale.Size = new System.Drawing.Size(8, 512);
@@ -585,7 +636,7 @@
             // uctrlDepth
             // 
             this.uctrlDepth.BackColor = System.Drawing.Color.Black;
-            this.uctrlDepth.Location = new System.Drawing.Point(69, 37);
+            this.uctrlDepth.Location = new System.Drawing.Point(40, 42);
             this.uctrlDepth.Name = "uctrlDepth";
             this.uctrlDepth.Size = new System.Drawing.Size(30, 522);
             this.uctrlDepth.TabIndex = 13;
@@ -596,7 +647,7 @@
             this.uctrlScan.BackColor = System.Drawing.Color.Transparent;
             this.uctrlScan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.uctrlScan.ForeColor = System.Drawing.Color.Transparent;
-            this.uctrlScan.Location = new System.Drawing.Point(100, 47);
+            this.uctrlScan.Location = new System.Drawing.Point(71, 52);
             this.uctrlScan.Name = "uctrlScan";
             this.uctrlScan.Size = new System.Drawing.Size(640, 480);
             this.uctrlScan.TabIndex = 9;
@@ -612,7 +663,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1166, 749);
+            this.ClientSize = new System.Drawing.Size(1170, 780);
+            this.Controls.Add(this.labelRobotCtrls);
+            this.Controls.Add(this.labelSaveReview);
+            this.Controls.Add(this.labelImaging);
+            this.Controls.Add(this.labelTgc);
             this.Controls.Add(this.textRadius);
             this.Controls.Add(this.butCfmMode);
             this.Controls.Add(this.buttonLoad);
@@ -733,6 +788,10 @@
         private System.Windows.Forms.Button buttonSaveCine;
         private System.Windows.Forms.Button buttonLoad;
         private System.Windows.Forms.TextBox textRadius;
+        private System.Windows.Forms.Label labelTgc;
+        private System.Windows.Forms.Label labelImaging;
+        private System.Windows.Forms.Label labelSaveReview;
+        private System.Windows.Forms.Label labelRobotCtrls;
     }
 }
 
