@@ -449,7 +449,16 @@ namespace SDK_Example
 
 
             SetSelectedProbe();
+
+            // Starts scanning immediately after probe has been selected
             StartScan();
+
+            // Sets Doulber to on immediately after scanner starts scanning
+            if ((ScanConv.Compound) == true)
+                return;
+            ScanConverter.Doubler = !ScanConverter.Doubler;
+            SetDoubler();
+            RebuildAll();
         }
 
         /// <summary>
@@ -4677,6 +4686,15 @@ namespace SDK_Example
             ScanConverter.Doubler = !ScanConverter.Doubler;
             SetDoubler();
             RebuildAll();
+
+            ToolStripMenuItem item = sender as ToolStripMenuItem;
+            if (item.Checked == true)
+            {
+                item.Checked = false;
+            }
+            else {
+                item.Checked = true;
+            }
         }
 
         private void MenuCompound_Click(object sender, EventArgs e)

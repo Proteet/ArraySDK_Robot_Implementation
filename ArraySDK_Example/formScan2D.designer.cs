@@ -721,6 +721,8 @@ namespace SDK_Example
             // 
             // menuDoubler
             // 
+            this.menuDoubler.Checked = true;
+            this.menuDoubler.CheckState = System.Windows.Forms.CheckState.Checked;
             this.menuDoubler.Name = "menuDoubler";
             this.menuDoubler.Size = new System.Drawing.Size(180, 22);
             this.menuDoubler.Text = "Doubler";
