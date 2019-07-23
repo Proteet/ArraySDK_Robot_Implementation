@@ -45,7 +45,7 @@
             // 
             // butPlus
             // 
-            this.butPlus.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.butPlus.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.butPlus.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
             this.butPlus.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butPlus.Location = new System.Drawing.Point(14, 3);
@@ -58,7 +58,7 @@
             // 
             // butMinus
             // 
-            this.butMinus.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.butMinus.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.butMinus.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
             this.butMinus.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butMinus.Location = new System.Drawing.Point(14, 84);

@@ -4718,5 +4718,30 @@ namespace SDK_Example
             ProcessStartInfo sInfo = new ProcessStartInfo("http://cccs-site.herokuapp.com/");
             Process.Start(sInfo);
         }
+
+        private void LabelImaging_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LabelFileName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LabelRobotCtrls_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LabelSaveReview_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LabelDynamic_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }///namespace SDK_EXAMPLE

@@ -88,9 +88,9 @@ namespace SDK_Example
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCompound = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDoubler = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuWebsite = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarCine)).BeginInit();
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tBarTgc1)).BeginInit();
@@ -106,17 +106,20 @@ namespace SDK_Example
             // 
             this.labelImaging.AutoSize = true;
             this.labelImaging.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelImaging.Location = new System.Drawing.Point(235, 596);
+            this.labelImaging.ForeColor = System.Drawing.Color.Gray;
+            this.labelImaging.Location = new System.Drawing.Point(234, 596);
             this.labelImaging.Name = "labelImaging";
             this.labelImaging.Size = new System.Drawing.Size(60, 13);
             this.labelImaging.TabIndex = 54;
             this.labelImaging.Text = "IMAGING";
             this.labelImaging.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelImaging.Click += new System.EventHandler(this.LabelImaging_Click);
             // 
             // labelTgc
             // 
             this.labelTgc.AutoSize = true;
             this.labelTgc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTgc.ForeColor = System.Drawing.Color.Gray;
             this.labelTgc.Location = new System.Drawing.Point(765, 596);
             this.labelTgc.Name = "labelTgc";
             this.labelTgc.Size = new System.Drawing.Size(32, 13);
@@ -139,7 +142,7 @@ namespace SDK_Example
             // labelProbeName
             // 
             this.labelProbeName.AutoSize = true;
-            this.labelProbeName.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.labelProbeName.BackColor = System.Drawing.Color.White;
             this.labelProbeName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelProbeName.ForeColor = System.Drawing.Color.Black;
             this.labelProbeName.Location = new System.Drawing.Point(15, 42);
@@ -151,8 +154,8 @@ namespace SDK_Example
             // 
             // labelDepth
             // 
-            this.labelDepth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDepth.Location = new System.Drawing.Point(240, 739);
+            this.labelDepth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDepth.Location = new System.Drawing.Point(239, 739);
             this.labelDepth.Name = "labelDepth";
             this.labelDepth.Size = new System.Drawing.Size(60, 16);
             this.labelDepth.TabIndex = 26;
@@ -163,10 +166,10 @@ namespace SDK_Example
             // labelFrequency
             // 
             this.labelFrequency.AutoSize = true;
-            this.labelFrequency.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFrequency.Location = new System.Drawing.Point(317, 739);
+            this.labelFrequency.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFrequency.Location = new System.Drawing.Point(316, 739);
             this.labelFrequency.Name = "labelFrequency";
-            this.labelFrequency.Size = new System.Drawing.Size(81, 16);
+            this.labelFrequency.Size = new System.Drawing.Size(72, 16);
             this.labelFrequency.TabIndex = 27;
             this.labelFrequency.Text = "Frequency";
             // 
@@ -182,8 +185,8 @@ namespace SDK_Example
             // 
             // labelMainGain
             // 
-            this.labelMainGain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMainGain.Location = new System.Drawing.Point(555, 739);
+            this.labelMainGain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMainGain.Location = new System.Drawing.Point(554, 739);
             this.labelMainGain.Name = "labelMainGain";
             this.labelMainGain.Size = new System.Drawing.Size(73, 16);
             this.labelMainGain.TabIndex = 32;
@@ -194,10 +197,10 @@ namespace SDK_Example
             // labelHighVolt
             // 
             this.labelHighVolt.AutoSize = true;
-            this.labelHighVolt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHighVolt.Location = new System.Drawing.Point(490, 739);
+            this.labelHighVolt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHighVolt.Location = new System.Drawing.Point(489, 739);
             this.labelHighVolt.Name = "labelHighVolt";
-            this.labelHighVolt.Size = new System.Drawing.Size(71, 16);
+            this.labelHighVolt.Size = new System.Drawing.Size(62, 16);
             this.labelHighVolt.TabIndex = 34;
             this.labelHighVolt.Text = "High Volt";
             this.labelHighVolt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -205,7 +208,7 @@ namespace SDK_Example
             // 
             // trackBarCine
             // 
-            this.trackBarCine.BackColor = System.Drawing.Color.Black;
+            this.trackBarCine.BackColor = System.Drawing.Color.White;
             this.trackBarCine.Location = new System.Drawing.Point(768, 501);
             this.trackBarCine.Maximum = 512;
             this.trackBarCine.Name = "trackBarCine";
@@ -216,7 +219,7 @@ namespace SDK_Example
             // 
             // buttonPrevious
             // 
-            this.buttonPrevious.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonPrevious.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.buttonPrevious.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPrevious.ForeColor = System.Drawing.Color.Black;
             this.buttonPrevious.Location = new System.Drawing.Point(778, 427);
@@ -229,7 +232,7 @@ namespace SDK_Example
             // 
             // buttonNext
             // 
-            this.buttonNext.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonNext.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.buttonNext.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNext.ForeColor = System.Drawing.Color.Black;
             this.buttonNext.Location = new System.Drawing.Point(1018, 427);
@@ -242,7 +245,7 @@ namespace SDK_Example
             // 
             // buttonCine
             // 
-            this.buttonCine.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonCine.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.buttonCine.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCine.ForeColor = System.Drawing.Color.Black;
             this.buttonCine.Location = new System.Drawing.Point(898, 427);
@@ -286,21 +289,24 @@ namespace SDK_Example
             // 
             this.labelFileName.AutoSize = true;
             this.labelFileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFileName.ForeColor = System.Drawing.Color.Gray;
             this.labelFileName.Location = new System.Drawing.Point(208, 49);
             this.labelFileName.Name = "labelFileName";
             this.labelFileName.Size = new System.Drawing.Size(75, 16);
             this.labelFileName.TabIndex = 39;
             this.labelFileName.Text = "FileName";
+            this.labelFileName.Click += new System.EventHandler(this.LabelFileName_Click);
             // 
             // labelDynamic
             // 
             this.labelDynamic.AutoSize = true;
-            this.labelDynamic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDynamic.Location = new System.Drawing.Point(648, 739);
+            this.labelDynamic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDynamic.Location = new System.Drawing.Point(647, 739);
             this.labelDynamic.Name = "labelDynamic";
-            this.labelDynamic.Size = new System.Drawing.Size(68, 16);
+            this.labelDynamic.Size = new System.Drawing.Size(61, 16);
             this.labelDynamic.TabIndex = 44;
             this.labelDynamic.Text = "Dynamic";
+            this.labelDynamic.Click += new System.EventHandler(this.LabelDynamic_Click);
             // 
             // labelTgc3
             // 
@@ -333,7 +339,7 @@ namespace SDK_Example
             // 
             // tBarTgc1
             // 
-            this.tBarTgc1.BackColor = System.Drawing.Color.Black;
+            this.tBarTgc1.BackColor = System.Drawing.Color.White;
             this.tBarTgc1.Location = new System.Drawing.Point(768, 619);
             this.tBarTgc1.Maximum = 15;
             this.tBarTgc1.Minimum = -15;
@@ -345,7 +351,7 @@ namespace SDK_Example
             // 
             // tBarTgc2
             // 
-            this.tBarTgc2.BackColor = System.Drawing.Color.Black;
+            this.tBarTgc2.BackColor = System.Drawing.Color.White;
             this.tBarTgc2.Location = new System.Drawing.Point(768, 673);
             this.tBarTgc2.Maximum = 15;
             this.tBarTgc2.Minimum = -15;
@@ -357,7 +363,7 @@ namespace SDK_Example
             // 
             // tBarTgc3
             // 
-            this.tBarTgc3.BackColor = System.Drawing.Color.Black;
+            this.tBarTgc3.BackColor = System.Drawing.Color.White;
             this.tBarTgc3.Location = new System.Drawing.Point(767, 728);
             this.tBarTgc3.Maximum = 15;
             this.tBarTgc3.Minimum = -15;
@@ -369,7 +375,7 @@ namespace SDK_Example
             // 
             // trackBarRobotSpeed
             // 
-            this.trackBarRobotSpeed.BackColor = System.Drawing.Color.Black;
+            this.trackBarRobotSpeed.BackColor = System.Drawing.Color.White;
             this.trackBarRobotSpeed.Location = new System.Drawing.Point(904, 103);
             this.trackBarRobotSpeed.Margin = new System.Windows.Forms.Padding(2);
             this.trackBarRobotSpeed.Maximum = 100;
@@ -383,10 +389,10 @@ namespace SDK_Example
             // labelFocus
             // 
             this.labelFocus.AutoSize = true;
-            this.labelFocus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFocus.Location = new System.Drawing.Point(402, 739);
+            this.labelFocus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFocus.Location = new System.Drawing.Point(401, 739);
             this.labelFocus.Name = "labelFocus";
-            this.labelFocus.Size = new System.Drawing.Size(50, 16);
+            this.labelFocus.Size = new System.Drawing.Size(45, 16);
             this.labelFocus.TabIndex = 46;
             this.labelFocus.Text = "Focus";
             this.labelFocus.Click += new System.EventHandler(this.LabelFocus_Click);
@@ -420,7 +426,7 @@ namespace SDK_Example
             // 
             // buttonRobotScan
             // 
-            this.buttonRobotScan.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonRobotScan.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.buttonRobotScan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.buttonRobotScan.ForeColor = System.Drawing.Color.Black;
             this.buttonRobotScan.Location = new System.Drawing.Point(778, 83);
@@ -434,25 +440,27 @@ namespace SDK_Example
             // 
             // butManRev
             // 
+            this.butManRev.BackColor = System.Drawing.Color.Silver;
             this.butManRev.Location = new System.Drawing.Point(916, 152);
             this.butManRev.Margin = new System.Windows.Forms.Padding(2);
             this.butManRev.Name = "butManRev";
             this.butManRev.Size = new System.Drawing.Size(70, 36);
             this.butManRev.TabIndex = 0;
             this.butManRev.Text = "Reverse";
-            this.butManRev.UseVisualStyleBackColor = true;
+            this.butManRev.UseVisualStyleBackColor = false;
             this.butManRev.MouseDown += new System.Windows.Forms.MouseEventHandler(this.butManRev_MouseDown);
             this.butManRev.MouseUp += new System.Windows.Forms.MouseEventHandler(this.butManRev_MouseUp);
             // 
             // butManFwd
             // 
+            this.butManFwd.BackColor = System.Drawing.Color.Silver;
             this.butManFwd.Location = new System.Drawing.Point(1045, 152);
             this.butManFwd.Margin = new System.Windows.Forms.Padding(2);
             this.butManFwd.Name = "butManFwd";
             this.butManFwd.Size = new System.Drawing.Size(70, 36);
             this.butManFwd.TabIndex = 1;
             this.butManFwd.Text = "Forward";
-            this.butManFwd.UseVisualStyleBackColor = true;
+            this.butManFwd.UseVisualStyleBackColor = false;
             this.butManFwd.MouseDown += new System.Windows.Forms.MouseEventHandler(this.butManFwd_MouseDown);
             this.butManFwd.MouseUp += new System.Windows.Forms.MouseEventHandler(this.butManFwd_MouseUp);
             // 
@@ -477,7 +485,7 @@ namespace SDK_Example
             // 
             // buttonSaveCine
             // 
-            this.buttonSaveCine.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonSaveCine.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.buttonSaveCine.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.buttonSaveCine.ForeColor = System.Drawing.Color.Black;
             this.buttonSaveCine.Location = new System.Drawing.Point(958, 361);
@@ -490,7 +498,7 @@ namespace SDK_Example
             // 
             // buttonLoad
             // 
-            this.buttonLoad.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonLoad.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.buttonLoad.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLoad.ForeColor = System.Drawing.Color.Black;
             this.buttonLoad.Location = new System.Drawing.Point(778, 361);
@@ -505,31 +513,35 @@ namespace SDK_Example
             // 
             this.labelSaveReview.AutoSize = true;
             this.labelSaveReview.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSaveReview.ForeColor = System.Drawing.Color.Gray;
             this.labelSaveReview.Location = new System.Drawing.Point(765, 338);
             this.labelSaveReview.Name = "labelSaveReview";
             this.labelSaveReview.Size = new System.Drawing.Size(94, 13);
             this.labelSaveReview.TabIndex = 58;
             this.labelSaveReview.Text = "SAVE/REVIEW";
             this.labelSaveReview.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelSaveReview.Click += new System.EventHandler(this.LabelSaveReview_Click);
             // 
             // labelRobotCtrls
             // 
             this.labelRobotCtrls.AutoSize = true;
             this.labelRobotCtrls.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRobotCtrls.ForeColor = System.Drawing.Color.Gray;
             this.labelRobotCtrls.Location = new System.Drawing.Point(765, 60);
             this.labelRobotCtrls.Name = "labelRobotCtrls";
             this.labelRobotCtrls.Size = new System.Drawing.Size(121, 13);
             this.labelRobotCtrls.TabIndex = 59;
             this.labelRobotCtrls.Text = "ROBOT CONTROLS";
             this.labelRobotCtrls.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelRobotCtrls.Click += new System.EventHandler(this.LabelRobotCtrls_Click);
             // 
             // uctrlPMDynamic
             // 
-            this.uctrlPMDynamic.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.uctrlPMDynamic.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.uctrlPMDynamic.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uctrlPMDynamic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uctrlPMDynamic.ForeColor = System.Drawing.Color.Black;
-            this.uctrlPMDynamic.Location = new System.Drawing.Point(638, 619);
+            this.uctrlPMDynamic.Location = new System.Drawing.Point(637, 619);
             this.uctrlPMDynamic.Margin = new System.Windows.Forms.Padding(0);
             this.uctrlPMDynamic.Name = "uctrlPMDynamic";
             this.uctrlPMDynamic.Size = new System.Drawing.Size(65, 120);
@@ -537,11 +549,11 @@ namespace SDK_Example
             // 
             // uctrlPMHighVoltage
             // 
-            this.uctrlPMHighVoltage.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.uctrlPMHighVoltage.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.uctrlPMHighVoltage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uctrlPMHighVoltage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uctrlPMHighVoltage.ForeColor = System.Drawing.Color.Black;
-            this.uctrlPMHighVoltage.Location = new System.Drawing.Point(478, 619);
+            this.uctrlPMHighVoltage.Location = new System.Drawing.Point(477, 619);
             this.uctrlPMHighVoltage.Margin = new System.Windows.Forms.Padding(0);
             this.uctrlPMHighVoltage.Name = "uctrlPMHighVoltage";
             this.uctrlPMHighVoltage.Size = new System.Drawing.Size(65, 120);
@@ -550,11 +562,11 @@ namespace SDK_Example
             // 
             // uctrlPMGalGain
             // 
-            this.uctrlPMGalGain.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.uctrlPMGalGain.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.uctrlPMGalGain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uctrlPMGalGain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uctrlPMGalGain.ForeColor = System.Drawing.Color.Black;
-            this.uctrlPMGalGain.Location = new System.Drawing.Point(558, 619);
+            this.uctrlPMGalGain.Location = new System.Drawing.Point(557, 619);
             this.uctrlPMGalGain.Margin = new System.Windows.Forms.Padding(0);
             this.uctrlPMGalGain.Name = "uctrlPMGalGain";
             this.uctrlPMGalGain.Size = new System.Drawing.Size(65, 120);
@@ -562,11 +574,11 @@ namespace SDK_Example
             // 
             // uctrlPMFocus
             // 
-            this.uctrlPMFocus.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.uctrlPMFocus.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.uctrlPMFocus.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uctrlPMFocus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uctrlPMFocus.ForeColor = System.Drawing.Color.Black;
-            this.uctrlPMFocus.Location = new System.Drawing.Point(398, 619);
+            this.uctrlPMFocus.Location = new System.Drawing.Point(397, 619);
             this.uctrlPMFocus.Margin = new System.Windows.Forms.Padding(0);
             this.uctrlPMFocus.Name = "uctrlPMFocus";
             this.uctrlPMFocus.Size = new System.Drawing.Size(65, 120);
@@ -574,11 +586,11 @@ namespace SDK_Example
             // 
             // uctrlPMFrequency
             // 
-            this.uctrlPMFrequency.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.uctrlPMFrequency.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.uctrlPMFrequency.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uctrlPMFrequency.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uctrlPMFrequency.ForeColor = System.Drawing.Color.Black;
-            this.uctrlPMFrequency.Location = new System.Drawing.Point(318, 619);
+            this.uctrlPMFrequency.Location = new System.Drawing.Point(317, 619);
             this.uctrlPMFrequency.Margin = new System.Windows.Forms.Padding(0);
             this.uctrlPMFrequency.Name = "uctrlPMFrequency";
             this.uctrlPMFrequency.Size = new System.Drawing.Size(65, 120);
@@ -586,11 +598,11 @@ namespace SDK_Example
             // 
             // uctrlPMDepth
             // 
-            this.uctrlPMDepth.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.uctrlPMDepth.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.uctrlPMDepth.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uctrlPMDepth.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uctrlPMDepth.ForeColor = System.Drawing.Color.Black;
-            this.uctrlPMDepth.Location = new System.Drawing.Point(238, 619);
+            this.uctrlPMDepth.Location = new System.Drawing.Point(237, 619);
             this.uctrlPMDepth.Margin = new System.Windows.Forms.Padding(0);
             this.uctrlPMDepth.Name = "uctrlPMDepth";
             this.uctrlPMDepth.Size = new System.Drawing.Size(65, 120);
@@ -693,7 +705,7 @@ namespace SDK_Example
             // menuCompound
             // 
             this.menuCompound.Name = "menuCompound";
-            this.menuCompound.Size = new System.Drawing.Size(180, 22);
+            this.menuCompound.Size = new System.Drawing.Size(135, 22);
             this.menuCompound.Text = "Compound";
             this.menuCompound.Click += new System.EventHandler(this.MenuCompound_Click);
             // 
@@ -702,19 +714,9 @@ namespace SDK_Example
             this.menuDoubler.Checked = true;
             this.menuDoubler.CheckState = System.Windows.Forms.CheckState.Checked;
             this.menuDoubler.Name = "menuDoubler";
-            this.menuDoubler.Size = new System.Drawing.Size(180, 22);
+            this.menuDoubler.Size = new System.Drawing.Size(135, 22);
             this.menuDoubler.Text = "Doubler";
             this.menuDoubler.Click += new System.EventHandler(this.MenuDoubler_Click);
-            // 
-            // pictureBoxIcon
-            // 
-            this.pictureBoxIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxIcon.Image")));
-            this.pictureBoxIcon.Location = new System.Drawing.Point(33, 603);
-            this.pictureBoxIcon.Name = "pictureBoxIcon";
-            this.pictureBoxIcon.Size = new System.Drawing.Size(153, 144);
-            this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxIcon.TabIndex = 1;
-            this.pictureBoxIcon.TabStop = false;
             // 
             // aboutToolStripMenuItem
             // 
@@ -731,12 +733,22 @@ namespace SDK_Example
             this.menuWebsite.Text = "Website";
             this.menuWebsite.Click += new System.EventHandler(this.MenuWebsite_Click);
             // 
+            // pictureBoxIcon
+            // 
+            this.pictureBoxIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxIcon.Image")));
+            this.pictureBoxIcon.Location = new System.Drawing.Point(53, 601);
+            this.pictureBoxIcon.Name = "pictureBoxIcon";
+            this.pictureBoxIcon.Size = new System.Drawing.Size(153, 144);
+            this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxIcon.TabIndex = 1;
+            this.pictureBoxIcon.TabStop = false;
+            // 
             // formScan2D
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1170, 801);
             this.Controls.Add(this.pictureBoxIcon);
             this.Controls.Add(this.labelRobotCtrls);
@@ -783,7 +795,7 @@ namespace SDK_Example
             this.Controls.Add(this.uctrlDepth);
             this.Controls.Add(this.labelProbeName);
             this.Controls.Add(this.uctrlScan);
-            this.ForeColor = System.Drawing.Color.LightSlateGray;
+            this.ForeColor = System.Drawing.Color.Gray;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(2046, 1274);
