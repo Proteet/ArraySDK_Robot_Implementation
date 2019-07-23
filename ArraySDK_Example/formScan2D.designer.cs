@@ -89,6 +89,8 @@ namespace SDK_Example
             this.menuCompound = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDoubler = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuWebsite = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarCine)).BeginInit();
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tBarTgc1)).BeginInit();
@@ -104,7 +106,7 @@ namespace SDK_Example
             // 
             this.labelImaging.AutoSize = true;
             this.labelImaging.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelImaging.Location = new System.Drawing.Point(201, 596);
+            this.labelImaging.Location = new System.Drawing.Point(235, 596);
             this.labelImaging.Name = "labelImaging";
             this.labelImaging.Size = new System.Drawing.Size(60, 13);
             this.labelImaging.TabIndex = 54;
@@ -150,7 +152,7 @@ namespace SDK_Example
             // labelDepth
             // 
             this.labelDepth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDepth.Location = new System.Drawing.Point(206, 739);
+            this.labelDepth.Location = new System.Drawing.Point(240, 739);
             this.labelDepth.Name = "labelDepth";
             this.labelDepth.Size = new System.Drawing.Size(60, 16);
             this.labelDepth.TabIndex = 26;
@@ -162,7 +164,7 @@ namespace SDK_Example
             // 
             this.labelFrequency.AutoSize = true;
             this.labelFrequency.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFrequency.Location = new System.Drawing.Point(283, 739);
+            this.labelFrequency.Location = new System.Drawing.Point(317, 739);
             this.labelFrequency.Name = "labelFrequency";
             this.labelFrequency.Size = new System.Drawing.Size(81, 16);
             this.labelFrequency.TabIndex = 27;
@@ -181,7 +183,7 @@ namespace SDK_Example
             // labelMainGain
             // 
             this.labelMainGain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMainGain.Location = new System.Drawing.Point(521, 739);
+            this.labelMainGain.Location = new System.Drawing.Point(555, 739);
             this.labelMainGain.Name = "labelMainGain";
             this.labelMainGain.Size = new System.Drawing.Size(73, 16);
             this.labelMainGain.TabIndex = 32;
@@ -193,7 +195,7 @@ namespace SDK_Example
             // 
             this.labelHighVolt.AutoSize = true;
             this.labelHighVolt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHighVolt.Location = new System.Drawing.Point(456, 739);
+            this.labelHighVolt.Location = new System.Drawing.Point(490, 739);
             this.labelHighVolt.Name = "labelHighVolt";
             this.labelHighVolt.Size = new System.Drawing.Size(71, 16);
             this.labelHighVolt.TabIndex = 34;
@@ -294,7 +296,7 @@ namespace SDK_Example
             // 
             this.labelDynamic.AutoSize = true;
             this.labelDynamic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDynamic.Location = new System.Drawing.Point(614, 739);
+            this.labelDynamic.Location = new System.Drawing.Point(648, 739);
             this.labelDynamic.Name = "labelDynamic";
             this.labelDynamic.Size = new System.Drawing.Size(68, 16);
             this.labelDynamic.TabIndex = 44;
@@ -382,7 +384,7 @@ namespace SDK_Example
             // 
             this.labelFocus.AutoSize = true;
             this.labelFocus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFocus.Location = new System.Drawing.Point(368, 739);
+            this.labelFocus.Location = new System.Drawing.Point(402, 739);
             this.labelFocus.Name = "labelFocus";
             this.labelFocus.Size = new System.Drawing.Size(50, 16);
             this.labelFocus.TabIndex = 46;
@@ -527,7 +529,7 @@ namespace SDK_Example
             this.uctrlPMDynamic.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uctrlPMDynamic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uctrlPMDynamic.ForeColor = System.Drawing.Color.Black;
-            this.uctrlPMDynamic.Location = new System.Drawing.Point(604, 619);
+            this.uctrlPMDynamic.Location = new System.Drawing.Point(638, 619);
             this.uctrlPMDynamic.Margin = new System.Windows.Forms.Padding(0);
             this.uctrlPMDynamic.Name = "uctrlPMDynamic";
             this.uctrlPMDynamic.Size = new System.Drawing.Size(65, 120);
@@ -539,7 +541,7 @@ namespace SDK_Example
             this.uctrlPMHighVoltage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uctrlPMHighVoltage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uctrlPMHighVoltage.ForeColor = System.Drawing.Color.Black;
-            this.uctrlPMHighVoltage.Location = new System.Drawing.Point(444, 619);
+            this.uctrlPMHighVoltage.Location = new System.Drawing.Point(478, 619);
             this.uctrlPMHighVoltage.Margin = new System.Windows.Forms.Padding(0);
             this.uctrlPMHighVoltage.Name = "uctrlPMHighVoltage";
             this.uctrlPMHighVoltage.Size = new System.Drawing.Size(65, 120);
@@ -552,7 +554,7 @@ namespace SDK_Example
             this.uctrlPMGalGain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uctrlPMGalGain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uctrlPMGalGain.ForeColor = System.Drawing.Color.Black;
-            this.uctrlPMGalGain.Location = new System.Drawing.Point(524, 619);
+            this.uctrlPMGalGain.Location = new System.Drawing.Point(558, 619);
             this.uctrlPMGalGain.Margin = new System.Windows.Forms.Padding(0);
             this.uctrlPMGalGain.Name = "uctrlPMGalGain";
             this.uctrlPMGalGain.Size = new System.Drawing.Size(65, 120);
@@ -564,7 +566,7 @@ namespace SDK_Example
             this.uctrlPMFocus.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uctrlPMFocus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uctrlPMFocus.ForeColor = System.Drawing.Color.Black;
-            this.uctrlPMFocus.Location = new System.Drawing.Point(364, 619);
+            this.uctrlPMFocus.Location = new System.Drawing.Point(398, 619);
             this.uctrlPMFocus.Margin = new System.Windows.Forms.Padding(0);
             this.uctrlPMFocus.Name = "uctrlPMFocus";
             this.uctrlPMFocus.Size = new System.Drawing.Size(65, 120);
@@ -576,7 +578,7 @@ namespace SDK_Example
             this.uctrlPMFrequency.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uctrlPMFrequency.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uctrlPMFrequency.ForeColor = System.Drawing.Color.Black;
-            this.uctrlPMFrequency.Location = new System.Drawing.Point(284, 619);
+            this.uctrlPMFrequency.Location = new System.Drawing.Point(318, 619);
             this.uctrlPMFrequency.Margin = new System.Windows.Forms.Padding(0);
             this.uctrlPMFrequency.Name = "uctrlPMFrequency";
             this.uctrlPMFrequency.Size = new System.Drawing.Size(65, 120);
@@ -588,7 +590,7 @@ namespace SDK_Example
             this.uctrlPMDepth.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uctrlPMDepth.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uctrlPMDepth.ForeColor = System.Drawing.Color.Black;
-            this.uctrlPMDepth.Location = new System.Drawing.Point(204, 619);
+            this.uctrlPMDepth.Location = new System.Drawing.Point(238, 619);
             this.uctrlPMDepth.Margin = new System.Windows.Forms.Padding(0);
             this.uctrlPMDepth.Name = "uctrlPMDepth";
             this.uctrlPMDepth.Size = new System.Drawing.Size(65, 120);
@@ -640,7 +642,8 @@ namespace SDK_Example
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.editToolStripMenuItem});
+            this.editToolStripMenuItem,
+            this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1170, 24);
@@ -690,7 +693,7 @@ namespace SDK_Example
             // menuCompound
             // 
             this.menuCompound.Name = "menuCompound";
-            this.menuCompound.Size = new System.Drawing.Size(135, 22);
+            this.menuCompound.Size = new System.Drawing.Size(180, 22);
             this.menuCompound.Text = "Compound";
             this.menuCompound.Click += new System.EventHandler(this.MenuCompound_Click);
             // 
@@ -699,19 +702,34 @@ namespace SDK_Example
             this.menuDoubler.Checked = true;
             this.menuDoubler.CheckState = System.Windows.Forms.CheckState.Checked;
             this.menuDoubler.Name = "menuDoubler";
-            this.menuDoubler.Size = new System.Drawing.Size(135, 22);
+            this.menuDoubler.Size = new System.Drawing.Size(180, 22);
             this.menuDoubler.Text = "Doubler";
             this.menuDoubler.Click += new System.EventHandler(this.MenuDoubler_Click);
             // 
             // pictureBoxIcon
             // 
             this.pictureBoxIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxIcon.Image")));
-            this.pictureBoxIcon.Location = new System.Drawing.Point(18, 601);
+            this.pictureBoxIcon.Location = new System.Drawing.Point(33, 603);
             this.pictureBoxIcon.Name = "pictureBoxIcon";
             this.pictureBoxIcon.Size = new System.Drawing.Size(153, 144);
             this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxIcon.TabIndex = 1;
             this.pictureBoxIcon.TabStop = false;
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuWebsite});
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "About";
+            // 
+            // menuWebsite
+            // 
+            this.menuWebsite.Name = "menuWebsite";
+            this.menuWebsite.Size = new System.Drawing.Size(180, 22);
+            this.menuWebsite.Text = "Website";
+            this.menuWebsite.Click += new System.EventHandler(this.MenuWebsite_Click);
             // 
             // formScan2D
             // 
@@ -860,6 +878,8 @@ namespace SDK_Example
         private ToolStripMenuItem menuCompound;
         private ToolStripMenuItem menuDoubler;
         private PictureBox pictureBoxIcon;
+        private ToolStripMenuItem aboutToolStripMenuItem;
+        private ToolStripMenuItem menuWebsite;
     }
 }
 

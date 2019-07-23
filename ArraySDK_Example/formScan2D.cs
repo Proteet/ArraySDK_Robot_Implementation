@@ -4712,5 +4712,11 @@ namespace SDK_Example
         {
 
         }
+
+        private void MenuWebsite_Click(object sender, EventArgs e)
+        {
+            ProcessStartInfo sInfo = new ProcessStartInfo("http://cccs-site.herokuapp.com/");
+            Process.Start(sInfo);
+        }
     }
 }///namespace SDK_EXAMPLE
