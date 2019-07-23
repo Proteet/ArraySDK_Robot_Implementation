@@ -4669,5 +4669,25 @@ namespace SDK_Example
 
             }
         }
+
+        private void MenuDoubler_Click(object sender, EventArgs e)
+        {
+            if ((ScanConv.Compound) == true)
+                return;
+            ScanConverter.Doubler = !ScanConverter.Doubler;
+            SetDoubler();
+            RebuildAll();
+        }
+
+        private void MenuCompound_Click(object sender, EventArgs e)
+        {
+            if (ScanConverter.Doubler == true)
+                return;
+
+            (ScanConv.Compound) = !(ScanConv.Compound);
+
+            SetCompound();
+            RebuildAll();
+        }
     }
 }///namespace SDK_EXAMPLE

@@ -86,6 +86,9 @@ namespace SDK_Example
             this.menuSave = new System.Windows.Forms.ToolStripMenuItem();
             this.menuLoad = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSaveScreenshot = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuCompound = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuDoubler = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarCine)).BeginInit();
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tBarTgc1)).BeginInit();
@@ -661,7 +664,8 @@ namespace SDK_Example
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.editToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1170, 24);
@@ -681,23 +685,46 @@ namespace SDK_Example
             // menuSave
             // 
             this.menuSave.Name = "menuSave";
-            this.menuSave.Size = new System.Drawing.Size(159, 22);
+            this.menuSave.Size = new System.Drawing.Size(180, 22);
             this.menuSave.Text = "Save";
             this.menuSave.Click += new System.EventHandler(this.MenuSave_Click);
             // 
             // menuLoad
             // 
             this.menuLoad.Name = "menuLoad";
-            this.menuLoad.Size = new System.Drawing.Size(159, 22);
+            this.menuLoad.Size = new System.Drawing.Size(180, 22);
             this.menuLoad.Text = "Load";
             this.menuLoad.Click += new System.EventHandler(this.MenuLoad_Click);
             // 
             // menuSaveScreenshot
             // 
             this.menuSaveScreenshot.Name = "menuSaveScreenshot";
-            this.menuSaveScreenshot.Size = new System.Drawing.Size(159, 22);
+            this.menuSaveScreenshot.Size = new System.Drawing.Size(180, 22);
             this.menuSaveScreenshot.Text = "Save Screenshot";
             this.menuSaveScreenshot.Click += new System.EventHandler(this.MenuSaveScreenshot_Click);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuCompound,
+            this.menuDoubler});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // menuCompound
+            // 
+            this.menuCompound.Name = "menuCompound";
+            this.menuCompound.Size = new System.Drawing.Size(180, 22);
+            this.menuCompound.Text = "Compound";
+            this.menuCompound.Click += new System.EventHandler(this.MenuCompound_Click);
+            // 
+            // menuDoubler
+            // 
+            this.menuDoubler.Name = "menuDoubler";
+            this.menuDoubler.Size = new System.Drawing.Size(180, 22);
+            this.menuDoubler.Text = "Doubler";
+            this.menuDoubler.Click += new System.EventHandler(this.MenuDoubler_Click);
             // 
             // formScan2D
             // 
@@ -842,6 +869,9 @@ namespace SDK_Example
         private ToolStripMenuItem menuSave;
         private ToolStripMenuItem menuLoad;
         private ToolStripMenuItem menuSaveScreenshot;
+        private ToolStripMenuItem editToolStripMenuItem;
+        private ToolStripMenuItem menuCompound;
+        private ToolStripMenuItem menuDoubler;
     }
 }
 
