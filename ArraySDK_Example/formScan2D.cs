@@ -4542,5 +4542,132 @@ namespace SDK_Example
                 box.Text = "Enter the Radius";
             }
         }
+
+        private void MenuSave_Click(object sender, EventArgs e)
+        {
+            DoSaveRobotScan();
+            StartScan();
+        }
+
+        private void MenuSaveScreenshot_Click(object sender, EventArgs e)
+        {
+            bool bRestart = false;
+            if (Scan2D.ScanOn == true)
+            {
+                StopThreadScan();
+                bRestart = true;
+            }
+
+            if (bCineOn == true)
+                StopCineloop();
+
+
+            SaveFileDialog fileDialog = new SaveFileDialog();
+            fileDialog.Filter = "BMP Files(*.bmp)|*.bmp|Jpeg Files(*.jpg)|*.jpg|Raw Files(*.raw)|*.raw";
+
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                if (fileDialog.FileName.EndsWith("raw"))
+                {
+                    DoSaveRaw(fileDialog.FileName);
+                }
+                else
+                {
+                    Bitmap bmpSaveScan = DoSaveScan();
+                    if (fileDialog.FileName.EndsWith("jpg"))
+                        bmpSaveScan.Save(fileDialog.FileName, ImageFormat.Jpeg);
+                    else if (fileDialog.FileName.EndsWith("bmp"))
+                        bmpSaveScan.Save(fileDialog.FileName, ImageFormat.Bmp);
+                    else
+                        bmpSaveScan.Save(fileDialog.FileName);
+                }
+            }
+
+            if (bRestart == true)
+                StartThreadScan();
+        }
+
+        private void MenuLoad_Click(object sender, EventArgs e)
+        {
+            if (Scan2D.ScanOn == true)
+            {
+                StopThreadScan();
+                MyMarshalToForm(ControlEnum.buttonScan, "Scan");
+                bInitDone = false;
+
+            }
+
+            HideDisplayControls();
+
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "BMP Files(*.bmp)|*.bmp|Jpeg Files(*.jpg)|*.jpg|Raw Files(*.raw)|*.raw";
+
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                if (fileDialog.FileName.EndsWith("raw"))
+                {
+                    DoLoadRaw(fileDialog.FileName);
+                    UpdateCineloopGroup(false);
+                    Bitmap bmpImage = new Bitmap(aiWidth[iIdleIndexSC], aiHeigth[iIdleIndexSC]);
+                    IntersonArray.Imaging.ScanConverter.ScanConverterError error = ScanConv.IdleInitScanConverter(iIdleDepth, aiWidth[iIdleIndexSC], aiHeigth[iIdleIndexSC], shIdleId, iIdleSteering, iIdleDepthCfmBox, bIdleDoubler, bIdleCompound, iIdleCompoundAngle, bSoftCFMData, ref ImageBuilding);
+
+                    if ((error == IntersonArray.Imaging.ScanConverter.ScanConverterError.OVER_LIMITS) ||
+                        (error == IntersonArray.Imaging.ScanConverter.ScanConverterError.UNDER_LIMITS) ||
+                        (error == IntersonArray.Imaging.ScanConverter.ScanConverterError.PROBE_NOT_INITIALIZED) ||
+                        (error == IntersonArray.Imaging.ScanConverter.ScanConverterError.UNKNOWN_PROBE) ||
+                        (error == IntersonArray.Imaging.ScanConverter.ScanConverterError.WRONG_FORMAT) ||
+                        (error == IntersonArray.Imaging.ScanConverter.ScanConverterError.ERROR)
+                        )
+                    {
+                        FormMessage formMessage = new FormMessage();
+                        formMessage.ShowMessage((object)MessageClass.ScanConverterMessage);
+                        formMessage.Dispose();
+                    }
+                    else if (bSoftRFData)
+                    {
+                        uctrlScan.Visible = true;
+                        BuildRFData(aushRawRF, ifactorRF);
+                        DoRefresh();
+                    }
+                    else
+                    {
+
+                        if (bSoftCFMData == false)
+                            ImageBuilding.Build2D(ref bmpImage, bytRawImage, bytRawImagePrevious, ScanConv);// build 
+                        else
+                        {
+                            ImageBuilding.Build2D(ref bmpImage, bytRawImage, abytRawCFM, ScanConv);
+                            ImageBuilding.DrawCFMBox(ref bmpImage, ScanConv, iIdleDepthCfmBox, colBox);
+                        }
+
+                        bmpLoad = new Bitmap(aiWidth[iIdleIndexSC] + uctrlDepth.Width, aiHeigth[iIdleIndexSC]);
+                        uctrlDepth.BuildDrawScale(null, iDepth, this.ScanConv, bIsUpDown, fltZoomFactor, iOffsetScale);
+                        uctrlDepth.DrawToBitmap(bmpLoad, new Rectangle(0, 0, bmpLoad.Width, bmpLoad.Height));
+                        uctrlDepth.Visible = true;
+                        bIdle = true;
+                        ResizeForm(iIdleIndexSC);
+
+                        Graphics g = Graphics.FromImage(bmpLoad);
+                        g.DrawImage(bmpImage, new Point(uctrlDepth.Width, iOffsetScale));
+                        g.Dispose();
+                        DoRefresh();
+
+                    }
+                    bmpImage.Dispose();
+
+                }
+                else
+                {
+                    bmpLoad = new Bitmap(aiWidth[iIndexSC] + uctrlDepth.Width, aiHeigth[iIndexSC]);
+                    bmpLoad = (Bitmap)Bitmap.FromFile(fileDialog.FileName, false);
+                }
+                ResetLabels();
+                labelDepth.Text = strDepth + iIdleDepth.ToString() + strMM;
+                uctrlDepth.Visible = true;
+                labelFileName.Text = fileDialog.FileName;
+                DoRefresh();
+
+            }
+        }
     }
 }///namespace SDK_EXAMPLE
