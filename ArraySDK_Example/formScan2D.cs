@@ -1446,12 +1446,12 @@ namespace SDK_Example
         {
             if (ScanConverter.Doubler)
             {
-                butDoubler.BackColor = Color.OrangeRed;
+                // butDoubler.BackColor = Color.OrangeRed;
                 HWControls.EnableDoubler();
             }
             else
             {
-                butDoubler.BackColor = Color.LightSteelBlue;
+                // butDoubler.BackColor = Color.LightSteelBlue;
                 HWControls.DisableDoubler();
 
             }
@@ -1473,13 +1473,13 @@ namespace SDK_Example
         {
             if (ScanConv.Compound == true)
             {
-                butCompound.BackColor = Color.OrangeRed;
+                // butCompound.BackColor = Color.OrangeRed;
                 HWControls.EnableCompound();
                 // labelCompound.Visible = true;
             }
             else
             {
-                butCompound.BackColor = Color.LightSteelBlue;
+                // butCompound.BackColor = Color.LightSteelBlue;
                 HWControls.DisableCompound();
                 // labelCompound.Visible = false;
             }

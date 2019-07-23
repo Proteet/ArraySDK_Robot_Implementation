@@ -59,8 +59,8 @@ namespace SDK_Example
             this.trackBarRobotSpeed = new System.Windows.Forms.TrackBar();
             this.labelFocus = new System.Windows.Forms.Label();
             this.butCfmMode = new System.Windows.Forms.Button();
-            this.butDoubler = new System.Windows.Forms.Button();
-            this.butCompound = new System.Windows.Forms.Button();
+            // this.butDoubler = new System.Windows.Forms.Button();
+            // this.butCompound = new System.Windows.Forms.Button();
             this.buttonProbe2 = new System.Windows.Forms.Button();
             this.buttonRobotScan = new System.Windows.Forms.Button();
             this.butManRev = new System.Windows.Forms.Button();
@@ -403,6 +403,7 @@ namespace SDK_Example
             // 
             // butDoubler
             // 
+            /*
             this.butDoubler.BackColor = System.Drawing.Color.LightSteelBlue;
             this.butDoubler.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butDoubler.ForeColor = System.Drawing.Color.Black;
@@ -413,9 +414,11 @@ namespace SDK_Example
             this.butDoubler.Text = "Doubler";
             this.butDoubler.UseVisualStyleBackColor = false;
             this.butDoubler.Click += new System.EventHandler(this.butDoubler_Click);
+             */
             // 
             // butCompound
             // 
+            /*
             this.butCompound.BackColor = System.Drawing.Color.LightSteelBlue;
             this.butCompound.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butCompound.ForeColor = System.Drawing.Color.Black;
@@ -426,6 +429,7 @@ namespace SDK_Example
             this.butCompound.Text = "Compound";
             this.butCompound.UseVisualStyleBackColor = false;
             this.butCompound.Click += new System.EventHandler(this.butCompound_Click);
+             */
             // 
             // buttonProbe2
             // 
@@ -742,9 +746,9 @@ namespace SDK_Example
             this.Controls.Add(this.textRadius);
             this.Controls.Add(this.butCfmMode);
             this.Controls.Add(this.buttonLoad);
-            this.Controls.Add(this.butDoubler);
+            // this.Controls.Add(this.butDoubler);
             this.Controls.Add(this.buttonSaveCine);
-            this.Controls.Add(this.butCompound);
+            // this.Controls.Add(this.butCompound);
             this.Controls.Add(this.trackBarCine);
             this.Controls.Add(this.labelFocus);
             this.Controls.Add(this.labelDynamic);
@@ -836,9 +840,9 @@ namespace SDK_Example
         private UserControlGrayScale uctrlGrayScale;
         // public System.Windows.Forms.Button buttonProbe1;
         private System.Windows.Forms.Label labelFocus;
-        public System.Windows.Forms.Button butCompound;
+        // public System.Windows.Forms.Button butCompound;
         // private System.Windows.Forms.Label labelSteering;
-        public System.Windows.Forms.Button butDoubler;
+        // public System.Windows.Forms.Button butDoubler;
         private UserControlPlusMinus uctrlPMDynamic;
         private UserControlPlusMinus uctrlPMGalGain;
         // private UserControlPlusMinus uctrlPMSteering;
