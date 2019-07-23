@@ -121,6 +121,7 @@ namespace SDK_Example
             this.textRadius.Text = "Enter the Radius";
             this.textRadius.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textRadius.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TextRadius_MouseClick);
+            this.textRadius.Leave += new System.EventHandler(this.TextRadius_Leave);
             // 
             // labelProbeName
             // 
@@ -731,7 +732,6 @@ namespace SDK_Example
             ((System.ComponentModel.ISupportInitialize)(this.tBarTgc3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarRobotSpeed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
-
             this.ResumeLayout(false);
             this.PerformLayout();
 

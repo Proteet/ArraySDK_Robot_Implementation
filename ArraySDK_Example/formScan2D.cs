@@ -4504,5 +4504,43 @@ namespace SDK_Example
                 hasBeenClicked = true;
             }
         }
+
+        private void TextRadius_Leave(object sender, EventArgs e)
+        {
+            String[] characters = new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "." }; 
+
+            TextBox box = sender as TextBox;
+            String text = box.Text;
+
+            /*
+            bool isNumeric = true;
+            int counter = 0;
+
+            for (int charInText = 0; charInText < text.Length; charInText++) {
+                for (int charInCharacters = 0; charInCharacters < characters.Length; charInCharacters++) {
+                    if (text.Substring(charInText, 1).Equals(characters[charInCharacters])) {
+                        break;
+                    }
+                    counter++;
+                }
+                if (counter == 10) {
+                    isNumeric = false;
+                }
+                counter = 0;
+            }
+
+            if (isNumeric == false)
+            {
+                box.Text = "Enter the Radius";
+            }
+            else {
+                box.Text = isNumeric.ToString();
+            }
+             */
+
+            if (!double.TryParse(text, out double n)) {
+                box.Text = "Enter the Radius";
+            }
+        }
     }
 }///namespace SDK_EXAMPLE
