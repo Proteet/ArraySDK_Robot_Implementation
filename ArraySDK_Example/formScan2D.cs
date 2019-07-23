@@ -368,6 +368,9 @@ namespace SDK_Example
         //---- Selected probe according to the 2 buttons so 0 or 1
         static public int iSelectedProbe = 0;
 
+        // Checks if the textRadius textbox has been clicked
+        bool hasBeenClicked = false;
+        
         #region FORMSCAN
         public formScan2D()
         {
@@ -389,6 +392,9 @@ namespace SDK_Example
         /// <param name="e"></param>
         private void formScan2D_Load(object sender, EventArgs e)
         {
+            // Sets the focus on labelTgc so that textRadius isn't focused
+            this.ActiveControl = labelTgc;
+
             DeviceNotificationsStart();//start notification NEW SDK 2.08
 
             int count = 0;
@@ -440,6 +446,7 @@ namespace SDK_Example
                     buttonProbe2.Text = strNotConnected;
                 }
             }
+
 
             SetSelectedProbe();
             StartScan();
@@ -4077,7 +4084,7 @@ namespace SDK_Example
                 file.WriteLine("Compound: " + ScanConv.Compound);
                 file.WriteLine("Compound_Angle: " + MyHwControls.CompoundAngle);
                 file.WriteLine("Steering: " + iSteering);
-                file.WriteLine("Number of Lines: " + uiNbOfLines);
+                file.WriteLine("Number_of_Lines: " + uiNbOfLines);
 
                 // Image description
                 file.WriteLine("Probe_ID: " + HWControls.GetProbeID());
@@ -4468,11 +4475,6 @@ namespace SDK_Example
 
         }
 
-        private void LabelImagesPer_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void UctrlPMDepth_Load(object sender, EventArgs e)
         {
 
@@ -4488,14 +4490,19 @@ namespace SDK_Example
 
         }
 
-        private void TextRadius_TextChanged(object sender, EventArgs e)
+        private void LabelTgc_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void LabelTgc_Click(object sender, EventArgs e)
+        private void TextRadius_MouseClick(object sender, MouseEventArgs e)
         {
-
+            if (!hasBeenClicked)
+            {
+                TextBox box = sender as TextBox;
+                box.Text = String.Empty;
+                hasBeenClicked = true;
+            }
         }
     }
 }///namespace SDK_EXAMPLE

@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace SDK_Example
 {
@@ -119,7 +120,7 @@ namespace SDK_Example
             this.textRadius.TabIndex = 0;
             this.textRadius.Text = "Enter the Radius";
             this.textRadius.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textRadius.TextChanged += new System.EventHandler(this.TextRadius_TextChanged);
+            this.textRadius.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TextRadius_MouseClick);
             // 
             // labelProbeName
             // 
@@ -730,6 +731,7 @@ namespace SDK_Example
             ((System.ComponentModel.ISupportInitialize)(this.tBarTgc3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarRobotSpeed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+
             this.ResumeLayout(false);
             this.PerformLayout();
 
