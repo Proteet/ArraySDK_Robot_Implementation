@@ -4707,5 +4707,10 @@ namespace SDK_Example
             SetCompound();
             RebuildAll();
         }
+
+        private void PictureBoxIcon_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }///namespace SDK_EXAMPLE

@@ -32,6 +32,7 @@ namespace SDK_Example
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formScan2D));
             this.labelImaging = new System.Windows.Forms.Label();
             this.labelTgc = new System.Windows.Forms.Label();
             this.textRadius = new System.Windows.Forms.TextBox();
@@ -59,8 +60,6 @@ namespace SDK_Example
             this.trackBarRobotSpeed = new System.Windows.Forms.TrackBar();
             this.labelFocus = new System.Windows.Forms.Label();
             this.butCfmMode = new System.Windows.Forms.Button();
-            // this.butDoubler = new System.Windows.Forms.Button();
-            // this.butCompound = new System.Windows.Forms.Button();
             this.buttonProbe2 = new System.Windows.Forms.Button();
             this.buttonRobotScan = new System.Windows.Forms.Button();
             this.butManRev = new System.Windows.Forms.Button();
@@ -89,6 +88,7 @@ namespace SDK_Example
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCompound = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDoubler = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarCine)).BeginInit();
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tBarTgc1)).BeginInit();
@@ -97,13 +97,14 @@ namespace SDK_Example
             ((System.ComponentModel.ISupportInitialize)(this.trackBarRobotSpeed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // labelImaging
             // 
             this.labelImaging.AutoSize = true;
             this.labelImaging.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelImaging.Location = new System.Drawing.Point(59, 596);
+            this.labelImaging.Location = new System.Drawing.Point(201, 596);
             this.labelImaging.Name = "labelImaging";
             this.labelImaging.Size = new System.Drawing.Size(60, 13);
             this.labelImaging.TabIndex = 54;
@@ -149,7 +150,7 @@ namespace SDK_Example
             // labelDepth
             // 
             this.labelDepth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDepth.Location = new System.Drawing.Point(64, 739);
+            this.labelDepth.Location = new System.Drawing.Point(206, 739);
             this.labelDepth.Name = "labelDepth";
             this.labelDepth.Size = new System.Drawing.Size(60, 16);
             this.labelDepth.TabIndex = 26;
@@ -161,7 +162,7 @@ namespace SDK_Example
             // 
             this.labelFrequency.AutoSize = true;
             this.labelFrequency.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFrequency.Location = new System.Drawing.Point(141, 739);
+            this.labelFrequency.Location = new System.Drawing.Point(283, 739);
             this.labelFrequency.Name = "labelFrequency";
             this.labelFrequency.Size = new System.Drawing.Size(81, 16);
             this.labelFrequency.TabIndex = 27;
@@ -180,7 +181,7 @@ namespace SDK_Example
             // labelMainGain
             // 
             this.labelMainGain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMainGain.Location = new System.Drawing.Point(566, 739);
+            this.labelMainGain.Location = new System.Drawing.Point(521, 739);
             this.labelMainGain.Name = "labelMainGain";
             this.labelMainGain.Size = new System.Drawing.Size(73, 16);
             this.labelMainGain.TabIndex = 32;
@@ -192,7 +193,7 @@ namespace SDK_Example
             // 
             this.labelHighVolt.AutoSize = true;
             this.labelHighVolt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHighVolt.Location = new System.Drawing.Point(314, 739);
+            this.labelHighVolt.Location = new System.Drawing.Point(456, 739);
             this.labelHighVolt.Name = "labelHighVolt";
             this.labelHighVolt.Size = new System.Drawing.Size(71, 16);
             this.labelHighVolt.TabIndex = 34;
@@ -293,7 +294,7 @@ namespace SDK_Example
             // 
             this.labelDynamic.AutoSize = true;
             this.labelDynamic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDynamic.Location = new System.Drawing.Point(659, 739);
+            this.labelDynamic.Location = new System.Drawing.Point(614, 739);
             this.labelDynamic.Name = "labelDynamic";
             this.labelDynamic.Size = new System.Drawing.Size(68, 16);
             this.labelDynamic.TabIndex = 44;
@@ -381,7 +382,7 @@ namespace SDK_Example
             // 
             this.labelFocus.AutoSize = true;
             this.labelFocus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFocus.Location = new System.Drawing.Point(226, 739);
+            this.labelFocus.Location = new System.Drawing.Point(368, 739);
             this.labelFocus.Name = "labelFocus";
             this.labelFocus.Size = new System.Drawing.Size(50, 16);
             this.labelFocus.TabIndex = 46;
@@ -400,36 +401,6 @@ namespace SDK_Example
             this.butCfmMode.Text = "CFM";
             this.butCfmMode.UseVisualStyleBackColor = false;
             this.butCfmMode.Click += new System.EventHandler(this.butCfmMode_Click);
-            // 
-            // butDoubler
-            // 
-            /*
-            this.butDoubler.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.butDoubler.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butDoubler.ForeColor = System.Drawing.Color.Black;
-            this.butDoubler.Location = new System.Drawing.Point(384, 684);
-            this.butDoubler.Name = "butDoubler";
-            this.butDoubler.Size = new System.Drawing.Size(170, 55);
-            this.butDoubler.TabIndex = 51;
-            this.butDoubler.Text = "Doubler";
-            this.butDoubler.UseVisualStyleBackColor = false;
-            this.butDoubler.Click += new System.EventHandler(this.butDoubler_Click);
-             */
-            // 
-            // butCompound
-            // 
-            /*
-            this.butCompound.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.butCompound.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butCompound.ForeColor = System.Drawing.Color.Black;
-            this.butCompound.Location = new System.Drawing.Point(384, 619);
-            this.butCompound.Name = "butCompound";
-            this.butCompound.Size = new System.Drawing.Size(170, 55);
-            this.butCompound.TabIndex = 50;
-            this.butCompound.Text = "Compound";
-            this.butCompound.UseVisualStyleBackColor = false;
-            this.butCompound.Click += new System.EventHandler(this.butCompound_Click);
-             */
             // 
             // buttonProbe2
             // 
@@ -556,7 +527,7 @@ namespace SDK_Example
             this.uctrlPMDynamic.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uctrlPMDynamic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uctrlPMDynamic.ForeColor = System.Drawing.Color.Black;
-            this.uctrlPMDynamic.Location = new System.Drawing.Point(649, 619);
+            this.uctrlPMDynamic.Location = new System.Drawing.Point(604, 619);
             this.uctrlPMDynamic.Margin = new System.Windows.Forms.Padding(0);
             this.uctrlPMDynamic.Name = "uctrlPMDynamic";
             this.uctrlPMDynamic.Size = new System.Drawing.Size(65, 120);
@@ -568,7 +539,7 @@ namespace SDK_Example
             this.uctrlPMHighVoltage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uctrlPMHighVoltage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uctrlPMHighVoltage.ForeColor = System.Drawing.Color.Black;
-            this.uctrlPMHighVoltage.Location = new System.Drawing.Point(302, 619);
+            this.uctrlPMHighVoltage.Location = new System.Drawing.Point(444, 619);
             this.uctrlPMHighVoltage.Margin = new System.Windows.Forms.Padding(0);
             this.uctrlPMHighVoltage.Name = "uctrlPMHighVoltage";
             this.uctrlPMHighVoltage.Size = new System.Drawing.Size(65, 120);
@@ -581,7 +552,7 @@ namespace SDK_Example
             this.uctrlPMGalGain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uctrlPMGalGain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uctrlPMGalGain.ForeColor = System.Drawing.Color.Black;
-            this.uctrlPMGalGain.Location = new System.Drawing.Point(569, 619);
+            this.uctrlPMGalGain.Location = new System.Drawing.Point(524, 619);
             this.uctrlPMGalGain.Margin = new System.Windows.Forms.Padding(0);
             this.uctrlPMGalGain.Name = "uctrlPMGalGain";
             this.uctrlPMGalGain.Size = new System.Drawing.Size(65, 120);
@@ -593,7 +564,7 @@ namespace SDK_Example
             this.uctrlPMFocus.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uctrlPMFocus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uctrlPMFocus.ForeColor = System.Drawing.Color.Black;
-            this.uctrlPMFocus.Location = new System.Drawing.Point(222, 619);
+            this.uctrlPMFocus.Location = new System.Drawing.Point(364, 619);
             this.uctrlPMFocus.Margin = new System.Windows.Forms.Padding(0);
             this.uctrlPMFocus.Name = "uctrlPMFocus";
             this.uctrlPMFocus.Size = new System.Drawing.Size(65, 120);
@@ -605,7 +576,7 @@ namespace SDK_Example
             this.uctrlPMFrequency.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uctrlPMFrequency.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uctrlPMFrequency.ForeColor = System.Drawing.Color.Black;
-            this.uctrlPMFrequency.Location = new System.Drawing.Point(142, 619);
+            this.uctrlPMFrequency.Location = new System.Drawing.Point(284, 619);
             this.uctrlPMFrequency.Margin = new System.Windows.Forms.Padding(0);
             this.uctrlPMFrequency.Name = "uctrlPMFrequency";
             this.uctrlPMFrequency.Size = new System.Drawing.Size(65, 120);
@@ -617,7 +588,7 @@ namespace SDK_Example
             this.uctrlPMDepth.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uctrlPMDepth.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uctrlPMDepth.ForeColor = System.Drawing.Color.Black;
-            this.uctrlPMDepth.Location = new System.Drawing.Point(62, 619);
+            this.uctrlPMDepth.Location = new System.Drawing.Point(204, 619);
             this.uctrlPMDepth.Margin = new System.Windows.Forms.Padding(0);
             this.uctrlPMDepth.Name = "uctrlPMDepth";
             this.uctrlPMDepth.Size = new System.Drawing.Size(65, 120);
@@ -689,21 +660,21 @@ namespace SDK_Example
             // menuSave
             // 
             this.menuSave.Name = "menuSave";
-            this.menuSave.Size = new System.Drawing.Size(180, 22);
+            this.menuSave.Size = new System.Drawing.Size(159, 22);
             this.menuSave.Text = "Save";
             this.menuSave.Click += new System.EventHandler(this.MenuSave_Click);
             // 
             // menuLoad
             // 
             this.menuLoad.Name = "menuLoad";
-            this.menuLoad.Size = new System.Drawing.Size(180, 22);
+            this.menuLoad.Size = new System.Drawing.Size(159, 22);
             this.menuLoad.Text = "Load";
             this.menuLoad.Click += new System.EventHandler(this.MenuLoad_Click);
             // 
             // menuSaveScreenshot
             // 
             this.menuSaveScreenshot.Name = "menuSaveScreenshot";
-            this.menuSaveScreenshot.Size = new System.Drawing.Size(180, 22);
+            this.menuSaveScreenshot.Size = new System.Drawing.Size(159, 22);
             this.menuSaveScreenshot.Text = "Save Screenshot";
             this.menuSaveScreenshot.Click += new System.EventHandler(this.MenuSaveScreenshot_Click);
             // 
@@ -719,7 +690,7 @@ namespace SDK_Example
             // menuCompound
             // 
             this.menuCompound.Name = "menuCompound";
-            this.menuCompound.Size = new System.Drawing.Size(180, 22);
+            this.menuCompound.Size = new System.Drawing.Size(135, 22);
             this.menuCompound.Text = "Compound";
             this.menuCompound.Click += new System.EventHandler(this.MenuCompound_Click);
             // 
@@ -728,9 +699,19 @@ namespace SDK_Example
             this.menuDoubler.Checked = true;
             this.menuDoubler.CheckState = System.Windows.Forms.CheckState.Checked;
             this.menuDoubler.Name = "menuDoubler";
-            this.menuDoubler.Size = new System.Drawing.Size(180, 22);
+            this.menuDoubler.Size = new System.Drawing.Size(135, 22);
             this.menuDoubler.Text = "Doubler";
             this.menuDoubler.Click += new System.EventHandler(this.MenuDoubler_Click);
+            // 
+            // pictureBoxIcon
+            // 
+            this.pictureBoxIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxIcon.Image")));
+            this.pictureBoxIcon.Location = new System.Drawing.Point(18, 601);
+            this.pictureBoxIcon.Name = "pictureBoxIcon";
+            this.pictureBoxIcon.Size = new System.Drawing.Size(153, 144);
+            this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxIcon.TabIndex = 1;
+            this.pictureBoxIcon.TabStop = false;
             // 
             // formScan2D
             // 
@@ -739,6 +720,7 @@ namespace SDK_Example
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1170, 801);
+            this.Controls.Add(this.pictureBoxIcon);
             this.Controls.Add(this.labelRobotCtrls);
             this.Controls.Add(this.labelSaveReview);
             this.Controls.Add(this.labelImaging);
@@ -746,9 +728,7 @@ namespace SDK_Example
             this.Controls.Add(this.textRadius);
             this.Controls.Add(this.butCfmMode);
             this.Controls.Add(this.buttonLoad);
-            // this.Controls.Add(this.butDoubler);
             this.Controls.Add(this.buttonSaveCine);
-            // this.Controls.Add(this.butCompound);
             this.Controls.Add(this.trackBarCine);
             this.Controls.Add(this.labelFocus);
             this.Controls.Add(this.labelDynamic);
@@ -807,6 +787,7 @@ namespace SDK_Example
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -878,6 +859,7 @@ namespace SDK_Example
         private ToolStripMenuItem editToolStripMenuItem;
         private ToolStripMenuItem menuCompound;
         private ToolStripMenuItem menuDoubler;
+        private PictureBox pictureBoxIcon;
     }
 }
 
