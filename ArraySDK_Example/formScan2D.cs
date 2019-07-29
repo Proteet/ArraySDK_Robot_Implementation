@@ -3243,6 +3243,8 @@ namespace SDK_Example
 
         void WatchRobotConnect(Object sender, EventArgs e)
         {
+
+
             if ((comPortQueried < 0) || (comPortQueried >= comPortsList.Count()))
             {
                 // we aren't waiting for a response, so create a new list
@@ -3250,7 +3252,7 @@ namespace SDK_Example
                     return;
             }
             else
-            {   
+            {
                 // check for response 
                 if (checkForQueryResponse())
                 {
@@ -3278,6 +3280,7 @@ namespace SDK_Example
                     RobotState = RobotStateEnum.unInitialized;
                     numTicksSinceQuery = 0;
                     Debug.WriteLine("Querying " + comPortsList[comPortQueried]);
+                    Thread.Sleep(2000);
                     queryRobotState();
                     return;
                 }
@@ -3337,7 +3340,7 @@ namespace SDK_Example
         // this shouldn't be necessary now that we are querying the comport
         // before accepting it as the correct on
         // But no harm in keeping it in?
-        static string[] preferredNames = { "COM4", "COM5", "COM7" };
+        static string[] preferredNames = {"COM1", "COM2", "COM3", "COM4", "COM5", "COM7", "COM8", "COM9", "COM10", "COM11", "COM12" };
 
         Boolean getComPortList()
         {
