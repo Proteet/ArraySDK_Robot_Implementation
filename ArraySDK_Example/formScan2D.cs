@@ -33,6 +33,7 @@ namespace SDK_Example
         /// Image extension Should be adapted to the new array probe since it's very dark as is.
         /// </summary>
         /// UScanGuide
+
         Boolean bImgExt = false; // Use ImageExtension if true
 
         const int INTENSITY_MIN = 0;
@@ -397,56 +398,11 @@ namespace SDK_Example
 
             DeviceNotificationsStart();//start notification NEW SDK 2.08
 
-            int count = 0;
+            StringCollection mycolProbesName = new StringCollection();
 
-            /// Enumerate the probes connected to the PC
-            try
-            {
-                FormProbes formProbes = new FormProbes();
-                count = formProbes.ShowProbes();
-                formProbes.Dispose();
-            }
-            catch (Exception ex)
-            {
-                this.Close();
-                this.Dispose();
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-                return;
-
-            }
-
-            if (count == FormProbes.QUIT)
-            {
-                this.Dispose();
-                return;
-            }
-            else if (count == FormProbes.CANCEL)
-            {
-                EnableIdle();
-            }
-            else
-            {
-                // Probe is detected
-                if (FormProbes.mycolProbesName.Count != 0)
-                {
-                    int i = 0;
-                    // buttonProbe1.Text = FormProbes.mycolProbesName[i++];
-                    if (FormProbes.mycolProbesName.Count > 1)
-                    {
-                        buttonProbe2.Text = FormProbes.mycolProbesName[i++];
-                    }
-                    else
-                    {
-                        buttonProbe2.Text = strNotConnected;
-                    }
-                }
-                else
-                {
-                    // buttonProbe1.Text = strNotConnected;
-                    buttonProbe2.Text = strNotConnected;
-                }
-            }
-
+            HWControls controls = new HWControls();
+            controls.FindAllProbes(ref mycolProbesName);
+            controls.FindMyProbe(0);
 
             SetSelectedProbe();
 
@@ -4523,32 +4479,6 @@ namespace SDK_Example
             TextBox box = sender as TextBox;
             String text = box.Text;
 
-            /*
-            bool isNumeric = true;
-            int counter = 0;
-
-            for (int charInText = 0; charInText < text.Length; charInText++) {
-                for (int charInCharacters = 0; charInCharacters < characters.Length; charInCharacters++) {
-                    if (text.Substring(charInText, 1).Equals(characters[charInCharacters])) {
-                        break;
-                    }
-                    counter++;
-                }
-                if (counter == 10) {
-                    isNumeric = false;
-                }
-                counter = 0;
-            }
-
-            if (isNumeric == false)
-            {
-                box.Text = "Enter the Radius";
-            }
-            else {
-                box.Text = isNumeric.ToString();
-            }
-             */
-
             if (!double.TryParse(text, out double n)) {
                 box.Text = "Enter the Radius";
             }
@@ -4744,31 +4674,6 @@ namespace SDK_Example
         private void LabelDynamic_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void buttondropShadow(object sender, PaintEventArgs e)
-        {
-            Button button = (Button) sender;
-            Color[] shadow = new Color[3];
-            shadow[0] = Color.FromArgb(181, 181, 181);
-            shadow[1] = Color.FromArgb(195, 195, 195);
-            shadow[2] = Color.FromArgb(211, 211, 211);
-            Pen pen = new Pen(shadow[0]);
-            Graphics graphics = this.CreateGraphics();
-            using (pen)
-            {
-                foreach (Button p in button.Controls.OfType<Button>())
-                {
-                    Point pt = p.Location;
-                    pt.Y += p.Height;
-                    for (var sp = 0; sp < 3; sp++)
-                    {
-                        pen.Color = shadow[sp];
-                        graphics.DrawLine(pen, pt.X, pt.Y, pt.X + p.Width - 1, pt.Y);
-                        pt.Y++;
-                    }
-                }
-            }
         }
 
         private void UctrlDepth_Load(object sender, EventArgs e)

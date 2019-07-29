@@ -170,7 +170,7 @@ namespace SDK_Example
             this.labelFrequency.AutoSize = true;
             this.labelFrequency.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFrequency.ForeColor = System.Drawing.Color.DimGray;
-            this.labelFrequency.Location = new System.Drawing.Point(316, 739);
+            this.labelFrequency.Location = new System.Drawing.Point(319, 739);
             this.labelFrequency.Name = "labelFrequency";
             this.labelFrequency.Size = new System.Drawing.Size(72, 16);
             this.labelFrequency.TabIndex = 27;
@@ -401,7 +401,7 @@ namespace SDK_Example
             this.labelFocus.AutoSize = true;
             this.labelFocus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFocus.ForeColor = System.Drawing.Color.DimGray;
-            this.labelFocus.Location = new System.Drawing.Point(401, 739);
+            this.labelFocus.Location = new System.Drawing.Point(405, 739);
             this.labelFocus.Name = "labelFocus";
             this.labelFocus.Size = new System.Drawing.Size(45, 16);
             this.labelFocus.TabIndex = 46;
