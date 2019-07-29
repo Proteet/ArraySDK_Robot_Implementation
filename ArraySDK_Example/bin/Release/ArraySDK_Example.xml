@@ -26,28 +26,6 @@
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="T:SDK_Example.FormProbes">
-            <summary>
-            Represents the probe form to choose one of the probe connected to the PC
-            </summary>
-        </member>
-        <member name="F:SDK_Example.FormProbes.components">
-            <summary>
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:SDK_Example.FormProbes.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        </member>
-        <member name="M:SDK_Example.FormProbes.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
         <member name="T:SDK_Example.formScan2D">
             <summary>
             represents the Main Form to display the US image.

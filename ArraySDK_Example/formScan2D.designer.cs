@@ -36,7 +36,6 @@ namespace SDK_Example
             this.labelImaging = new System.Windows.Forms.Label();
             this.labelTgc = new System.Windows.Forms.Label();
             this.textRadius = new System.Windows.Forms.TextBox();
-            this.labelProbeName = new System.Windows.Forms.Label();
             this.labelDepth = new System.Windows.Forms.Label();
             this.labelFrequency = new System.Windows.Forms.Label();
             this.labelRobotSpeed = new System.Windows.Forms.Label();
@@ -139,19 +138,6 @@ namespace SDK_Example
             this.textRadius.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textRadius.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TextRadius_MouseClick);
             this.textRadius.Leave += new System.EventHandler(this.TextRadius_Leave);
-            // 
-            // labelProbeName
-            // 
-            this.labelProbeName.AutoSize = true;
-            this.labelProbeName.BackColor = System.Drawing.Color.White;
-            this.labelProbeName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProbeName.ForeColor = System.Drawing.Color.DimGray;
-            this.labelProbeName.Location = new System.Drawing.Point(15, 42);
-            this.labelProbeName.MaximumSize = new System.Drawing.Size(200, 20);
-            this.labelProbeName.MinimumSize = new System.Drawing.Size(10, 10);
-            this.labelProbeName.Name = "labelProbeName";
-            this.labelProbeName.Size = new System.Drawing.Size(10, 16);
-            this.labelProbeName.TabIndex = 12;
             // 
             // labelDepth
             // 
@@ -815,7 +801,6 @@ namespace SDK_Example
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.uctrlDepth);
-            this.Controls.Add(this.labelProbeName);
             this.Controls.Add(this.uctrlScan);
             this.ForeColor = System.Drawing.Color.DimGray;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -848,7 +833,6 @@ namespace SDK_Example
         #endregion
 
         private UserControlScan uctrlScan;
-        public System.Windows.Forms.Label labelProbeName;
         private UserControlDepth uctrlDepth;
         private System.Windows.Forms.Label labelDepth;
         private System.Windows.Forms.Label labelFrequency;

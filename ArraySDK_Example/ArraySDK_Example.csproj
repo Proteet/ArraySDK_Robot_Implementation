@@ -91,12 +91,6 @@
     <Compile Include="FormMessage.designer.cs">
       <DependentUpon>FormMessage.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormProbes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormProbes.designer.cs">
-      <DependentUpon>FormProbes.cs</DependentUpon>
-    </Compile>
     <Compile Include="formScan2D.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,10 +102,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormMessage.resx">
       <DependentUpon>FormMessage.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormProbes.resx">
-      <DependentUpon>FormProbes.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="formScan2D.resx">

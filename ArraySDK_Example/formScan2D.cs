@@ -400,22 +400,25 @@ namespace SDK_Example
 
             StringCollection mycolProbesName = new StringCollection();
 
-            HWControls controls = new HWControls();
-            controls.FindAllProbes(ref mycolProbesName);
-            controls.FindMyProbe(0);
+            try
+            {
+                HWControls controls = new HWControls();
+                controls.FindAllProbes(ref mycolProbesName);
+                controls.FindMyProbe(0);
 
-            SetSelectedProbe();
+                SetSelectedProbe();
 
-            // Starts scanning immediately after probe has been selected
-            StartScan();
+                // Starts scanning immediately after probe has been selected
+                StartScan();
 
-            // Sets Doulber to on immediately after scanner starts scanning
-            if ((ScanConv.Compound) == true)
-                return;
-            ScanConverter.Doubler = !ScanConverter.Doubler;
-            SetDoubler();
-            RebuildAll();
-
+                // Sets Doulber to on immediately after scanner starts scanning
+                if ((ScanConv.Compound) == true)
+                    return;
+                ScanConverter.Doubler = !ScanConverter.Doubler;
+                SetDoubler();
+                RebuildAll();
+            } catch (ArgumentOutOfRangeException error) {
+            }
         }
 
 
@@ -796,11 +799,14 @@ namespace SDK_Example
             buttonSaveCine.Enabled = false;
 
             StopCineloop();
-            Scan2D.NewImageTick -= new IntersonArray.Imaging.Capture.NewImageHandler(ImageRefresh); //Image Ready to be displayed
+            try { 
+                Scan2D.NewImageTick -= new IntersonArray.Imaging.Capture.NewImageHandler(ImageRefresh); //Image Ready to be displayed
+                MyHwControls.DisableHardButton();
+                MyHwControls.HWButtonTick -= new HWControls.HWButtonHandler(WatchHWButton);
+            }
+            catch (Exception ex) {
 
-            MyHwControls.DisableHardButton();
-            MyHwControls.HWButtonTick -= new HWControls.HWButtonHandler(WatchHWButton);
-
+            }
             DeviceNotificationsStop();//NEW SDK 2.08
 
             Thread.Sleep(200); //wait to release ressources
@@ -2957,29 +2963,7 @@ namespace SDK_Example
 
         void WatchConnect(Object sender, EventArgs e)
         {
-            FormProbes.mycolProbesName = new StringCollection();
             HWControls MyHwControls = new HWControls();
-            MyHwControls.FindAllProbes(ref FormProbes.mycolProbesName);
-            int count = FormProbes.mycolProbesName.Count;
-            if (FormProbes.mycolProbesName.Count != 0)
-            {
-                int i = 0;
-                // formScan2D.MyFormScan2D.buttonProbe1.Text = FormProbes.mycolProbesName[i++];
-                if (FormProbes.mycolProbesName.Count > 1)
-                {
-                    buttonProbe2.Text = FormProbes.mycolProbesName[i++];
-                }
-                else
-                {
-                    buttonProbe2.Text = strNotConnected;
-                }
-            }
-            else
-            {
-                // buttonProbe1.Text = strNotConnected;
-                buttonProbe2.Text = strNotConnected;
-            }
-
         }
 
         private void buttonProbe1_Click(object sender, EventArgs e)
@@ -3002,30 +2986,11 @@ namespace SDK_Example
             localHwControls.FindMyProbe(index);
             iSelectedProbe = index;
             //---- Get the probe's characteristics
-            formScan2D.MyFormScan2D.labelProbeName.Text = FormProbes.mycolProbesName[index];
             SetSelectedProbe();
             DisableIdle();
         }
         void UpdateProbesButtons()
         {
-            if (FormProbes.mycolProbesName.Count != 0)
-            {
-                int i = 0;
-                MyMarshalToForm(ControlEnum.buttonProbe1, FormProbes.mycolProbesName[i++]);
-                if (FormProbes.mycolProbesName.Count > 1)
-                {
-                    MyMarshalToForm(ControlEnum.buttonProbe2, FormProbes.mycolProbesName[i++]);
-                }
-                else
-                {
-                    MyMarshalToForm(ControlEnum.buttonProbe2, formScan2D.MyFormScan2D.strNotConnected);
-                }
-            }
-            else
-            {
-                MyMarshalToForm(ControlEnum.buttonProbe1, formScan2D.MyFormScan2D.strNotConnected);
-                MyMarshalToForm(ControlEnum.buttonProbe2, formScan2D.MyFormScan2D.strNotConnected);
-            }
         }
         #endregion
         #region ADD/REMOVE DEVICE
@@ -3183,7 +3148,6 @@ namespace SDK_Example
 
         void CheckProbes()
         {
-            FormProbes.mycolProbesName = new StringCollection();
             HWControls localHwControls = new HWControls();
             bool bconnected = false;
 
@@ -3193,7 +3157,6 @@ namespace SDK_Example
                 StopThreadScan();
                 bRestart = true;
             }
-            localHwControls.FindAllProbes(ref FormProbes.mycolProbesName, ref bconnected);
 
             if ((bRestart == true) && (bconnected == true))
                 StartThreadScan();// Start Scan if the current is still connected
