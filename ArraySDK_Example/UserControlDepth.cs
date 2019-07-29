@@ -51,7 +51,7 @@ namespace SDK_Example
             // Create font and brush.
             Font drawFont = new Font("Verdana", 10);
             SolidBrush drawBrush = new SolidBrush(ColorScale);
-            gScale.Clear(Color.Black);
+            gScale.Clear(Color.White);
             
             int iDir = 1; 
             if (bIsUpDown)

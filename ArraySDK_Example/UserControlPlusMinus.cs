@@ -44,5 +44,17 @@ namespace SDK_Example
             if (bInitDone)
                 actionMinus();
         }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                const int CS_DROPSHADOW = 0x20000;
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle |= CS_DROPSHADOW;
+                return cp;
+            }
+        }
+
     }
 }

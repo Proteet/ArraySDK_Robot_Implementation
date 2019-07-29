@@ -459,7 +459,9 @@ namespace SDK_Example
             ScanConverter.Doubler = !ScanConverter.Doubler;
             SetDoubler();
             RebuildAll();
+
         }
+
 
         /// <summary>
         /// File Version
@@ -779,6 +781,7 @@ namespace SDK_Example
                 }
                 else
                 {
+                    //#else
                     //#else
                     trackBarCine.Maximum = ByteUniArrayList.Count() - 1;
                     trackBarCine.Value = ByteUniArrayList.Count() - 1;
@@ -2338,7 +2341,7 @@ namespace SDK_Example
 
             }
             Graphics g = uctrlScan.CreateGraphics();
-            g.Clear(Color.Black);
+            g.Clear(this.BackColor);
             g.Dispose();
 
         }
@@ -2895,7 +2898,7 @@ namespace SDK_Example
         void DoClear()
         {
             Graphics g = CreateGraphics();
-            g.Clear(Color.Black);
+            g.Clear(this.BackColor);
             g.Dispose();
         }
 
@@ -3720,7 +3723,6 @@ namespace SDK_Example
                     prevStepPos = curStepPos;
 
                     StartRobot();
-                    StartScan();
                     break;
                 case RobotStateEnum.homing:
                     StopRobot();
@@ -3766,12 +3768,12 @@ namespace SDK_Example
                 case RobotStateEnum.disConnected:
                     buttonRobotScan.Enabled = false;
                     buttonRobotScan.Text = "No Robot";
-                    buttonRobotScan.BackColor = Color.LightSteelBlue;
+                    buttonRobotScan.BackColor = Color.DeepSkyBlue;
                     break;
                 case RobotStateEnum.unInitialized:
                     buttonRobotScan.Text = "Initializing...";
                     buttonRobotScan.Enabled = false;
-                    buttonRobotScan.BackColor = Color.LightSteelBlue;
+                    buttonRobotScan.BackColor = Color.DeepSkyBlue;
                     break;
                 case RobotStateEnum.readyToScan:
                     buttonRobotScan.Enabled = true;
@@ -4740,6 +4742,36 @@ namespace SDK_Example
         }
 
         private void LabelDynamic_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttondropShadow(object sender, PaintEventArgs e)
+        {
+            Button button = (Button) sender;
+            Color[] shadow = new Color[3];
+            shadow[0] = Color.FromArgb(181, 181, 181);
+            shadow[1] = Color.FromArgb(195, 195, 195);
+            shadow[2] = Color.FromArgb(211, 211, 211);
+            Pen pen = new Pen(shadow[0]);
+            Graphics graphics = this.CreateGraphics();
+            using (pen)
+            {
+                foreach (Button p in button.Controls.OfType<Button>())
+                {
+                    Point pt = p.Location;
+                    pt.Y += p.Height;
+                    for (var sp = 0; sp < 3; sp++)
+                    {
+                        pen.Color = shadow[sp];
+                        graphics.DrawLine(pen, pt.X, pt.Y, pt.X + p.Width - 1, pt.Y);
+                        pt.Y++;
+                    }
+                }
+            }
+        }
+
+        private void UctrlDepth_Load(object sender, EventArgs e)
         {
 
         }
