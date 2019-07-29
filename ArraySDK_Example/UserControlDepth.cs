@@ -47,10 +47,11 @@ namespace SDK_Example
             float  fltStepMarker = (float)(ScaleStep / fltMmPerPixel);
 
             // Draw the markers of the scale every ScaleStep
-            Pen pen = new Pen(ColorScale, 3.0F);
+            Pen pen = new Pen(Color.DimGray, 3.0F);
             // Create font and brush.
             Font drawFont = new Font("Verdana", 10);
-            SolidBrush drawBrush = new SolidBrush(ColorScale);
+            drawFont = new Font(drawFont, FontStyle.Bold);
+            SolidBrush drawBrush = new SolidBrush(Color.DimGray);
             gScale.Clear(Color.White);
             
             int iDir = 1; 
