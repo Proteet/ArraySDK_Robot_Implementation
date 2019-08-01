@@ -47,12 +47,14 @@ namespace SDK_Example
             float  fltStepMarker = (float)(ScaleStep / fltMmPerPixel);
 
             // Draw the markers of the scale every ScaleStep
-            Pen pen = new Pen(Color.DimGray, 3.0F);
+            Pen pen = new Pen(Color.White, 3.0F);
             // Create font and brush.
-            Font drawFont = new Font("Verdana", 10);
+            Font drawFont = new Font("Lato", 10);
             drawFont = new Font(drawFont, FontStyle.Bold);
-            SolidBrush drawBrush = new SolidBrush(Color.DimGray);
-            gScale.Clear(Color.White);
+            SolidBrush drawBrush = new SolidBrush(Color.White);
+            Color background = new Color();
+            background = Color.FromArgb(34, 50, 63);
+            gScale.Clear(background);
             
             int iDir = 1; 
             if (bIsUpDown)
@@ -97,6 +99,11 @@ namespace SDK_Example
             }
             pen.Dispose();
             
+        }
+
+        private void UserControlDepth_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

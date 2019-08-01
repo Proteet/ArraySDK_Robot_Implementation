@@ -306,9 +306,9 @@
             To increase the High Voltage
             </summary>
         </member>
-        <member name="M:SDK_Example.formScan2D.ImageRefresh(IntersonArray.Imaging.Capture,System.EventArgs)">
+        <member name="M:SDK_Example.formScan2D.ImageRefresh(System.Object,System.EventArgs)">
             <summary>
-            NewImageHandler
+            NewImageHandler (First Version)
             </summary>
             <param name="e"></param>
         </member>
@@ -675,6 +675,55 @@
             </summary>
             <param name="slide"></param>
             <param name="fileName"></param>
+        </member>
+        <member name="M:SDK_Example.formScan2D.ProtoButtonRobotScan_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Button Robot Scan
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SDK_Example.formScan2D.ProtoButManRev_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Button Reverse
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SDK_Example.formScan2D.ProtoButManFwd_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Button Forward
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SDK_Example.formScan2D.ProtoButtonLoad_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Button Load
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SDK_Example.formScan2D.ProtoButtonSaveCine_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Button Save Cine
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SDK_Example.formScan2D.ProtoButtonPrevious_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Button Previous
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SDK_Example.formScan2D.ProtoButtonCine_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Button Cine
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
         </member>
         <member name="F:SDK_Example.formScan2D.components">
             <summary>

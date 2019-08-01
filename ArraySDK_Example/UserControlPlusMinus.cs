@@ -29,22 +29,7 @@ namespace SDK_Example
             bInitDone = true;
         }
 
-        private void butPlus_Click(object sender, EventArgs e)
-        {
-            if (actionPlus == null)
-                return;
-            if (bInitDone)
-                actionPlus();
-        }
-
-        private void butMinus_Click(object sender, EventArgs e)
-        {
-            if (actionMinus == null)
-                return;
-            if (bInitDone)
-                actionMinus();
-        }
-
+        /*
         protected override CreateParams CreateParams
         {
             get
@@ -54,6 +39,49 @@ namespace SDK_Example
                 cp.ClassStyle |= CS_DROPSHADOW;
                 return cp;
             }
+        }
+         */
+
+        private void ProtoButPlus_Click(object sender, EventArgs e)
+        {
+            if (actionPlus == null)
+                return;
+            if (bInitDone)
+                actionPlus();
+        }
+
+        private void ProtoButMinus_Click(object sender, EventArgs e)
+        {
+            if (actionMinus == null)
+                return;
+            if (bInitDone)
+                actionMinus();
+        }
+
+        private void ProtoButPlus_MouseDown(object sender, MouseEventArgs e)
+        {
+            PictureBox image = (PictureBox)sender;
+            image.InitialImage = null;
+            image.Refresh();
+            image.Load("Images/Pressed/UserControl/uctrlPlus.png");
+        }
+
+        private void ProtoButPlus_MouseUp(object sender, MouseEventArgs e)
+        {
+            PictureBox image = (PictureBox)sender;
+            image.Load("Images/Unpressed/UserControl/uctrlPlus.png");
+        }
+
+        private void ProtoButMinus_MouseDown(object sender, MouseEventArgs e)
+        {
+            PictureBox image = (PictureBox)sender;
+            image.Load("Images/Pressed/UserControl/uctrlMinus.png");
+        }
+
+        private void ProtoButMinus_MouseUp(object sender, MouseEventArgs e)
+        {
+            PictureBox image = (PictureBox)sender;
+            image.Load("Images/Unpressed/UserControl/uctrlMinus.png");
         }
 
     }

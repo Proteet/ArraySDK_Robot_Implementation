@@ -482,7 +482,16 @@ namespace SDK_Example
             ImageBuilding = new ImageBuilding();
 
             /// NewImageTick Event handler; event raised when image ready to be displayed
-            Scan2D.NewImageTick += new IntersonArray.Imaging.Capture.NewImageHandler(ImageRefresh);
+
+            // Scan2D.NewImageTick += new IntersonArray.Imaging.Capture.NewImageHandler(ImageRefresh);
+            // Our own custom timer instead of Interson's timer
+            System.Windows.Forms.Timer timerImage = null;
+            timerImage = new System.Windows.Forms.Timer();
+            timerImage.Tick += new EventHandler(ImageRefresh);
+            timerImage.Interval = 1;
+            timerImage.Enabled = true;
+            timerImage.Start();
+
             Scan2D.FrameAvg = true; //Enable/Disable Frame Averaging. Default is true.
 
             ///Robot initialization
@@ -643,12 +652,12 @@ namespace SDK_Example
             if (bSoftCFMData == true)
             {
                 butCfmMode.BackColor = Color.OrangeRed;
-                uctrlPMFrequency.Init("PRF", FreqPlus, FreqMinus);
+                protoUCtrlPMFrequency.Init("PRF", FreqPlus, FreqMinus);
             }
             else
             {
                 butCfmMode.BackColor = Color.LightSteelBlue;
-                uctrlPMFrequency.Init("Freq", FreqPlus, FreqMinus);
+                protoUCtrlPMFrequency.Init("Freq", FreqPlus, FreqMinus);
             }
 
 
@@ -761,12 +770,12 @@ namespace SDK_Example
         private void InitControlPlusMinus()
         {
             //---- Imaging
-            uctrlPMDepth.Init("Depth", DepthPlus, DepthMinus);
-            uctrlPMFrequency.Init("Freq", FreqPlus, FreqMinus);
-            uctrlPMFocus.Init("Focus", FocusPlus, FocusMinus);
-            uctrlPMHighVoltage.Init("HV", HighPlus, HighMinus);
-            uctrlPMGalGain.Init("Main", MainGainPlus, MainGainMinus);
-            uctrlPMDynamic.Init("Dyn", DynamicPlus, DynamicMinus);
+            protoUCtrlPMDepth.Init("Depth", DepthPlus, DepthMinus);
+            protoUCtrlPMFrequency.Init("Freq", FreqPlus, FreqMinus);
+            protoUCtrlPMFocus.Init("Focus", FocusPlus, FocusMinus);
+            protoUCtrlPMHighVoltage.Init("HV", HighPlus, HighMinus);
+            protoUCtrlPMGalGain.Init("Main", MainGainPlus, MainGainMinus);
+            protoUCtrlPMDynamic.Init("Dyn", DynamicPlus, DynamicMinus);
             // uctrlPMSteering.Init("Steering", SteeringPlus, SteeringMinus);
             // uctrlImagesPer.Init("ImagesPer", ImagPlus, ImagMinus);
 
@@ -1458,10 +1467,27 @@ namespace SDK_Example
         static readonly object locker = new object();
 
         /// <summary>
-        /// NewImageHandler
+        /// NewImageHandler (First Version)
         /// </summary>
         /// <param name="e"></param>
-        void ImageRefresh(IntersonArray.Imaging.Capture scan, EventArgs e)
+        /*
+        void firstImageRefresh(IntersonArray.Imaging.Capture scan, EventArgs e)
+        {
+            // Remove later
+            if (RobotState == RobotStateEnum.scanning) {
+                imageRefreshCount++;
+            }
+            if (bIsBusy == false)
+            {
+                Thread trdRefresh = new Thread(new ThreadStart(StartRefresh));
+                trdRefresh.Start();
+                while (trdRefresh.IsAlive == false) ;
+            }
+            
+        }
+         */
+
+        void ImageRefresh(Object sender, EventArgs e)
         {
             if (bIsBusy == false)
             {
@@ -1471,9 +1497,10 @@ namespace SDK_Example
             }
         }
 
+
+
         void StartRefresh()
         {
-        
             curImageTime = DateTime.Now;
             lock (locker)
             {
@@ -1487,7 +1514,7 @@ namespace SDK_Example
                 {
                     Array.Copy(bytRawImage, bytRawImagePrevious, uiNbOfLines * ScanConverter.MAX_SAMPLES);
                     Array.Copy(bytRawImageRef, bytRawImage, uiNbOfLines * ScanConverter.MAX_SAMPLES);
-                    Console.WriteLine("Previous Step Position: " + prevStepPos);
+                    // Console.WriteLine("previous step position: " + prevStepPos);
                     if (prevStepPos < curStepPos) { 
                         AddToCine(bytRawImage); //B
                         prevStepPos++;
@@ -1498,9 +1525,6 @@ namespace SDK_Example
                                                 //    imgControl.ApplyLUT(bytRawImage);   
                                                 //}
 
-                    //TO DO: data/image processing
-                    
-                    Thread.Sleep(1);
                     if (Scan2D.CFMData == true)
                     {
                         if (bGetRawCfm == false)
@@ -1521,12 +1545,13 @@ namespace SDK_Example
 
                 }
 
-                if (curStepPos % 2 == 0 || RobotState == RobotStateEnum.readyToScan) {
+                if (RobotState != RobotStateEnum.scanning || curStepPos % 16 == 0) {
                     DoRefresh();
                 }
+
                 bIsBusy = false;
             }
-            Thread.Sleep(1);
+            // Thread.Sleep(1);
 
         }
 
@@ -2291,15 +2316,15 @@ namespace SDK_Example
             if (bcfm == true)
             {
                 butCfmMode.BackColor = Color.OrangeRed;
-                uctrlPMFrequency.Init("PRF", FreqPlus, FreqMinus);
-                uctrlPMGalGain.Init("CFM", MainGainPlus, MainGainMinus);
+                protoUCtrlPMFrequency.Init("PRF", FreqPlus, FreqMinus);
+                protoUCtrlPMGalGain.Init("CFM", MainGainPlus, MainGainMinus);
 
             }
             else
             {
                 butCfmMode.BackColor = Color.LightSteelBlue;
-                uctrlPMFrequency.Init("Freq", FreqPlus, FreqMinus);
-                uctrlPMGalGain.Init("Main", MainGainPlus, MainGainMinus);
+                protoUCtrlPMFrequency.Init("Freq", FreqPlus, FreqMinus);
+                protoUCtrlPMGalGain.Init("Main", MainGainPlus, MainGainMinus);
 
             }
             Graphics g = uctrlScan.CreateGraphics();
@@ -3421,10 +3446,9 @@ namespace SDK_Example
             {
                 robotListenerTimer = new System.Windows.Forms.Timer();
                 robotListenerTimer.Tick += new EventHandler(RobotListenerTimer_Tick);
-                robotListenerTimer.Interval = 10; //20
+                robotListenerTimer.Interval = 5; //20
                 robotListenerTimer.Enabled = true;
                 robotListenerTimer.Start();
-
                 bRobotListenerTimer = true;
             }
         }
@@ -3459,27 +3483,20 @@ namespace SDK_Example
 
                     if (b == 0x50)
                     {
-                        //takePicture = true;
                         if (RobotState == RobotStateEnum.homing && homeCountSteps)
                         {
                             ++maxSteps;
-                            Console.WriteLine("Max Steps: " + maxSteps);
                         }
                         else if (RobotState == RobotStateEnum.scanning)
                         {
                             ++posStepCount;
-                            //labelPosition.Text = posStepCount.ToString();
-                            takePicture = true;
-                            Console.WriteLine("Step Counts: " + posStepCount);
                         }
                         else if (RobotState == RobotStateEnum.rewinding)
                         {
-                            Debug.Write("subtracting");
                             ++negStepCount;
-                            // labelPosition.Text = posStepCount.ToString();
                         }
-                        //Debug.Write("steps:" + posStepCount + "\n");
                         curStepPos = posStepCount - negStepCount;
+                        // Change back later
                         labelPosition.Text = curStepPos.ToString();
                         return;
                     }
@@ -3487,12 +3504,11 @@ namespace SDK_Example
                     if ((b & 0xF0) == 0x40)
                     {
                         responseCodes.Add(b);
-
-                        Debug.Write(" " + (char)b);
+                        // Debug.Write(" " + (char)b);
                     }
                     else
                     {
-                        Debug.Write("Don't Understand");
+                        // Debug.Write("Don't Understand");
                         return;
                     }
                 }
@@ -3528,6 +3544,7 @@ namespace SDK_Example
                     responseCodes.Add(b);
                     posStepCount = 0;
                     negStepCount = 0;
+                    // Change back later 
                     labelPosition.Text = posStepCount.ToString();
                     RobotState = RobotStateEnum.readyToScan;
                     SetButtonForRobotState(RobotState);
@@ -3568,7 +3585,7 @@ namespace SDK_Example
             else if (b == 0x41)
             {
                 homeCountSteps = false;
-                Debug.Write(" max steps: " + maxSteps);
+                // Debug.Write(" max steps: " + maxSteps);
                 RobotState = RobotStateEnum.rewinding;
                 SetButtonForRobotState(RobotState);
 
@@ -3833,7 +3850,8 @@ namespace SDK_Example
         #region ROBOT SPEED
         private void trackBarRobotSpeed_Scroll(object sender, EventArgs e)
         {
-            setRobotSpeed(trackBarRobotSpeed.Value);
+            double speed = trackBarRobotSpeed.Value / 2.5;
+            setRobotSpeed((int) speed);
         }
 
         // set motor speed to a percentage of maximum
@@ -4035,6 +4053,7 @@ namespace SDK_Example
 
                 // Radius in cm
                 file.WriteLine("Radius: " + textRadius.Text);
+
             }
 
         }
@@ -4408,11 +4427,6 @@ namespace SDK_Example
 
         }
 
-        private void UctrlPMDepth_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void LabelFocus_Click(object sender, EventArgs e)
         {
 
@@ -4646,5 +4660,329 @@ namespace SDK_Example
         {
 
         }
+
+        private void LabelPosition_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Button Robot Scan
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void ProtoButtonRobotScan_MouseDown(object sender, MouseEventArgs e)
+        {
+            PictureBox image = (PictureBox) sender;
+            image.Load("Images/Pressed/buttonRobotScan.png");
+        }
+
+        private void ProtoButtonRobotScan_MouseUp(object sender, MouseEventArgs e)
+        {
+            PictureBox image = (PictureBox) sender;
+            image.Load("Images/Unpressed/buttonRobotScan.png");
+        }
+
+        private void ProtoButtonRobotScan_Click(object sender, EventArgs e)
+        {
+            switch (RobotState)
+            {
+                case RobotStateEnum.readyToScan:
+
+                    RobotState = RobotStateEnum.scanning;
+                    SetButtonForRobotState(RobotState);
+
+                    // clear out old scans
+                    ByteArrayList.Clear();
+
+                    // Resets prevStepPos to the current position
+                    prevStepPos = curStepPos;
+
+                    StartRobot();
+                    break;
+                case RobotStateEnum.homing:
+                    StopRobot();
+                    RobotState = RobotStateEnum.emergencyStopped;
+                    SetButtonForRobotState(RobotState);
+                    break;
+
+                case RobotStateEnum.endOfTravel:
+                case RobotStateEnum.emergencyStopped:
+
+                    RobotState = RobotStateEnum.rewinding;
+                    SetButtonForRobotState(RobotState);
+
+                    rewindRobot();
+                    break;
+
+                case RobotStateEnum.scanning:
+
+                    RobotState = RobotStateEnum.emergencyStopped;
+
+                    SetButtonForRobotState(RobotState);
+
+                    StopRobot();
+                    // StopScan();
+                    break;
+                case RobotStateEnum.rewinding:
+
+                    RobotState = RobotStateEnum.emergencyStopped;
+                    SetButtonForRobotState(RobotState);
+
+                    // StopRobot();
+
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Button Reverse
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ProtoButManRev_MouseDown(object sender, MouseEventArgs e)
+        {
+            PictureBox image = (PictureBox)sender;
+            image.Load("Images/Pressed/butManRev.png");
+            rewindRobot();
+            RobotState = RobotStateEnum.rewinding;
+            SetButtonForRobotState(RobotState);
+        }
+
+        private void ProtoButManRev_MouseUp(object sender, MouseEventArgs e)
+        {
+            PictureBox image = (PictureBox)sender;
+            image.Load("Images/Unpressed/butManRev.png");
+            StopRobot();
+            RobotState = RobotStateEnum.emergencyStopped;
+            SetButtonForRobotState(RobotState);
+        }
+
+        /// <summary>
+        /// Button Forward
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ProtoButManFwd_MouseDown(object sender, MouseEventArgs e)
+        {
+            PictureBox image = (PictureBox)sender;
+            image.Load("Images/Pressed/butManFwd.png");
+            StartRobot();
+            RobotState = RobotStateEnum.scanning;
+            SetButtonForRobotState(RobotState);
+        }
+
+        private void ProtoButManFwd_MouseUp(object sender, MouseEventArgs e)
+        {
+            PictureBox image = (PictureBox)sender;
+            image.Load("Images/Unpressed/butManFwd.png");
+            StopRobot();
+            RobotState = RobotStateEnum.emergencyStopped;
+            SetButtonForRobotState(RobotState);
+        }
+
+        /// <summary>
+        /// Button Load
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ProtoButtonLoad_MouseDown(object sender, MouseEventArgs e)
+        {
+            PictureBox image = (PictureBox)sender;
+            image.Load("Images/Pressed/buttonLoad.png");
+        }
+
+        private void ProtoButtonLoad_MouseUp(object sender, MouseEventArgs e)
+        {
+            PictureBox image = (PictureBox)sender;
+            image.Load("Images/Unpressed/buttonLoad.png");
+        }
+
+        private void ProtoButtonLoad_Click(object sender, EventArgs e)
+        {
+            if (Scan2D.ScanOn == true)
+            {
+                StopThreadScan();
+                MyMarshalToForm(ControlEnum.buttonScan, "Scan");
+                bInitDone = false;
+
+            }
+
+            HideDisplayControls();
+
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "BMP Files(*.bmp)|*.bmp|Jpeg Files(*.jpg)|*.jpg|Raw Files(*.raw)|*.raw";
+
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                if (fileDialog.FileName.EndsWith("raw"))
+                {
+                    DoLoadRaw(fileDialog.FileName);
+                    UpdateCineloopGroup(false);
+                    Bitmap bmpImage = new Bitmap(aiWidth[iIdleIndexSC], aiHeigth[iIdleIndexSC]);
+                    IntersonArray.Imaging.ScanConverter.ScanConverterError error = ScanConv.IdleInitScanConverter(iIdleDepth, aiWidth[iIdleIndexSC], aiHeigth[iIdleIndexSC], shIdleId, iIdleSteering, iIdleDepthCfmBox, bIdleDoubler, bIdleCompound, iIdleCompoundAngle, bSoftCFMData, ref ImageBuilding);
+
+                    if ((error == IntersonArray.Imaging.ScanConverter.ScanConverterError.OVER_LIMITS) ||
+                        (error == IntersonArray.Imaging.ScanConverter.ScanConverterError.UNDER_LIMITS) ||
+                        (error == IntersonArray.Imaging.ScanConverter.ScanConverterError.PROBE_NOT_INITIALIZED) ||
+                        (error == IntersonArray.Imaging.ScanConverter.ScanConverterError.UNKNOWN_PROBE) ||
+                        (error == IntersonArray.Imaging.ScanConverter.ScanConverterError.WRONG_FORMAT) ||
+                        (error == IntersonArray.Imaging.ScanConverter.ScanConverterError.ERROR)
+                        )
+                    {
+                        FormMessage formMessage = new FormMessage();
+                        formMessage.ShowMessage((object)MessageClass.ScanConverterMessage);
+                        formMessage.Dispose();
+                    }
+                    else if (bSoftRFData)
+                    {
+                        uctrlScan.Visible = true;
+                        BuildRFData(aushRawRF, ifactorRF);
+                        DoRefresh();
+                    }
+                    else
+                    {
+
+                        if (bSoftCFMData == false)
+                            ImageBuilding.Build2D(ref bmpImage, bytRawImage, bytRawImagePrevious, ScanConv);// build 
+                        else
+                        {
+                            ImageBuilding.Build2D(ref bmpImage, bytRawImage, abytRawCFM, ScanConv);
+                            ImageBuilding.DrawCFMBox(ref bmpImage, ScanConv, iIdleDepthCfmBox, colBox);
+                        }
+
+                        bmpLoad = new Bitmap(aiWidth[iIdleIndexSC] + uctrlDepth.Width, aiHeigth[iIdleIndexSC]);
+                        uctrlDepth.BuildDrawScale(null, iDepth, this.ScanConv, bIsUpDown, fltZoomFactor, iOffsetScale);
+                        uctrlDepth.DrawToBitmap(bmpLoad, new Rectangle(0, 0, bmpLoad.Width, bmpLoad.Height));
+                        uctrlDepth.Visible = true;
+                        bIdle = true;
+                        ResizeForm(iIdleIndexSC);
+
+                        Graphics g = Graphics.FromImage(bmpLoad);
+                        g.DrawImage(bmpImage, new Point(uctrlDepth.Width, iOffsetScale));
+                        g.Dispose();
+                        DoRefresh();
+
+                    }
+                    bmpImage.Dispose();
+
+                }
+                else
+                {
+                    bmpLoad = new Bitmap(aiWidth[iIndexSC] + uctrlDepth.Width, aiHeigth[iIndexSC]);
+                    bmpLoad = (Bitmap)Bitmap.FromFile(fileDialog.FileName, false);
+                }
+                ResetLabels();
+                labelDepth.Text = strDepth + iIdleDepth.ToString() + strMM;
+                uctrlDepth.Visible = true;
+                labelFileName.Text = fileDialog.FileName;
+                DoRefresh();
+
+            }
+        }
+
+        /// <summary>
+        /// Button Save Cine
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void ProtoButtonSaveCine_MouseDown(object sender, MouseEventArgs e)
+        {
+            PictureBox image = (PictureBox)sender;
+            image.Load("Images/Pressed/buttonSaveCine.png");
+        }
+
+        private void ProtoButtonSaveCine_MouseUp(object sender, MouseEventArgs e)
+        {
+            PictureBox image = (PictureBox)sender;
+            image.Load("Images/Unpressed/buttonSaveCine.png");
+        }
+
+        private void ProtoButtonSaveCine_Click(object sender, EventArgs e)
+        {
+            DoSaveRobotScan();
+            StartScan();
+        }
+
+        /// <summary>
+        /// Button Previous
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ProtoButtonPrevious_MouseDown(object sender, MouseEventArgs e)
+        {
+            PictureBox image = (PictureBox)sender;
+            image.Load("Images/Pressed/buttonPrev.png");
+        }
+
+        private void ProtoButtonPrevious_MouseUp(object sender, MouseEventArgs e)
+        {
+            PictureBox image = (PictureBox)sender;
+            image.Load("Images/Unpressed/buttonPrev.png");
+        }
+
+        private void ProtoButtonPrevious_Click(object sender, EventArgs e)
+        {
+            PreviousImage();
+            trackBarCine.Value = iCineCounter;
+        }
+
+        /// <summary>
+        /// Button Cine
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ProtoButtonCine_MouseDown(object sender, MouseEventArgs e)
+        {
+            PictureBox image = (PictureBox)sender;
+            image.Load("Images/Pressed/buttonCine.png");
+        }
+
+        private void ProtoButtonCine_MouseUp(object sender, MouseEventArgs e)
+        {
+            PictureBox image = (PictureBox)sender;
+            image.Load("Images/Unpressed/buttonCine.png");
+        }
+
+        private void ProtoButtonCine_Click(object sender, EventArgs e)
+        {
+            if (Scan2D.ScanOn == true)
+                return;
+
+            if (bCineOn == false)
+            {
+                ShowDisplayControls();
+                StartCineloop();
+                MyMarshalToForm(ControlEnum.buttonCine, "Pause");
+            }
+            else
+            {
+                StopCineloop();
+                MyMarshalToForm(ControlEnum.buttonCine, "Play");
+            }
+        }
+
+        private void ProtoButtonNext_MouseDown(object sender, MouseEventArgs e)
+        {
+            PictureBox image = (PictureBox)sender;
+            image.Load("Images/Pressed/buttonNext.png");
+        }
+
+        private void ProtoButtonNext_MouseUp(object sender, MouseEventArgs e)
+        {
+            PictureBox image = (PictureBox)sender;
+            image.Load("Images/Unpressed/buttonNext.png");
+        }
+
+        private void ProtoButtonNext_Click(object sender, EventArgs e)
+        {
+            NextImage();
+            trackBarCine.Value = iCineCounter;
+        }
+
     }
 }///namespace SDK_EXAMPLE

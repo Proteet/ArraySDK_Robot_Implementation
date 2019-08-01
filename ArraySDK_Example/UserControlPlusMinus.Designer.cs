@@ -28,53 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlPlusMinus));
             this.labelName = new System.Windows.Forms.Label();
-            this.butPlus = new System.Windows.Forms.Button();
-            this.butMinus = new System.Windows.Forms.Button();
+            this.butPlus = new System.Windows.Forms.PictureBox();
+            this.butMinus = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.butPlus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.butMinus)).BeginInit();
             this.SuspendLayout();
             // 
             // labelName
             // 
             this.labelName.AutoEllipsis = true;
-            this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(15, 50);
+            this.labelName.Font = new System.Drawing.Font("Lato", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelName.ForeColor = System.Drawing.Color.White;
+            this.labelName.Location = new System.Drawing.Point(7, 52);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(60, 13);
             this.labelName.TabIndex = 2;
             this.labelName.Text = "Nameabcd";
+            this.labelName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // butPlus
             // 
-            this.butPlus.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.butPlus.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
-            this.butPlus.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butPlus.Location = new System.Drawing.Point(14, 3);
+            this.butPlus.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("butPlus.BackgroundImage")));
+            this.butPlus.Location = new System.Drawing.Point(10, 8);
             this.butPlus.Name = "butPlus";
-            this.butPlus.Size = new System.Drawing.Size(33, 28);
+            this.butPlus.Size = new System.Drawing.Size(43, 43);
             this.butPlus.TabIndex = 3;
-            this.butPlus.Text = "+";
-            this.butPlus.UseVisualStyleBackColor = false;
-            this.butPlus.Click += new System.EventHandler(this.butPlus_Click);
+            this.butPlus.TabStop = false;
+            this.butPlus.Click += new System.EventHandler(this.ProtoButPlus_Click);
+            this.butPlus.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ProtoButPlus_MouseDown);
+            this.butPlus.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ProtoButPlus_MouseUp);
             // 
             // butMinus
             // 
-            this.butMinus.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.butMinus.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
-            this.butMinus.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butMinus.Location = new System.Drawing.Point(14, 84);
+            this.butMinus.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("butMinus.BackgroundImage")));
+            this.butMinus.Location = new System.Drawing.Point(10, 68);
             this.butMinus.Name = "butMinus";
-            this.butMinus.Size = new System.Drawing.Size(33, 28);
+            this.butMinus.Size = new System.Drawing.Size(43, 43);
             this.butMinus.TabIndex = 4;
-            this.butMinus.Text = "-";
-            this.butMinus.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.butMinus.UseVisualStyleBackColor = false;
-            this.butMinus.Click += new System.EventHandler(this.butMinus_Click);
+            this.butMinus.TabStop = false;
+            this.butMinus.Click += new System.EventHandler(this.ProtoButMinus_Click);
+            this.butMinus.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ProtoButMinus_MouseDown);
+            this.butMinus.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ProtoButMinus_MouseUp);
             // 
             // UserControlPlusMinus
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.BackColor = System.Drawing.Color.Transparent;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.Controls.Add(this.butMinus);
             this.Controls.Add(this.butPlus);
             this.Controls.Add(this.labelName);
@@ -82,7 +84,9 @@
             this.ForeColor = System.Drawing.Color.Black;
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "UserControlPlusMinus";
-            this.Size = new System.Drawing.Size(65, 120);
+            this.Size = new System.Drawing.Size(75, 128);
+            ((System.ComponentModel.ISupportInitialize)(this.butPlus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.butMinus)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -90,7 +94,7 @@
         #endregion
 
         private System.Windows.Forms.Label labelName;
-        private System.Windows.Forms.Button butPlus;
-        private System.Windows.Forms.Button butMinus;
+        private System.Windows.Forms.PictureBox butPlus;
+        private System.Windows.Forms.PictureBox butMinus;
     }
 }
