@@ -50,8 +50,8 @@
             // 
             // butPlus
             // 
-            this.butPlus.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("butPlus.BackgroundImage")));
-            this.butPlus.Location = new System.Drawing.Point(10, 8);
+            this.butPlus.Image = ((System.Drawing.Image)(resources.GetObject("butPlus.Image")));
+            this.butPlus.Location = new System.Drawing.Point(14, 8);
             this.butPlus.Name = "butPlus";
             this.butPlus.Size = new System.Drawing.Size(43, 43);
             this.butPlus.TabIndex = 3;
@@ -62,8 +62,8 @@
             // 
             // butMinus
             // 
-            this.butMinus.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("butMinus.BackgroundImage")));
-            this.butMinus.Location = new System.Drawing.Point(10, 68);
+            this.butMinus.Image = ((System.Drawing.Image)(resources.GetObject("butMinus.Image")));
+            this.butMinus.Location = new System.Drawing.Point(14, 72);
             this.butMinus.Name = "butMinus";
             this.butMinus.Size = new System.Drawing.Size(43, 43);
             this.butMinus.TabIndex = 4;

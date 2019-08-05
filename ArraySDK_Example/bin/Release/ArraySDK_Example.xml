@@ -4,6 +4,39 @@
         <name>ArraySDK_Example</name>
     </assembly>
     <members>
+        <member name="F:ArraySDK_Example.formFoot.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ArraySDK_Example.formFoot.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ArraySDK_Example.formFoot.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:ArraySDK_Example.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:ArraySDK_Example.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:ArraySDK_Example.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
         <member name="T:SDK_Example.FormMessage">
             <summary>
             Represents a message form. Displays message defined by MessageClass
@@ -823,22 +856,6 @@
             <summary> 
             Required method for Designer support - do not modify 
             the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="T:ArraySDK_Example.Properties.Resources">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:ArraySDK_Example.Properties.Resources.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:ArraySDK_Example.Properties.Resources.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
             </summary>
         </member>
     </members>

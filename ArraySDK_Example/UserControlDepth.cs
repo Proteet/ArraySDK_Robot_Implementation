@@ -52,9 +52,10 @@ namespace SDK_Example
             Font drawFont = new Font("Lato", 10);
             drawFont = new Font(drawFont, FontStyle.Bold);
             SolidBrush drawBrush = new SolidBrush(Color.White);
-            Color background = new Color();
-            background = Color.FromArgb(34, 50, 63);
-            gScale.Clear(background);
+            // Color background = new Color();
+            // background = Color.FromArgb(34, 50, 63);
+            this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            gScale.Clear(Color.Transparent);
             
             int iDir = 1; 
             if (bIsUpDown)

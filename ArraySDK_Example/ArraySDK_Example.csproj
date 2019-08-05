@@ -88,6 +88,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="formFoot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formFoot.Designer.cs">
+      <DependentUpon>formFoot.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMessage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     <Compile Include="MessageClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="formFoot.resx">
+      <DependentUpon>formFoot.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMessage.resx">
       <DependentUpon>FormMessage.cs</DependentUpon>
       <SubType>Designer</SubType>

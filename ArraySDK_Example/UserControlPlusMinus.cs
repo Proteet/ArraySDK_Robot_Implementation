@@ -61,8 +61,6 @@ namespace SDK_Example
         private void ProtoButPlus_MouseDown(object sender, MouseEventArgs e)
         {
             PictureBox image = (PictureBox)sender;
-            image.InitialImage = null;
-            image.Refresh();
             image.Load("Images/Pressed/UserControl/uctrlPlus.png");
         }
 

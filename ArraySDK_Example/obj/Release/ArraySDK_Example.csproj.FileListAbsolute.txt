@@ -100,3 +100,4 @@ C:\Users\Jeff\Documents\GUI Controller\Build_Off_Original\GUI_Controller_Testing
 C:\Users\Jeff\Documents\GUI Controller\Build_Off_Original\GUI_Controller_Testing\ArraySDK_Example\obj\Release\ArraySDK_Example.csproj.CopyComplete
 C:\Users\Jeff\Documents\GUI Controller\Build_Off_Original\GUI_Controller_Testing\ArraySDK_Example\obj\Release\ArraySDK_Example.exe
 C:\Users\Jeff\Documents\GUI Controller\Build_Off_Original\GUI_Controller_Testing\ArraySDK_Example\obj\Release\ArraySDK_Example.pdb
+C:\Users\Jeff\Documents\GUI Controller\Build_Off_Original\GUI_Controller_Testing\ArraySDK_Example\obj\Release\ArraySDK_Example.formFoot.resources

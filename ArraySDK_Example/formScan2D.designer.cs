@@ -91,6 +91,8 @@ namespace SDK_Example
             this.uctrlGrayScale = new SDK_Example.UserControlGrayScale();
             this.uctrlDepth = new SDK_Example.UserControlDepth();
             this.uctrlScan = new SDK_Example.UserControlScan();
+            this.referenceImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ankleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarCine)).BeginInit();
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tBarTgc1)).BeginInit();
@@ -126,6 +128,7 @@ namespace SDK_Example
             // labelTgc
             // 
             this.labelTgc.AutoSize = true;
+            this.labelTgc.BackColor = System.Drawing.Color.Transparent;
             this.labelTgc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTgc.ForeColor = System.Drawing.Color.White;
             this.labelTgc.Location = new System.Drawing.Point(765, 596);
@@ -151,6 +154,7 @@ namespace SDK_Example
             // 
             // labelDepth
             // 
+            this.labelDepth.BackColor = System.Drawing.Color.Transparent;
             this.labelDepth.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDepth.ForeColor = System.Drawing.Color.White;
             this.labelDepth.Location = new System.Drawing.Point(241, 748);
@@ -164,6 +168,7 @@ namespace SDK_Example
             // labelFrequency
             // 
             this.labelFrequency.AutoSize = true;
+            this.labelFrequency.BackColor = System.Drawing.Color.Transparent;
             this.labelFrequency.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFrequency.ForeColor = System.Drawing.Color.White;
             this.labelFrequency.Location = new System.Drawing.Point(321, 748);
@@ -171,10 +176,12 @@ namespace SDK_Example
             this.labelFrequency.Size = new System.Drawing.Size(67, 16);
             this.labelFrequency.TabIndex = 27;
             this.labelFrequency.Text = "Frequency";
+            this.labelFrequency.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelRobotSpeed
             // 
             this.labelRobotSpeed.AutoSize = true;
+            this.labelRobotSpeed.BackColor = System.Drawing.Color.Transparent;
             this.labelRobotSpeed.ForeColor = System.Drawing.Color.White;
             this.labelRobotSpeed.Location = new System.Drawing.Point(981, 83);
             this.labelRobotSpeed.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -185,9 +192,10 @@ namespace SDK_Example
             // 
             // labelMainGain
             // 
+            this.labelMainGain.BackColor = System.Drawing.Color.Transparent;
             this.labelMainGain.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMainGain.ForeColor = System.Drawing.Color.White;
-            this.labelMainGain.Location = new System.Drawing.Point(556, 748);
+            this.labelMainGain.Location = new System.Drawing.Point(554, 748);
             this.labelMainGain.Name = "labelMainGain";
             this.labelMainGain.Size = new System.Drawing.Size(73, 16);
             this.labelMainGain.TabIndex = 32;
@@ -198,9 +206,10 @@ namespace SDK_Example
             // labelHighVolt
             // 
             this.labelHighVolt.AutoSize = true;
+            this.labelHighVolt.BackColor = System.Drawing.Color.Transparent;
             this.labelHighVolt.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHighVolt.ForeColor = System.Drawing.Color.White;
-            this.labelHighVolt.Location = new System.Drawing.Point(491, 748);
+            this.labelHighVolt.Location = new System.Drawing.Point(477, 748);
             this.labelHighVolt.Name = "labelHighVolt";
             this.labelHighVolt.Size = new System.Drawing.Size(61, 16);
             this.labelHighVolt.TabIndex = 34;
@@ -251,9 +260,10 @@ namespace SDK_Example
             // labelFileName
             // 
             this.labelFileName.AutoSize = true;
+            this.labelFileName.BackColor = System.Drawing.Color.Transparent;
             this.labelFileName.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFileName.ForeColor = System.Drawing.Color.White;
-            this.labelFileName.Location = new System.Drawing.Point(208, 49);
+            this.labelFileName.Location = new System.Drawing.Point(208, 35);
             this.labelFileName.Name = "labelFileName";
             this.labelFileName.Size = new System.Drawing.Size(63, 16);
             this.labelFileName.TabIndex = 39;
@@ -263,18 +273,21 @@ namespace SDK_Example
             // labelDynamic
             // 
             this.labelDynamic.AutoSize = true;
+            this.labelDynamic.BackColor = System.Drawing.Color.Transparent;
             this.labelDynamic.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDynamic.ForeColor = System.Drawing.Color.White;
-            this.labelDynamic.Location = new System.Drawing.Point(649, 748);
+            this.labelDynamic.Location = new System.Drawing.Point(639, 748);
             this.labelDynamic.Name = "labelDynamic";
             this.labelDynamic.Size = new System.Drawing.Size(58, 16);
             this.labelDynamic.TabIndex = 44;
             this.labelDynamic.Text = "Dynamic";
+            this.labelDynamic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelDynamic.Click += new System.EventHandler(this.LabelDynamic_Click);
             // 
             // labelTgc3
             // 
             this.labelTgc3.AutoSize = true;
+            this.labelTgc3.BackColor = System.Drawing.Color.Transparent;
             this.labelTgc3.Font = new System.Drawing.Font("Lato", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTgc3.ForeColor = System.Drawing.Color.White;
             this.labelTgc3.Location = new System.Drawing.Point(940, 712);
@@ -287,6 +300,7 @@ namespace SDK_Example
             // labelTgc2
             // 
             this.labelTgc2.AutoSize = true;
+            this.labelTgc2.BackColor = System.Drawing.Color.Transparent;
             this.labelTgc2.Font = new System.Drawing.Font("Lato", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTgc2.ForeColor = System.Drawing.Color.White;
             this.labelTgc2.Location = new System.Drawing.Point(932, 657);
@@ -298,6 +312,7 @@ namespace SDK_Example
             // labelTgc1
             // 
             this.labelTgc1.AutoSize = true;
+            this.labelTgc1.BackColor = System.Drawing.Color.Transparent;
             this.labelTgc1.Font = new System.Drawing.Font("Lato", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTgc1.ForeColor = System.Drawing.Color.White;
             this.labelTgc1.Location = new System.Drawing.Point(936, 603);
@@ -359,6 +374,7 @@ namespace SDK_Example
             // labelFocus
             // 
             this.labelFocus.AutoSize = true;
+            this.labelFocus.BackColor = System.Drawing.Color.Transparent;
             this.labelFocus.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFocus.ForeColor = System.Drawing.Color.White;
             this.labelFocus.Location = new System.Drawing.Point(407, 748);
@@ -366,6 +382,7 @@ namespace SDK_Example
             this.labelFocus.Size = new System.Drawing.Size(40, 16);
             this.labelFocus.TabIndex = 46;
             this.labelFocus.Text = "Focus";
+            this.labelFocus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelFocus.Click += new System.EventHandler(this.LabelFocus_Click);
             // 
             // butCfmMode
@@ -398,6 +415,7 @@ namespace SDK_Example
             // labelPosition
             // 
             this.labelPosition.AutoSize = true;
+            this.labelPosition.BackColor = System.Drawing.Color.Transparent;
             this.labelPosition.ForeColor = System.Drawing.Color.White;
             this.labelPosition.Location = new System.Drawing.Point(997, 163);
             this.labelPosition.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -419,6 +437,7 @@ namespace SDK_Example
             // labelSaveReview
             // 
             this.labelSaveReview.AutoSize = true;
+            this.labelSaveReview.BackColor = System.Drawing.Color.Transparent;
             this.labelSaveReview.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSaveReview.ForeColor = System.Drawing.Color.White;
             this.labelSaveReview.Location = new System.Drawing.Point(765, 338);
@@ -432,6 +451,7 @@ namespace SDK_Example
             // labelRobotCtrls
             // 
             this.labelRobotCtrls.AutoSize = true;
+            this.labelRobotCtrls.BackColor = System.Drawing.Color.Transparent;
             this.labelRobotCtrls.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRobotCtrls.ForeColor = System.Drawing.Color.White;
             this.labelRobotCtrls.Location = new System.Drawing.Point(765, 60);
@@ -452,7 +472,8 @@ namespace SDK_Example
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
-            this.aboutToolStripMenuItem});
+            this.aboutToolStripMenuItem,
+            this.referenceImagesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1170, 24);
@@ -532,6 +553,7 @@ namespace SDK_Example
             // 
             // pictureBoxIcon
             // 
+            this.pictureBoxIcon.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxIcon.Image")));
             this.pictureBoxIcon.Location = new System.Drawing.Point(53, 601);
             this.pictureBoxIcon.Name = "pictureBoxIcon";
@@ -542,6 +564,7 @@ namespace SDK_Example
             // 
             // buttonRobotScan
             // 
+            this.buttonRobotScan.BackColor = System.Drawing.Color.Transparent;
             this.buttonRobotScan.Image = ((System.Drawing.Image)(resources.GetObject("buttonRobotScan.Image")));
             this.buttonRobotScan.Location = new System.Drawing.Point(767, 83);
             this.buttonRobotScan.Name = "buttonRobotScan";
@@ -555,6 +578,7 @@ namespace SDK_Example
             // 
             // butManRev
             // 
+            this.butManRev.BackColor = System.Drawing.Color.Transparent;
             this.butManRev.Image = ((System.Drawing.Image)(resources.GetObject("butManRev.Image")));
             this.butManRev.Location = new System.Drawing.Point(905, 150);
             this.butManRev.Name = "butManRev";
@@ -567,6 +591,7 @@ namespace SDK_Example
             // 
             // protoButManFwd
             // 
+            this.protoButManFwd.BackColor = System.Drawing.Color.Transparent;
             this.protoButManFwd.Image = ((System.Drawing.Image)(resources.GetObject("protoButManFwd.Image")));
             this.protoButManFwd.Location = new System.Drawing.Point(1046, 150);
             this.protoButManFwd.Name = "protoButManFwd";
@@ -579,6 +604,7 @@ namespace SDK_Example
             // 
             // buttonLoad
             // 
+            this.buttonLoad.BackColor = System.Drawing.Color.Transparent;
             this.buttonLoad.Image = ((System.Drawing.Image)(resources.GetObject("buttonLoad.Image")));
             this.buttonLoad.Location = new System.Drawing.Point(768, 361);
             this.buttonLoad.Name = "buttonLoad";
@@ -592,6 +618,7 @@ namespace SDK_Example
             // 
             // buttonSaveCine
             // 
+            this.buttonSaveCine.BackColor = System.Drawing.Color.Transparent;
             this.buttonSaveCine.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveCine.Image")));
             this.buttonSaveCine.Location = new System.Drawing.Point(952, 361);
             this.buttonSaveCine.Name = "buttonSaveCine";
@@ -605,6 +632,7 @@ namespace SDK_Example
             // 
             // buttonPrevious
             // 
+            this.buttonPrevious.BackColor = System.Drawing.Color.Transparent;
             this.buttonPrevious.Image = ((System.Drawing.Image)(resources.GetObject("buttonPrevious.Image")));
             this.buttonPrevious.Location = new System.Drawing.Point(768, 437);
             this.buttonPrevious.Name = "buttonPrevious";
@@ -618,6 +646,7 @@ namespace SDK_Example
             // 
             // buttonCine
             // 
+            this.buttonCine.BackColor = System.Drawing.Color.Transparent;
             this.buttonCine.Image = ((System.Drawing.Image)(resources.GetObject("buttonCine.Image")));
             this.buttonCine.Location = new System.Drawing.Point(890, 437);
             this.buttonCine.Name = "buttonCine";
@@ -631,6 +660,7 @@ namespace SDK_Example
             // 
             // buttonNext
             // 
+            this.buttonNext.BackColor = System.Drawing.Color.Transparent;
             this.buttonNext.Image = ((System.Drawing.Image)(resources.GetObject("buttonNext.Image")));
             this.buttonNext.Location = new System.Drawing.Point(1012, 437);
             this.buttonNext.Name = "buttonNext";
@@ -724,7 +754,7 @@ namespace SDK_Example
             // 
             // uctrlGrayScale
             // 
-            this.uctrlGrayScale.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(50)))), ((int)(((byte)(63)))));
+            this.uctrlGrayScale.BackColor = System.Drawing.Color.Transparent;
             this.uctrlGrayScale.Enabled = false;
             this.uctrlGrayScale.Location = new System.Drawing.Point(577, 83);
             this.uctrlGrayScale.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -736,12 +766,11 @@ namespace SDK_Example
             // 
             // uctrlDepth
             // 
-            this.uctrlDepth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(50)))), ((int)(((byte)(63)))));
+            this.uctrlDepth.BackColor = System.Drawing.Color.Transparent;
             this.uctrlDepth.Location = new System.Drawing.Point(33, 73);
             this.uctrlDepth.Name = "uctrlDepth";
             this.uctrlDepth.Size = new System.Drawing.Size(30, 522);
             this.uctrlDepth.TabIndex = 13;
-            this.uctrlDepth.Load += new System.EventHandler(this.UctrlDepth_Load);
             this.uctrlDepth.Paint += new System.Windows.Forms.PaintEventHandler(this.uctrlDepth_Paint);
             // 
             // uctrlScan
@@ -759,12 +788,28 @@ namespace SDK_Example
             this.uctrlScan.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.uctrlScan_MouseDoubleClick);
             this.uctrlScan.MouseMove += new System.Windows.Forms.MouseEventHandler(this.uctrlScan_MouseMove);
             // 
+            // referenceImagesToolStripMenuItem
+            // 
+            this.referenceImagesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ankleToolStripMenuItem});
+            this.referenceImagesToolStripMenuItem.Name = "referenceImagesToolStripMenuItem";
+            this.referenceImagesToolStripMenuItem.Size = new System.Drawing.Size(112, 20);
+            this.referenceImagesToolStripMenuItem.Text = "Reference Images";
+            // 
+            // ankleToolStripMenuItem
+            // 
+            this.ankleToolStripMenuItem.Name = "ankleToolStripMenuItem";
+            this.ankleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ankleToolStripMenuItem.Text = "Foot";
+            this.ankleToolStripMenuItem.Click += new System.EventHandler(this.AnkleToolStripMenuItem_Click);
+            // 
             // formScan2D
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(50)))), ((int)(((byte)(63)))));
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1170, 801);
             this.Controls.Add(this.protoUCtrlPMDynamic);
             this.Controls.Add(this.protoUCtrlPMGalGain);
@@ -911,6 +956,8 @@ namespace SDK_Example
         private UserControlPlusMinus protoUCtrlPMHighVoltage;
         private UserControlPlusMinus protoUCtrlPMGalGain;
         private UserControlPlusMinus protoUCtrlPMDynamic;
+        private ToolStripMenuItem referenceImagesToolStripMenuItem;
+        private ToolStripMenuItem ankleToolStripMenuItem;
     }
 }
 

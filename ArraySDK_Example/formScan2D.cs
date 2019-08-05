@@ -19,7 +19,7 @@ using IntersonArray.Imaging;
 using ArraySDK_Example.Properties;
 using Microsoft.Win32;
 using System.Text.RegularExpressions;
-
+using ArraySDK_Example;
 
 namespace SDK_Example
 {
@@ -4656,11 +4656,6 @@ namespace SDK_Example
 
         }
 
-        private void UctrlDepth_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void LabelPosition_Click(object sender, EventArgs e)
         {
 
@@ -4984,5 +4979,10 @@ namespace SDK_Example
             trackBarCine.Value = iCineCounter;
         }
 
+        private void AnkleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formFoot referenceFoot = new formFoot();
+            referenceFoot.Show();
+        }
     }
 }///namespace SDK_EXAMPLE
