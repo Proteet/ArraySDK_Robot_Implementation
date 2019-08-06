@@ -58,7 +58,6 @@ namespace SDK_Example
             this.butCfmMode = new System.Windows.Forms.Button();
             this.buttonProbe2 = new System.Windows.Forms.Button();
             this.labelPosition = new System.Windows.Forms.Label();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.labelSaveReview = new System.Windows.Forms.Label();
             this.labelRobotCtrls = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -72,6 +71,8 @@ namespace SDK_Example
             this.menuDoubler = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuWebsite = new System.Windows.Forms.ToolStripMenuItem();
+            this.referenceImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ankleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
             this.buttonRobotScan = new System.Windows.Forms.PictureBox();
             this.butManRev = new System.Windows.Forms.PictureBox();
@@ -91,15 +92,13 @@ namespace SDK_Example
             this.uctrlGrayScale = new SDK_Example.UserControlGrayScale();
             this.uctrlDepth = new SDK_Example.UserControlDepth();
             this.uctrlScan = new SDK_Example.UserControlScan();
-            this.referenceImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ankleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.robotStateIndicator = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarCine)).BeginInit();
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tBarTgc1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBarTgc2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBarTgc3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarRobotSpeed)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonRobotScan)).BeginInit();
@@ -110,6 +109,7 @@ namespace SDK_Example
             ((System.ComponentModel.ISupportInitialize)(this.buttonPrevious)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonCine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonNext)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.robotStateIndicator)).BeginInit();
             this.SuspendLayout();
             // 
             // labelImaging
@@ -141,11 +141,11 @@ namespace SDK_Example
             // 
             // textRadius
             // 
-            this.textRadius.Font = new System.Drawing.Font("Lato", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textRadius.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textRadius.ForeColor = System.Drawing.Color.DimGray;
-            this.textRadius.Location = new System.Drawing.Point(904, 260);
+            this.textRadius.Location = new System.Drawing.Point(906, 95);
             this.textRadius.Name = "textRadius";
-            this.textRadius.Size = new System.Drawing.Size(220, 21);
+            this.textRadius.Size = new System.Drawing.Size(220, 23);
             this.textRadius.TabIndex = 0;
             this.textRadius.Text = "Enter the Radius";
             this.textRadius.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -171,7 +171,7 @@ namespace SDK_Example
             this.labelFrequency.BackColor = System.Drawing.Color.Transparent;
             this.labelFrequency.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFrequency.ForeColor = System.Drawing.Color.White;
-            this.labelFrequency.Location = new System.Drawing.Point(321, 748);
+            this.labelFrequency.Location = new System.Drawing.Point(316, 748);
             this.labelFrequency.Name = "labelFrequency";
             this.labelFrequency.Size = new System.Drawing.Size(67, 16);
             this.labelFrequency.TabIndex = 27;
@@ -183,7 +183,7 @@ namespace SDK_Example
             this.labelRobotSpeed.AutoSize = true;
             this.labelRobotSpeed.BackColor = System.Drawing.Color.Transparent;
             this.labelRobotSpeed.ForeColor = System.Drawing.Color.White;
-            this.labelRobotSpeed.Location = new System.Drawing.Point(981, 83);
+            this.labelRobotSpeed.Location = new System.Drawing.Point(917, 243);
             this.labelRobotSpeed.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelRobotSpeed.Name = "labelRobotSpeed";
             this.labelRobotSpeed.Size = new System.Drawing.Size(70, 13);
@@ -209,7 +209,7 @@ namespace SDK_Example
             this.labelHighVolt.BackColor = System.Drawing.Color.Transparent;
             this.labelHighVolt.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHighVolt.ForeColor = System.Drawing.Color.White;
-            this.labelHighVolt.Location = new System.Drawing.Point(477, 748);
+            this.labelHighVolt.Location = new System.Drawing.Point(486, 748);
             this.labelHighVolt.Name = "labelHighVolt";
             this.labelHighVolt.Size = new System.Drawing.Size(61, 16);
             this.labelHighVolt.TabIndex = 34;
@@ -276,7 +276,7 @@ namespace SDK_Example
             this.labelDynamic.BackColor = System.Drawing.Color.Transparent;
             this.labelDynamic.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDynamic.ForeColor = System.Drawing.Color.White;
-            this.labelDynamic.Location = new System.Drawing.Point(639, 748);
+            this.labelDynamic.Location = new System.Drawing.Point(647, 748);
             this.labelDynamic.Name = "labelDynamic";
             this.labelDynamic.Size = new System.Drawing.Size(58, 16);
             this.labelDynamic.TabIndex = 44;
@@ -361,11 +361,11 @@ namespace SDK_Example
             // trackBarRobotSpeed
             // 
             this.trackBarRobotSpeed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(50)))), ((int)(((byte)(63)))));
-            this.trackBarRobotSpeed.Location = new System.Drawing.Point(904, 103);
+            this.trackBarRobotSpeed.Location = new System.Drawing.Point(768, 260);
             this.trackBarRobotSpeed.Margin = new System.Windows.Forms.Padding(2);
             this.trackBarRobotSpeed.Maximum = 100;
             this.trackBarRobotSpeed.Name = "trackBarRobotSpeed";
-            this.trackBarRobotSpeed.Size = new System.Drawing.Size(220, 45);
+            this.trackBarRobotSpeed.Size = new System.Drawing.Size(370, 45);
             this.trackBarRobotSpeed.TabIndex = 53;
             this.trackBarRobotSpeed.TickFrequency = 5;
             this.trackBarRobotSpeed.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
@@ -377,7 +377,7 @@ namespace SDK_Example
             this.labelFocus.BackColor = System.Drawing.Color.Transparent;
             this.labelFocus.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFocus.ForeColor = System.Drawing.Color.White;
-            this.labelFocus.Location = new System.Drawing.Point(407, 748);
+            this.labelFocus.Location = new System.Drawing.Point(402, 748);
             this.labelFocus.Name = "labelFocus";
             this.labelFocus.Size = new System.Drawing.Size(40, 16);
             this.labelFocus.TabIndex = 46;
@@ -417,7 +417,7 @@ namespace SDK_Example
             this.labelPosition.AutoSize = true;
             this.labelPosition.BackColor = System.Drawing.Color.Transparent;
             this.labelPosition.ForeColor = System.Drawing.Color.White;
-            this.labelPosition.Location = new System.Drawing.Point(997, 163);
+            this.labelPosition.Location = new System.Drawing.Point(1002, 178);
             this.labelPosition.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPosition.Name = "labelPosition";
             this.labelPosition.Size = new System.Drawing.Size(44, 13);
@@ -425,14 +425,6 @@ namespace SDK_Example
             this.labelPosition.Text = "Position";
             this.labelPosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelPosition.Click += new System.EventHandler(this.LabelPosition_Click);
-            // 
-            // trackBar1
-            // 
-            this.trackBar1.Location = new System.Drawing.Point(905, 201);
-            this.trackBar1.Margin = new System.Windows.Forms.Padding(2);
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(220, 45);
-            this.trackBar1.TabIndex = 3;
             // 
             // labelSaveReview
             // 
@@ -454,7 +446,7 @@ namespace SDK_Example
             this.labelRobotCtrls.BackColor = System.Drawing.Color.Transparent;
             this.labelRobotCtrls.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRobotCtrls.ForeColor = System.Drawing.Color.White;
-            this.labelRobotCtrls.Location = new System.Drawing.Point(765, 60);
+            this.labelRobotCtrls.Location = new System.Drawing.Point(765, 73);
             this.labelRobotCtrls.Name = "labelRobotCtrls";
             this.labelRobotCtrls.Size = new System.Drawing.Size(129, 16);
             this.labelRobotCtrls.TabIndex = 59;
@@ -551,6 +543,21 @@ namespace SDK_Example
             this.menuWebsite.Text = "Website";
             this.menuWebsite.Click += new System.EventHandler(this.MenuWebsite_Click);
             // 
+            // referenceImagesToolStripMenuItem
+            // 
+            this.referenceImagesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ankleToolStripMenuItem});
+            this.referenceImagesToolStripMenuItem.Name = "referenceImagesToolStripMenuItem";
+            this.referenceImagesToolStripMenuItem.Size = new System.Drawing.Size(112, 20);
+            this.referenceImagesToolStripMenuItem.Text = "Reference Images";
+            // 
+            // ankleToolStripMenuItem
+            // 
+            this.ankleToolStripMenuItem.Name = "ankleToolStripMenuItem";
+            this.ankleToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.ankleToolStripMenuItem.Text = "Foot";
+            this.ankleToolStripMenuItem.Click += new System.EventHandler(this.AnkleToolStripMenuItem_Click);
+            // 
             // pictureBoxIcon
             // 
             this.pictureBoxIcon.BackColor = System.Drawing.Color.Transparent;
@@ -566,9 +573,9 @@ namespace SDK_Example
             // 
             this.buttonRobotScan.BackColor = System.Drawing.Color.Transparent;
             this.buttonRobotScan.Image = ((System.Drawing.Image)(resources.GetObject("buttonRobotScan.Image")));
-            this.buttonRobotScan.Location = new System.Drawing.Point(767, 83);
+            this.buttonRobotScan.Location = new System.Drawing.Point(768, 95);
             this.buttonRobotScan.Name = "buttonRobotScan";
-            this.buttonRobotScan.Size = new System.Drawing.Size(118, 210);
+            this.buttonRobotScan.Size = new System.Drawing.Size(128, 160);
             this.buttonRobotScan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.buttonRobotScan.TabIndex = 64;
             this.buttonRobotScan.TabStop = false;
@@ -580,9 +587,9 @@ namespace SDK_Example
             // 
             this.butManRev.BackColor = System.Drawing.Color.Transparent;
             this.butManRev.Image = ((System.Drawing.Image)(resources.GetObject("butManRev.Image")));
-            this.butManRev.Location = new System.Drawing.Point(905, 150);
+            this.butManRev.Location = new System.Drawing.Point(906, 141);
             this.butManRev.Name = "butManRev";
-            this.butManRev.Size = new System.Drawing.Size(78, 46);
+            this.butManRev.Size = new System.Drawing.Size(78, 90);
             this.butManRev.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.butManRev.TabIndex = 65;
             this.butManRev.TabStop = false;
@@ -593,9 +600,9 @@ namespace SDK_Example
             // 
             this.protoButManFwd.BackColor = System.Drawing.Color.Transparent;
             this.protoButManFwd.Image = ((System.Drawing.Image)(resources.GetObject("protoButManFwd.Image")));
-            this.protoButManFwd.Location = new System.Drawing.Point(1046, 150);
+            this.protoButManFwd.Location = new System.Drawing.Point(1049, 141);
             this.protoButManFwd.Name = "protoButManFwd";
-            this.protoButManFwd.Size = new System.Drawing.Size(78, 46);
+            this.protoButManFwd.Size = new System.Drawing.Size(78, 90);
             this.protoButManFwd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.protoButManFwd.TabIndex = 66;
             this.protoButManFwd.TabStop = false;
@@ -788,20 +795,16 @@ namespace SDK_Example
             this.uctrlScan.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.uctrlScan_MouseDoubleClick);
             this.uctrlScan.MouseMove += new System.Windows.Forms.MouseEventHandler(this.uctrlScan_MouseMove);
             // 
-            // referenceImagesToolStripMenuItem
+            // robotStateIndicator
             // 
-            this.referenceImagesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ankleToolStripMenuItem});
-            this.referenceImagesToolStripMenuItem.Name = "referenceImagesToolStripMenuItem";
-            this.referenceImagesToolStripMenuItem.Size = new System.Drawing.Size(112, 20);
-            this.referenceImagesToolStripMenuItem.Text = "Reference Images";
-            // 
-            // ankleToolStripMenuItem
-            // 
-            this.ankleToolStripMenuItem.Name = "ankleToolStripMenuItem";
-            this.ankleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.ankleToolStripMenuItem.Text = "Foot";
-            this.ankleToolStripMenuItem.Click += new System.EventHandler(this.AnkleToolStripMenuItem_Click);
+            this.robotStateIndicator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(240)))));
+            this.robotStateIndicator.Image = ((System.Drawing.Image)(resources.GetObject("robotStateIndicator.Image")));
+            this.robotStateIndicator.Location = new System.Drawing.Point(780, 205);
+            this.robotStateIndicator.Name = "robotStateIndicator";
+            this.robotStateIndicator.Size = new System.Drawing.Size(38, 38);
+            this.robotStateIndicator.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.robotStateIndicator.TabIndex = 78;
+            this.robotStateIndicator.TabStop = false;
             // 
             // formScan2D
             // 
@@ -811,6 +814,7 @@ namespace SDK_Example
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(50)))), ((int)(((byte)(63)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1170, 801);
+            this.Controls.Add(this.robotStateIndicator);
             this.Controls.Add(this.protoUCtrlPMDynamic);
             this.Controls.Add(this.protoUCtrlPMGalGain);
             this.Controls.Add(this.protoUCtrlPMHighVoltage);
@@ -841,7 +845,6 @@ namespace SDK_Example
             this.Controls.Add(this.labelRobotSpeed);
             this.Controls.Add(this.labelFrequency);
             this.Controls.Add(this.labelDepth);
-            this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.labelTgc3);
             this.Controls.Add(this.labelTgc2);
             this.Controls.Add(this.labelPosition);
@@ -875,7 +878,6 @@ namespace SDK_Example
             ((System.ComponentModel.ISupportInitialize)(this.tBarTgc2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBarTgc3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarRobotSpeed)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).EndInit();
@@ -887,6 +889,7 @@ namespace SDK_Example
             ((System.ComponentModel.ISupportInitialize)(this.buttonPrevious)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonCine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonNext)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.robotStateIndicator)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -923,7 +926,6 @@ namespace SDK_Example
         private System.Windows.Forms.TrackBar trackBarRobotSpeed;
         public System.Windows.Forms.Button buttonProbe2; //not used
         private System.Windows.Forms.Label labelPosition;
-        private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.TextBox textRadius;
         private System.Windows.Forms.Label labelTgc;
         private System.Windows.Forms.Label labelImaging;
@@ -958,6 +960,7 @@ namespace SDK_Example
         private UserControlPlusMinus protoUCtrlPMDynamic;
         private ToolStripMenuItem referenceImagesToolStripMenuItem;
         private ToolStripMenuItem ankleToolStripMenuItem;
+        private PictureBox robotStateIndicator;
     }
 }
 

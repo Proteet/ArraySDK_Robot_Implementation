@@ -773,9 +773,9 @@ namespace SDK_Example
             protoUCtrlPMDepth.Init("Depth", DepthPlus, DepthMinus);
             protoUCtrlPMFrequency.Init("Freq", FreqPlus, FreqMinus);
             protoUCtrlPMFocus.Init("Focus", FocusPlus, FocusMinus);
-            protoUCtrlPMHighVoltage.Init("HV", HighPlus, HighMinus);
-            protoUCtrlPMGalGain.Init("Main", MainGainPlus, MainGainMinus);
-            protoUCtrlPMDynamic.Init("Dyn", DynamicPlus, DynamicMinus);
+            protoUCtrlPMHighVoltage.Init("Volt", HighPlus, HighMinus);
+            protoUCtrlPMGalGain.Init("Main Gain", MainGainPlus, MainGainMinus);
+            protoUCtrlPMDynamic.Init("Dyn Gain", DynamicPlus, DynamicMinus);
             // uctrlPMSteering.Init("Steering", SteeringPlus, SteeringMinus);
             // uctrlImagesPer.Init("ImagesPer", ImagPlus, ImagMinus);
 
@@ -3706,44 +3706,33 @@ namespace SDK_Example
             {
                 case RobotStateEnum.disConnected:
                     buttonRobotScan.Enabled = false;
-                    buttonRobotScan.Text = "No Robot";
-                    buttonRobotScan.BackColor = Color.DeepSkyBlue;
                     break;
                 case RobotStateEnum.unInitialized:
-                    buttonRobotScan.Text = "Initializing...";
-                    buttonRobotScan.Enabled = false;
-                    buttonRobotScan.BackColor = Color.DeepSkyBlue;
                     break;
                 case RobotStateEnum.readyToScan:
                     buttonRobotScan.Enabled = true;
-                    buttonRobotScan.Text = "Robot Scan";
-                    buttonRobotScan.BackColor = Color.LawnGreen;
+                    robotStateIndicator.Load("Images/readyToScan.png");
                     break;
                 case RobotStateEnum.homing:
                     buttonRobotScan.Enabled = true;
-                    buttonRobotScan.Text = "Abort Homing";
-                    buttonRobotScan.BackColor = Color.Yellow;
+                    robotStateIndicator.Load("Images/homing.png");
                     break;
                 case RobotStateEnum.scanning:
                     buttonRobotScan.Enabled = true;
-                    buttonRobotScan.Text = "Abort Scan";
-                    buttonRobotScan.BackColor = Color.Blue;
+                    robotStateIndicator.Load("Images/scanning.png");
                     break;
                 case RobotStateEnum.endOfTravel:
                     buttonRobotScan.Enabled = true;
-                    buttonRobotScan.Text = "Rewind";
-                    buttonRobotScan.BackColor = Color.Orange;
+                    robotStateIndicator.Load("Images/endOfTravel.png");
                     break;
                 case RobotStateEnum.emergencyStopped:
                     buttonRobotScan.Enabled = true;
-                    buttonRobotScan.Text = "Rewind";
-                    buttonRobotScan.BackColor = Color.Red;
+                    robotStateIndicator.Load("Images/emergencyStopped.png");
                     break;
                 case RobotStateEnum.rewinding:
                     StartScan();
                     buttonRobotScan.Enabled = true;
-                    buttonRobotScan.Text = "Abort Rewind";
-                    buttonRobotScan.BackColor = Color.Gray;
+                    robotStateIndicator.Load("Images/rewinding.png");
                     break;
                 default:
                     break;
@@ -4984,5 +4973,6 @@ namespace SDK_Example
             formFoot referenceFoot = new formFoot();
             referenceFoot.Show();
         }
+
     }
 }///namespace SDK_EXAMPLE
