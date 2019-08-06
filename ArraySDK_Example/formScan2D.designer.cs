@@ -115,6 +115,7 @@ namespace SDK_Example
             // labelImaging
             // 
             this.labelImaging.AutoSize = true;
+            this.labelImaging.BackColor = System.Drawing.Color.Transparent;
             this.labelImaging.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelImaging.ForeColor = System.Drawing.Color.White;
             this.labelImaging.Location = new System.Drawing.Point(234, 596);
@@ -133,11 +134,10 @@ namespace SDK_Example
             this.labelTgc.ForeColor = System.Drawing.Color.White;
             this.labelTgc.Location = new System.Drawing.Point(765, 596);
             this.labelTgc.Name = "labelTgc";
-            this.labelTgc.Size = new System.Drawing.Size(39, 16);
+            this.labelTgc.Size = new System.Drawing.Size(208, 16);
             this.labelTgc.TabIndex = 54;
-            this.labelTgc.Text = "TGC";
+            this.labelTgc.Text = "TIME GAIN COMPENSATION";
             this.labelTgc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelTgc.Click += new System.EventHandler(this.LabelTgc_Click);
             // 
             // textRadius
             // 
@@ -163,7 +163,6 @@ namespace SDK_Example
             this.labelDepth.TabIndex = 26;
             this.labelDepth.Text = "Depth";
             this.labelDepth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelDepth.Click += new System.EventHandler(this.LabelDepth_Click);
             // 
             // labelFrequency
             // 
@@ -201,7 +200,6 @@ namespace SDK_Example
             this.labelMainGain.TabIndex = 32;
             this.labelMainGain.Text = "MainGain";
             this.labelMainGain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelMainGain.Click += new System.EventHandler(this.LabelMainGain_Click);
             // 
             // labelHighVolt
             // 
@@ -215,7 +213,6 @@ namespace SDK_Example
             this.labelHighVolt.TabIndex = 34;
             this.labelHighVolt.Text = "High Volt";
             this.labelHighVolt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelHighVolt.Click += new System.EventHandler(this.LabelHighVolt_Click);
             // 
             // trackBarCine
             // 
@@ -236,7 +233,7 @@ namespace SDK_Example
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel,
             this.toolStripStatusLabelFpga});
-            this.statusStrip.Location = new System.Drawing.Point(0, 779);
+            this.statusStrip.Location = new System.Drawing.Point(0, 784);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(1170, 22);
             this.statusStrip.TabIndex = 35;
@@ -290,12 +287,11 @@ namespace SDK_Example
             this.labelTgc3.BackColor = System.Drawing.Color.Transparent;
             this.labelTgc3.Font = new System.Drawing.Font("Lato", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTgc3.ForeColor = System.Drawing.Color.White;
-            this.labelTgc3.Location = new System.Drawing.Point(940, 712);
+            this.labelTgc3.Location = new System.Drawing.Point(1109, 712);
             this.labelTgc3.Name = "labelTgc3";
             this.labelTgc3.Size = new System.Drawing.Size(21, 13);
             this.labelTgc3.TabIndex = 56;
             this.labelTgc3.Text = "Far";
-            this.labelTgc3.Click += new System.EventHandler(this.LabelTgc3_Click);
             // 
             // labelTgc2
             // 
@@ -303,7 +299,7 @@ namespace SDK_Example
             this.labelTgc2.BackColor = System.Drawing.Color.Transparent;
             this.labelTgc2.Font = new System.Drawing.Font("Lato", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTgc2.ForeColor = System.Drawing.Color.White;
-            this.labelTgc2.Location = new System.Drawing.Point(932, 657);
+            this.labelTgc2.Location = new System.Drawing.Point(1094, 657);
             this.labelTgc2.Name = "labelTgc2";
             this.labelTgc2.Size = new System.Drawing.Size(41, 13);
             this.labelTgc2.TabIndex = 55;
@@ -315,7 +311,7 @@ namespace SDK_Example
             this.labelTgc1.BackColor = System.Drawing.Color.Transparent;
             this.labelTgc1.Font = new System.Drawing.Font("Lato", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTgc1.ForeColor = System.Drawing.Color.White;
-            this.labelTgc1.Location = new System.Drawing.Point(936, 603);
+            this.labelTgc1.Location = new System.Drawing.Point(1102, 603);
             this.labelTgc1.Name = "labelTgc1";
             this.labelTgc1.Size = new System.Drawing.Size(30, 13);
             this.labelTgc1.TabIndex = 54;
@@ -325,7 +321,7 @@ namespace SDK_Example
             // tBarTgc1
             // 
             this.tBarTgc1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(50)))), ((int)(((byte)(63)))));
-            this.tBarTgc1.Location = new System.Drawing.Point(768, 619);
+            this.tBarTgc1.Location = new System.Drawing.Point(767, 619);
             this.tBarTgc1.Maximum = 15;
             this.tBarTgc1.Minimum = -15;
             this.tBarTgc1.Name = "tBarTgc1";
@@ -337,7 +333,7 @@ namespace SDK_Example
             // tBarTgc2
             // 
             this.tBarTgc2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(50)))), ((int)(((byte)(63)))));
-            this.tBarTgc2.Location = new System.Drawing.Point(768, 673);
+            this.tBarTgc2.Location = new System.Drawing.Point(767, 673);
             this.tBarTgc2.Maximum = 15;
             this.tBarTgc2.Minimum = -15;
             this.tBarTgc2.Name = "tBarTgc2";
@@ -349,7 +345,7 @@ namespace SDK_Example
             // tBarTgc3
             // 
             this.tBarTgc3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(50)))), ((int)(((byte)(63)))));
-            this.tBarTgc3.Location = new System.Drawing.Point(767, 728);
+            this.tBarTgc3.Location = new System.Drawing.Point(766, 728);
             this.tBarTgc3.Maximum = 15;
             this.tBarTgc3.Minimum = -15;
             this.tBarTgc3.Name = "tBarTgc3";
@@ -383,7 +379,6 @@ namespace SDK_Example
             this.labelFocus.TabIndex = 46;
             this.labelFocus.Text = "Focus";
             this.labelFocus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelFocus.Click += new System.EventHandler(this.LabelFocus_Click);
             // 
             // butCfmMode
             // 
@@ -813,7 +808,7 @@ namespace SDK_Example
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(50)))), ((int)(((byte)(63)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1170, 801);
+            this.ClientSize = new System.Drawing.Size(1170, 806);
             this.Controls.Add(this.robotStateIndicator);
             this.Controls.Add(this.protoUCtrlPMDynamic);
             this.Controls.Add(this.protoUCtrlPMGalGain);
@@ -859,6 +854,7 @@ namespace SDK_Example
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.uctrlDepth);
             this.Controls.Add(this.uctrlScan);
+            this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.DimGray;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;

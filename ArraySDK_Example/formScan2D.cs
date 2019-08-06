@@ -419,6 +419,7 @@ namespace SDK_Example
                 RebuildAll();
             } catch (ArgumentOutOfRangeException error) {
             }
+
         }
 
 
@@ -1632,7 +1633,7 @@ namespace SDK_Example
             Bitmap curBmp = new Bitmap(uctrlScan.Width, uctrlScan.Height / factor);
             //Create a temporary Graphics object from the bitmap
             Graphics gCur = Graphics.FromImage(curBmp);
-            gCur.Clear(this.BackColor);
+            // gCur.Clear(this.BackColor);
             //RF
             Pen penCurrent = new Pen(Color.Red);
             gCur.DrawCurve(penCurrent, aptRFdata);
@@ -2328,7 +2329,7 @@ namespace SDK_Example
 
             }
             Graphics g = uctrlScan.CreateGraphics();
-            g.Clear(this.BackColor);
+            // g.Clear(this.BackColor);
             g.Dispose();
 
         }
@@ -2885,7 +2886,7 @@ namespace SDK_Example
         void DoClear()
         {
             Graphics g = CreateGraphics();
-            g.Clear(this.BackColor);
+            // g.Clear(this.BackColor);
             g.Dispose();
         }
 
@@ -4395,41 +4396,6 @@ namespace SDK_Example
             
         } // end partial class formScan2D : Form
         #endregion
-
-        private void LabelHighVolt_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UctrlPMHighVoltage_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void LabelMainGain_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LabelDepth_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LabelFocus_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LabelTgc3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LabelTgc_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void TextRadius_MouseClick(object sender, MouseEventArgs e)
         {
