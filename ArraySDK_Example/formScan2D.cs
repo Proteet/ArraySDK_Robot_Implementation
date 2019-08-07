@@ -28,6 +28,7 @@ namespace SDK_Example
     /// </summary>
     public partial class formScan2D : Form
     {
+        #region ATTRIBUTES
         /// <summary>
         /// TO BE DONE
         /// Image extension Should be adapted to the new array probe since it's very dark as is.
@@ -371,7 +372,8 @@ namespace SDK_Example
 
         // Checks if the textRadius textbox has been clicked
         bool hasBeenClicked = false;
-        
+        #endregion
+
         #region FORMSCAN
         public formScan2D()
         {
@@ -449,6 +451,9 @@ namespace SDK_Example
             }
         }
 
+        /// <summary>
+        /// Enables idle mode
+        /// </summary>
         void EnableIdle()
         {
             /*
@@ -461,6 +466,9 @@ namespace SDK_Example
             bIdle = true;
         }
 
+        /// <summary>
+        /// Disables idle mode
+        /// </summary>
         void DisableIdle()
         {
             /*
@@ -473,6 +481,9 @@ namespace SDK_Example
             bIdle = false;
         }
 
+        /// <summary>
+        /// Sets up the probe that has been connected to the computer. 
+        /// </summary>
         void SetSelectedProbe()
         {
             // buttonProbe1.Enabled = buttonProbe2.Enabled = butRFMode.Enabled = true;
@@ -637,9 +648,8 @@ namespace SDK_Example
             }
         }
 
-
         /// <summary>
-        /// to update buttons 
+        /// Updates all the buttons.
         /// </summary>
         void UpdateButtons()
         {
@@ -659,11 +669,10 @@ namespace SDK_Example
                 butCfmMode.BackColor = Color.LightSteelBlue;
                 protoUCtrlPMFrequency.Init("Freq", FreqPlus, FreqMinus);
             }
-
-
         }
+
         /// <summary>
-        /// to update all the labels
+        /// To update all the labels
         /// </summary>
         private void UpdateLabels()
         {
@@ -708,11 +717,10 @@ namespace SDK_Example
 
             // labelSteering.Text = strSteering + iSteering.ToString();
             //UScanGuide: need to update imagesper and position
-
         }
 
         /// <summary>
-        /// to reset all the labels, no value displayed, just the title
+        /// To reset all the labels, no value displayed, just the title
         /// </summary>
         private void ResetLabels()
         {
@@ -730,6 +738,9 @@ namespace SDK_Example
 
         }
 
+        /// <summary>
+        /// Updates the Track bars
+        /// </summary>
         void UpdateTrackBar()
         {
             if (bSoftRFData)
@@ -764,6 +775,7 @@ namespace SDK_Example
             }
 
         }
+       
         /// <summary>
         /// To initialize the PlusMinus controls
         /// </summary>
@@ -827,6 +839,7 @@ namespace SDK_Example
                 Scan2D.StopReadScan();
 
         }
+
         #endregion
 
         #region SCAN
@@ -897,7 +910,6 @@ namespace SDK_Example
             }
         }
 
-
         /// <summary>
         /// To recalculate the ScanConverter when a parameter has changed, ex: Depth, Zoom
         /// </summary>
@@ -944,6 +956,7 @@ namespace SDK_Example
             if (bRestart == true)
                 StartThreadScan();// Start Scan
         }
+
         /// <summary>
         /// to Start/Stop the Acquisition and scan
         /// </summary>
@@ -966,8 +979,9 @@ namespace SDK_Example
                 StartScan();
             }
         }
+
         /// <summary>
-        /// call to Start
+        /// Call to start scan
         /// </summary>
         void StartScan()
         {
@@ -993,7 +1007,7 @@ namespace SDK_Example
         }
 
         /// <summary>
-        /// call to stop
+        /// Call to stop scan
         /// </summary>
         void StopScan()
         {
@@ -1082,9 +1096,8 @@ namespace SDK_Example
                 Scan2D.StopReadScan();// stop scan
         }
 
-
-
         #endregion
+
         #region SOFTWARE TGC AND CFM GAIN
         void UpdateCfmGain()
         {
@@ -1101,6 +1114,7 @@ namespace SDK_Example
             if (bRestart == true)
                 StartThreadScan();// Start Scan
         }
+
         private void MainGainPlus()
         {
             if (bSoftCFMData)
@@ -1121,6 +1135,7 @@ namespace SDK_Example
                 TgcCurve();
             }
         }
+
         private void MainGainMinus()
         {
             if (bSoftCFMData)
@@ -1140,6 +1155,10 @@ namespace SDK_Example
                 TgcCurve();
             }
         }
+
+        /// <summary>
+        /// Defines the Time Gain Compensation.
+        /// </summary>
         private void TgcCurve()
         {
             afltTgcInc[0] = ((float)(asbytTgcValue[1] - asbytTgcValue[0]) / aiTgcSeg[0]) * fltTgcScaling;
@@ -1171,6 +1190,10 @@ namespace SDK_Example
 
         }
 
+        /// <summary>
+        /// Applies Time Gain Compensation for the probe.
+        /// </summary>
+        /// <param name="arrayByte"></param>
         private void ApplyTgc(byte[,] arrayByte)
         {
             int iMax = (int)uiNbOfLines;
@@ -1191,6 +1214,7 @@ namespace SDK_Example
         }
 
         #endregion
+
         #region DYNAMIC
         private void DynamicMinus()
         {
@@ -1337,6 +1361,7 @@ namespace SDK_Example
 
             UpdateLabels();
         }
+
         #endregion
         #region IMAGESPER
         /// <summary>
@@ -1443,6 +1468,7 @@ namespace SDK_Example
 
         /// <summary>
         /// NewImageHandler (First Version)
+        /// Only takes a picture when interson array says that a new scan is ready (too slow).
         /// </summary>
         /// <param name="e"></param>
         /*
@@ -1462,6 +1488,9 @@ namespace SDK_Example
         }
          */
 
+        /// <summary>
+        /// Starts a new thread when a new thread is available
+        /// </summary>
         void ImageRefresh(Object sender, EventArgs e)
         {
             if (bIsBusy == false)
@@ -1472,8 +1501,11 @@ namespace SDK_Example
             }
         }
 
-
-
+        /// <summary>
+        /// Capturing the current image.
+        /// Calls DoRefresh to draw the graphics.
+        /// Calls AddToCine to save the images into ByteArrayList
+        /// </summary>
         void StartRefresh()
         {
             curImageTime = DateTime.Now;
@@ -1520,6 +1552,7 @@ namespace SDK_Example
 
                 }
 
+                // Only refresh every 16 ticks while scanning to save processing
                 if (RobotState != RobotStateEnum.scanning || curStepPos % 16 == 0) {
                     DoRefresh();
                 }
@@ -1530,9 +1563,9 @@ namespace SDK_Example
 
         }
 
-
         /// <summary>
-        /// to refresh uctrlscan, container of the US image
+        /// To refresh uctrlscan, container of the US image.
+        /// Drawing the graphics.
         /// </summary>
         void DoRefresh()
         {
@@ -1654,6 +1687,7 @@ namespace SDK_Example
 
 
         #endregion
+
         #region DISPLAY
         /// <summary>
         ///  Enables accessing a form from another thread
@@ -1725,7 +1759,7 @@ namespace SDK_Example
         }
 
         /// <summary>
-        /// To display GrayScale
+        /// To display GrayScale.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1755,6 +1789,7 @@ namespace SDK_Example
 
 
         #endregion
+
         #region ZOOM
         /// //////////
         /// To be used with ZoomBoxClass (ToolsLibrary.dll)
@@ -1883,10 +1918,12 @@ namespace SDK_Example
             }
         }
         #endregion
+
         #region CINE
         //TODO: Mark images by their position or angle
         /// <summary>
         /// When scanning, to Add the last Raw data to the List( i.e. cineloop)
+        /// Adds all of the images taken during the scan to ByteArrayList
         /// </summary>
         /// <param name="arrayByte"></param>
         void AddToCine(byte[,] arrayByte)
@@ -1908,12 +1945,9 @@ namespace SDK_Example
                         cineStepCount[i - 1] = cineStepCount[i];
                     }
                 }
-                //Rita - if its the scan step interval...
-                //if(curStepPos % 10 == 0){
                 ByteArrayList.Add(bytRawCine);
                 cineImageTimes[ByteArrayList.Count - 1] = curImageTime;
                 cineStepCount[ByteArrayList.Count - 1] = curStepPos;
-                //}   
             }
         }
 
@@ -1979,32 +2013,8 @@ namespace SDK_Example
             }
         }
 
-
         /// <summary>
-        /// Command to start/stop the cineloop
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void buttonCine_Click(object sender, EventArgs e)
-        {
-            if (Scan2D.ScanOn == true)
-                return;
-
-            if (bCineOn == false)
-            {
-                ShowDisplayControls();
-                StartCineloop();
-                MyMarshalToForm(ControlEnum.buttonCine, "Pause");
-            }
-            else
-            {
-                StopCineloop();
-                MyMarshalToForm(ControlEnum.buttonCine, "Play");
-            }
-        }
-
-        /// <summary>
-        /// to Start the cineloop
+        /// To start the cineloop.
         /// </summary>
         private void StartCineloop()
         {
@@ -2021,7 +2031,7 @@ namespace SDK_Example
         }
 
         /// <summary>
-        /// to stop the cineloop
+        /// To stop the cineloop.
         /// </summary>
         private void StopCineloop()
         {
@@ -2035,7 +2045,7 @@ namespace SDK_Example
         }
 
         /// <summary>
-        /// to display the slide "iCineCounter" of the cineloop, 
+        /// Displays the slide "iCineCounter" of the cineloop.
         /// </summary>
         private void CineloopSlide()
         {
@@ -2061,6 +2071,10 @@ namespace SDK_Example
             DrawOut(iCineCounter);
         }
 
+        /// <summary>
+        /// Draws the graphics for playing back the cine. 
+        /// </summary>
+        /// <param name="slide"></param>
         void DrawOut(int slide)
         {
             if (bmpOut == null) // So Idle mode, so use iIdleIndexSC
@@ -2156,7 +2170,7 @@ namespace SDK_Example
         }
 
         /// <summary>
-        /// to play the cineloop
+        /// Plays the cineloop.
         /// </summary>
         /// <param name="FrameRateMilliSeconds"> frame Rate of the probe</param>
         void CinePlay(object FrameRateMilliSeconds)
@@ -2187,35 +2201,19 @@ namespace SDK_Example
             iCineCounter++;
             CineloopSlide();
         }
-        /// Outside of the thread of the cineloop, to display the previous image
+
+        /// <summary>
+        /// Outside of the thread of the cineloop, to display the previous image.
+        /// </summary>
         void PreviousImage()
         {
             StopCineloop();
             iCineCounter--;
             CineloopSlide();
         }
-        /// <summary>
-        /// Command to NextImage
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void buttonNext_Click(object sender, EventArgs e)
-        {
-            NextImage();
-            protoTrackBarCine.Value = iCineCounter;
-        }
-        /// <summary>
-        /// Command to previous image
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void buttonPrevious_Click(object sender, EventArgs e)
-        {
-            PreviousImage();
-            protoTrackBarCine.Value = iCineCounter;
-        }
-        
+              
         #endregion
+
         #region INTERFACE
         /// <summary>
         /// </summary>
@@ -2248,7 +2246,6 @@ namespace SDK_Example
             UpdateButtons();
         }
 
-
         private void butCfmMode_Click(object sender, EventArgs e)
         {
 
@@ -2274,7 +2271,10 @@ namespace SDK_Example
 
         }
 
-
+        /// <summary>
+        /// Sets UI into CFM mode.
+        /// </summary>
+        /// <param name="bcfm"></param>
         void SetUItoCFM(bool bcfm)
         {
             if (bcfm == true)
@@ -2298,51 +2298,7 @@ namespace SDK_Example
         }
 
         /// <summary>
-        /// Command to save image to a file
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void buttonSave_Click(object sender, EventArgs e)
-        {
-            bool bRestart = false;
-            if (Scan2D.ScanOn == true)
-            {
-                StopThreadScan();
-                bRestart = true;
-            }
-
-            if (bCineOn == true)
-                StopCineloop();
-
-
-            SaveFileDialog fileDialog = new SaveFileDialog();
-            fileDialog.Filter = "BMP Files(*.bmp)|*.bmp|Jpeg Files(*.jpg)|*.jpg|Raw Files(*.raw)|*.raw";
-
-            if (fileDialog.ShowDialog() == DialogResult.OK)
-            {
-                if (fileDialog.FileName.EndsWith("raw"))
-                {
-                    DoSaveRaw(fileDialog.FileName);
-                }
-                else
-                {
-                    Bitmap bmpSaveScan = DoSaveScan();
-                    if (fileDialog.FileName.EndsWith("jpg"))
-                        bmpSaveScan.Save(fileDialog.FileName, ImageFormat.Jpeg);
-                    else if (fileDialog.FileName.EndsWith("bmp"))
-                        bmpSaveScan.Save(fileDialog.FileName, ImageFormat.Bmp);
-                    else
-                        bmpSaveScan.Save(fileDialog.FileName);
-                }
-            }
-
-            if (bRestart == true)
-                StartThreadScan();
-        }
-
-
-        /// <summary>
-        /// to get the bmp to be saved
+        /// Returns a bitmap to save.
         /// </summary>
         /// <returns></returns>
         Bitmap DoSaveScan()
@@ -2369,7 +2325,6 @@ namespace SDK_Example
             g.Dispose();
             return bmpSave;
         }
-
 
         /// <summary>
         /// Save the raw data: 
@@ -2537,6 +2492,11 @@ namespace SDK_Example
             }
         }
 
+        /// <summary>
+        /// Write a binary file with the values from Depth, Frequency, etc
+        /// </summary>
+        /// <param name="bwrtFile"></param>
+        /// <param name="writer"></param>
         void WriteData(BinaryWriter bwrtFile, FileStream writer)
         {
             bwrtFile.Write(HWControls.GetProbeID());
@@ -2565,104 +2525,10 @@ namespace SDK_Example
 
         }
 
-
-
         /// <summary>
-        /// Command to load a image from a file
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void buttonLoad_Click(object sender, EventArgs e)
-        {
-            if (Scan2D.ScanOn == true)
-            {
-                StopThreadScan();
-                MyMarshalToForm(ControlEnum.buttonScan, "Scan");
-                bInitDone = false;
-
-            }
-
-            HideDisplayControls();
-
-            OpenFileDialog fileDialog = new OpenFileDialog();
-            fileDialog.Filter = "BMP Files(*.bmp)|*.bmp|Jpeg Files(*.jpg)|*.jpg|Raw Files(*.raw)|*.raw";
-
-            if (fileDialog.ShowDialog() == DialogResult.OK)
-            {
-                if (fileDialog.FileName.EndsWith("raw"))
-                {
-                    DoLoadRaw(fileDialog.FileName);
-                    UpdateCineloopGroup(false);
-                    Bitmap bmpImage = new Bitmap(aiWidth[iIdleIndexSC], aiHeigth[iIdleIndexSC]);
-                    IntersonArray.Imaging.ScanConverter.ScanConverterError error = ScanConv.IdleInitScanConverter(iIdleDepth, aiWidth[iIdleIndexSC], aiHeigth[iIdleIndexSC], shIdleId, iIdleSteering, iIdleDepthCfmBox, bIdleDoubler, bIdleCompound, iIdleCompoundAngle, bSoftCFMData, ref ImageBuilding);
-
-                    if ((error == IntersonArray.Imaging.ScanConverter.ScanConverterError.OVER_LIMITS) ||
-                        (error == IntersonArray.Imaging.ScanConverter.ScanConverterError.UNDER_LIMITS) ||
-                        (error == IntersonArray.Imaging.ScanConverter.ScanConverterError.PROBE_NOT_INITIALIZED) ||
-                        (error == IntersonArray.Imaging.ScanConverter.ScanConverterError.UNKNOWN_PROBE) ||
-                        (error == IntersonArray.Imaging.ScanConverter.ScanConverterError.WRONG_FORMAT) ||
-                        (error == IntersonArray.Imaging.ScanConverter.ScanConverterError.ERROR)
-                        )
-                    {
-                        FormMessage formMessage = new FormMessage();
-                        formMessage.ShowMessage((object)MessageClass.ScanConverterMessage);
-                        formMessage.Dispose();
-                    }
-                    else if (bSoftRFData)
-                    {
-                        uctrlScan.Visible = true;
-                        BuildRFData(aushRawRF, ifactorRF);
-                        DoRefresh();
-                    }
-                    else
-                    {
-
-                        if (bSoftCFMData == false)
-                            ImageBuilding.Build2D(ref bmpImage, bytRawImage, bytRawImagePrevious, ScanConv);// build 
-                        else
-                        {
-                            ImageBuilding.Build2D(ref bmpImage, bytRawImage, abytRawCFM, ScanConv);
-                            ImageBuilding.DrawCFMBox(ref bmpImage, ScanConv, iIdleDepthCfmBox, colBox);
-                        }
-
-                        bmpLoad = new Bitmap(aiWidth[iIdleIndexSC] + uctrlDepth.Width, aiHeigth[iIdleIndexSC]);
-                        uctrlDepth.BuildDrawScale(null, iDepth, this.ScanConv, bIsUpDown, fltZoomFactor, iOffsetScale);
-                        uctrlDepth.DrawToBitmap(bmpLoad, new Rectangle(0, 0, bmpLoad.Width, bmpLoad.Height));
-                        uctrlDepth.Visible = true;
-                        bIdle = true;
-                        ResizeForm(iIdleIndexSC);
-
-                        Graphics g = Graphics.FromImage(bmpLoad);
-                        g.DrawImage(bmpImage, new Point(uctrlDepth.Width, iOffsetScale));
-                        g.Dispose();
-                        DoRefresh();
-
-                    }
-                    bmpImage.Dispose();
-
-                }
-                else
-                {
-                    bmpLoad = new Bitmap(aiWidth[iIndexSC] + uctrlDepth.Width, aiHeigth[iIndexSC]);
-                    bmpLoad = (Bitmap)Bitmap.FromFile(fileDialog.FileName, false);
-                }
-                ResetLabels();
-                labelDepth.Text = strDepth + iIdleDepth.ToString() + strMM;
-                uctrlDepth.Visible = true;
-                labelFileName.Text = fileDialog.FileName;
-                DoRefresh();
-
-            }
-        }
-
-
-
-        /// <summary>
-        /// Load the raw data
+        /// Load the raw data.
         /// </summary>
         /// <param name="fileName"></param>
-
-
         void DoLoadRaw(string fileName)
         {
             BinaryReader brdFile = null;
@@ -2791,6 +2657,11 @@ namespace SDK_Example
             }
         }
 
+        /// <summary>
+        /// Reads data.txt file so redraw the depth scale
+        /// </summary>
+        /// <param name="brdFile"></param>
+        /// <param name="reader"></param>
         void ReadData(BinaryReader brdFile, FileStream reader)
         {
             shIdleId = brdFile.ReadInt16();
@@ -2824,6 +2695,9 @@ namespace SDK_Example
 
         }
 
+        /// <summary>
+        /// Displays the controls when not in idle mode
+        /// </summary>
         void ShowDisplayControls()
         {
             uctrlDepth.Visible = true;
@@ -2837,6 +2711,9 @@ namespace SDK_Example
             DoClear();
         }
 
+        /// <summary>
+        /// Hides display controls in idle mode
+        /// </summary>
         void HideDisplayControls()
         {
             uctrlDepth.Visible = false;
@@ -2846,14 +2723,20 @@ namespace SDK_Example
             DoClear();
         }
 
+        /// <summary>
+        /// Sets the graphics object to a new instance
+        /// </summary>
         void DoClear()
         {
             Graphics g = CreateGraphics();
-            // g.Clear(this.BackColor);
             g.Dispose();
         }
 
-
+        /// <summary>
+        /// Draws the Depth scale.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uctrlDepth_Paint(object sender, PaintEventArgs e)
         {
             uctrlDepth.BuildDrawScale(e.Graphics, iDepth, this.ScanConv, bIsUpDown, fltZoomFactor, iOffsetScale);
@@ -2869,18 +2752,11 @@ namespace SDK_Example
             buttonScan_Click((object)HwCtrl, e);
         }
 
-        private void cboxSCSize_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Scan2D.ScanOn == true)
-            {
-                StopScan();
-                bInitDone = false;
-            }
-            // iIndexSC = cboxSCSize.SelectedIndex;
-            ResizeForm(iIndexSC);
-        }
-
-        // Currently resize form doesn't change size of the application, keep it this way for now
+        /// <summary>
+        /// Resizes the form.
+        /// However, currently set up so that the form can't resize.
+        /// </summary>
+        /// <param name="i"></param>
         void ResizeForm(int i)
         {
             //Added boxes for UScanGuide here
@@ -2906,6 +2782,7 @@ namespace SDK_Example
         }
 
         #endregion
+
         #region Probe De/Connect
         /// <summary>
         /// Watch the USB connections:
@@ -2949,7 +2826,11 @@ namespace SDK_Example
             }
         }
 
-
+        /// <summary>
+        /// Initializes/clears HWControls
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void WatchConnect(Object sender, EventArgs e)
         {
             HWControls MyHwControls = new HWControls();
@@ -2969,6 +2850,10 @@ namespace SDK_Example
                 SwitchProbe(1);
         }
 
+        /// <summary>
+        /// Switches from one probe to another if there are multiple probes attached 
+        /// </summary>
+        /// <param name="index"></param>
         void SwitchProbe(int index)
         {
             HWControls localHwControls = new HWControls();
@@ -2978,15 +2863,19 @@ namespace SDK_Example
             SetSelectedProbe();
             DisableIdle();
         }
+
+        /// <summary>
+        /// Does nothing?
+        /// </summary>
         void UpdateProbesButtons()
         {
         }
         #endregion
+
         #region ADD/REMOVE DEVICE
         /// <summary>
         /// Another way to check the connections. this is the one used
         /// </summary>
-
         private ManagementEventWatcher _deviceRemovedWatcher;
         private ManagementEventWatcher _deviceArrivedWatcher;
         static bool bIsIntersonProbeDetected = false;
@@ -2995,7 +2884,6 @@ namespace SDK_Example
         ///  <summary>
         ///  Add a handler to detect arrival of devices.
         ///  </summary>
-
         void AddDeviceArrivedHandler()
         {
             const Int32 pollingIntervalSeconds = 1;
@@ -3022,11 +2910,9 @@ namespace SDK_Example
         }
 
 
-
         ///  <summary>
         ///  Add a handler to detect removal of devices.
         ///  </summary>
-
         void AddDeviceRemovedHandler()
         {
             const Int32 pollingIntervalSeconds = 1;
@@ -3050,11 +2936,11 @@ namespace SDK_Example
                     _deviceRemovedWatcher.Stop();
             }
         }
+
         ///  <summary>
         ///  Called on arrival of any device.
         ///  Calls a routine that searches to see if the desired device is present.
         ///  </summary>
-
         private void DeviceAdded(object sender, EventArrivedEventArgs e)
         {
             try
@@ -3080,7 +2966,6 @@ namespace SDK_Example
         ///  <summary>
         ///  Add handlers to detect device arrival and removal.
         ///  </summary>
-
         internal void DeviceNotificationsStart()
         {
             AddDeviceArrivedHandler();
@@ -3090,7 +2975,6 @@ namespace SDK_Example
         ///  <summary>
         ///  Stop receiving notifications about device arrival and removal
         ///  </summary>
-
         internal void DeviceNotificationsStop()
         {
             try
@@ -3131,10 +3015,13 @@ namespace SDK_Example
             {
                 Debug.WriteLine("DeviceRemoved error");
                 //                DisplayException(Name, ex);
-                throw;
+                 throw;
             }
         }
 
+        /// <summary>
+        /// Checks if the probe is currently connected to the computer
+        /// </summary>
         void CheckProbes()
         {
             HWControls localHwControls = new HWControls();
@@ -3214,6 +3101,9 @@ namespace SDK_Example
             }
         }
 
+        /// <summary>
+        /// Calls getComPortList to generate a list of comports
+        /// </summary>
         void portTest()
         {
             if (!getComPortList())
@@ -3226,10 +3116,14 @@ namespace SDK_Example
             //    openComPort(port);
             //}
             return;
-
-
         }
 
+        /// <summary>
+        /// Watches for when the robot connects
+        /// When the robot does connect, it enables the robot listener and disables the robot connect timer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void WatchRobotConnect(Object sender, EventArgs e)
         {
 
@@ -3276,7 +3170,10 @@ namespace SDK_Example
             }
         }
 
-        // copy of robotListenerTimer_Tick but just accepts responses to the initial query
+        /// <summary>
+        /// Copy of robotListenerTimer_Tick but just accepts responses to the initial query
+        /// </summary>
+        /// <returns></returns>
         Boolean checkForQueryResponse()
         {
             Debug.WriteLine("\r\nQuerying");
@@ -3323,19 +3220,25 @@ namespace SDK_Example
             return true;
         }
 
-        // getComPortList
-        // hard-coding of 4, 5 and 7 as preferred comPorts
-        // workaround to prevent getting stuck on a virtual comPort
-        // this shouldn't be necessary now that we are querying the comport
-        // before accepting it as the correct on
-        // But no harm in keeping it in?
+        /// <summary>
+        /// getComPortList
+        /// hard-coding of 4, 5 and 7 as preferred comPorts
+        /// workaround to prevent getting stuck on a virtual comPort
+        /// this shouldn't be necessary now that we are querying the comport
+        /// before accepting it as the correct on
+        /// But no harm in keeping it in?
+        /// </summary>
         static string[] preferredNames = {"COM1", "COM2", "COM3", "COM4", "COM5", "COM7", "COM8", "COM9", "COM10", "COM11", "COM12" };
 
+        /// <summary>
+        /// Adds strings of comport names to comPortsList
+        /// Always returns true
+        /// </summary>
+        /// <returns></returns>
         Boolean getComPortList()
         {
             comPortsList.Clear();
 
-            //Debug.WriteLine( "ComPorts");
 
             string[] ComPortsNames = System.IO.Ports.SerialPort.GetPortNames();
 
@@ -3346,7 +3249,6 @@ namespace SDK_Example
                 if (ComPortsNames.Contains(name))
                 {
                     comPortsList.Add(name);
-                    //Debug.Write ( "\r\n" + name);
                 }
 
             }
@@ -3358,12 +3260,17 @@ namespace SDK_Example
                 if (!comPortsList.Contains(name))
                 {
                     comPortsList.Add(name);
-                    //Debug.Write( "\r\n" + name);
                 }
             }
 
             return true;
         }
+
+        /// <summary>
+        /// Opens a comport
+        /// </summary>
+        /// <param name="comPortName"></param>
+        /// <returns></returns>
         Boolean openComPort(string comPortName)
         {
             if (comPort == null)
@@ -3389,6 +3296,7 @@ namespace SDK_Example
             return false;
         }
         #endregion
+
         #region ROBOT LISTENER
         /// <summary>
         /// Timer that listens for communications from the motor
@@ -3418,7 +3326,7 @@ namespace SDK_Example
         }
 
         /// <summary>
-        /// To Stop Listening for communications from the robot
+        /// Stops Listening for communications from the robot
         /// </summary>
         public void DisableRobotListener()
         {
@@ -3432,7 +3340,13 @@ namespace SDK_Example
             }
         }
 
-
+        /// <summary>
+        /// Tells the scanner and robot what to do according to what the Arduino sends to the computer
+        /// MaxSteps and CurSteps are counted here
+        /// MaxCine is later set to MaxSteps, size of the ArrayList holding all of the images in a scan is set to MaxCine
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void RobotListenerTimer_Tick(Object sender, EventArgs e)
         {
             byte b = 0;
@@ -3460,7 +3374,6 @@ namespace SDK_Example
                             ++negStepCount;
                         }
                         curStepPos = posStepCount - negStepCount;
-                        // Change back later
                         labelPosition.Text = curStepPos.ToString();
                         return;
                     }
@@ -3579,6 +3492,9 @@ namespace SDK_Example
             }
         }
 
+        /// <summary>
+        /// Saves a log file of what the Arduino sends back to the computer
+        /// </summary>
         private void writeResponseCodes()
         {
             FileStream writer = null;
@@ -3607,95 +3523,54 @@ namespace SDK_Example
                 }
             }
         }
-
         #endregion
-        #region ROBOT SCAN
-        private void robotScanButton_Click(object sender, EventArgs e)
-        {
-            switch (RobotState)
-            {
-                case RobotStateEnum.readyToScan:
+                    
+        #region ROBOT CONTROL COMMANDS
 
-                    RobotState = RobotStateEnum.scanning;
-                    SetButtonForRobotState(RobotState);
-
-                    // clear out old scans
-                    ByteArrayList.Clear();
-
-                    // Resets prevStepPos to the current position
-                    prevStepPos = curStepPos;
-
-                    StartRobot();
-                    break;
-                case RobotStateEnum.homing:
-                    StopRobot();
-                    RobotState = RobotStateEnum.emergencyStopped;
-                    SetButtonForRobotState(RobotState);
-                    break;
-
-                case RobotStateEnum.endOfTravel:
-                case RobotStateEnum.emergencyStopped:
-
-                    RobotState = RobotStateEnum.rewinding;
-                    SetButtonForRobotState(RobotState);
-
-                    rewindRobot();
-                    break;
-
-                case RobotStateEnum.scanning:
-
-                    RobotState = RobotStateEnum.emergencyStopped;
-
-                    SetButtonForRobotState(RobotState);
-
-                    StopRobot();
-                    // StopScan();
-                    break;
-                case RobotStateEnum.rewinding:
-
-                    RobotState = RobotStateEnum.emergencyStopped;
-                    SetButtonForRobotState(RobotState);
-
-                    // StopRobot();
-
-                    break;
-                default:
-                    break;
-            }
-        }
-
+        /// <summary>
+        /// Changes the circle indicator on the button "Robot Scan" when the state of the robot changes
+        /// </summary>
+        /// <param name="robotState"></param>
         void SetButtonForRobotState(RobotStateEnum robotState)
         {
             switch (robotState)
             {
                 case RobotStateEnum.disConnected:
                     buttonRobotScan.Enabled = false;
+                    labelRobotState.Text = "No Robot";
                     break;
                 case RobotStateEnum.unInitialized:
+                    labelRobotState.Text = "Uninitialized";
                     break;
                 case RobotStateEnum.readyToScan:
                     buttonRobotScan.Enabled = true;
+                    labelRobotState.Text = "Ready to Scan";
                     robotStateIndicator.Load("Images/readyToScan.png");
                     break;
                 case RobotStateEnum.homing:
                     buttonRobotScan.Enabled = true;
+                    labelRobotState.Text = "Homing";
                     robotStateIndicator.Load("Images/homing.png");
                     break;
                 case RobotStateEnum.scanning:
                     buttonRobotScan.Enabled = true;
+                    labelRobotState.Text = "Scanning";
                     robotStateIndicator.Load("Images/scanning.png");
                     break;
                 case RobotStateEnum.endOfTravel:
                     buttonRobotScan.Enabled = true;
+                    labelRobotState.Text = "End of Travel";
                     robotStateIndicator.Load("Images/endOfTravel.png");
                     break;
                 case RobotStateEnum.emergencyStopped:
                     buttonRobotScan.Enabled = true;
+                    labelRobotState.Text = "Emergency Stopped";
                     robotStateIndicator.Load("Images/emergencyStopped.png");
                     break;
                 case RobotStateEnum.rewinding:
                     StartScan();
                     buttonRobotScan.Enabled = true;
+                    labelRobotState.Text = "Rewinding";
                     robotStateIndicator.Load("Images/rewinding.png");
                     break;
                 default:
@@ -3703,9 +3578,9 @@ namespace SDK_Example
             }
         }
 
-        // robot control commands
-
-        // stop the robot
+        /// <summary>
+        /// Sends a "l" to the Arduino to stop the robot
+        /// </summary>
         private void StopRobot()
         {
 
@@ -3723,6 +3598,10 @@ namespace SDK_Example
 
             Debug.WriteLine(" ");
         }
+
+        /// <summary>
+        /// Sends a "D" to the Arduino to check the robot's state
+        /// </summary>
         private void queryRobotState()
         {
             try
@@ -3735,6 +3614,9 @@ namespace SDK_Example
             }
         }
 
+        /// <summary>
+        /// Sends an "m" to the Arduino to start the robot
+        /// </summary>
         private void StartRobot()
         {
 
@@ -3750,7 +3632,9 @@ namespace SDK_Example
             }
         }
 
-        // rewind the robot
+        /// <summary>
+        /// Rewinds the robot
+        /// </summary>
         private void rewindRobot()
         {
             Debug.Write("Rewinding...");
@@ -3767,8 +3651,14 @@ namespace SDK_Example
             }
         }
 
-        // all the things we have to do when the robot disconnects
-        // but we are not shutting down
+        /// <summary>
+        /// All the things we have to do when the robot disconnects
+        /// But we are not shutting down the robot
+        /// 
+        /// Closes the comports
+        /// Sets the robot state to disconnected
+        /// Disables the robot listener
+        /// </summary>
         private void robotConnectionLost()
         {
 
@@ -3800,14 +3690,18 @@ namespace SDK_Example
             SetButtonForRobotState(RobotState);
         }
 
-        // set motor speed to a percentage of maximum
+        /// <summary>
+        ///  Set motor speed to a percentage of maximum
+        ///  Max speed is 70 rpm while scanning
+        ///  RPM = 2 * Robot_Speed + 20 rpm
+        /// </summary>
         private void setRobotSpeed(int percent)
         {
             // track bar reads speed as a percentage
             // motor expects a value 
             // Set Speed		0x80 .. 0xbf (bit 7 is set, bit 6 is clear, bits 5:0 represent the speed value)
 
-            const int MAX_ROBOT_SPEED = 63;
+            const int MAX_ROBOT_SPEED = 25;
             const int SET_BIT_7 = 128;
 
             int speed = (percent * MAX_ROBOT_SPEED) / 100;
@@ -3830,6 +3724,7 @@ namespace SDK_Example
             }
         }
         #endregion
+
         #region SAVE ROBOT SCAN
         /// </summary>
         /// DoSave3DScan
@@ -3839,13 +3734,6 @@ namespace SDK_Example
         /// // Need to understanding processing of raw data....
         /// </summary>
         string baseFileName = "Scan_3d_";
-
-        private void buttonSaveCine_Click(object sender, EventArgs e)
-        {
-            DoSaveRobotScan();
-            StartScan(); 
-        }
-
 
         private void DoSaveRobotScan()
         {
@@ -3943,8 +3831,11 @@ namespace SDK_Example
             }
         }
 
-        // write .dat file as text instead of binary
-        //UScanGuide 
+
+        /// <summary>
+        /// Saves a .txt file that has the values used for Depth, Frequency, High Voltage, Main Gain, Dynamic, Etc
+        /// </summary>
+        /// <param name="filePath"></param>
         void DoSaveRobotScanDataAsText(string filePath)
         {
             // Example #3: Write only some strings in an array to a file.
@@ -4005,41 +3896,11 @@ namespace SDK_Example
         }
 
         /// <summary>
-        /// Save the raw  .dat with the minimum charateristics to retrieve 
-        /// the images: depth, up/down, left/right, size of ScanConverter, (Index of ScanConverter), ProbeID
-        /// Essentially copied from DoSaveRaw since I only need one for all the entire 3D scan
-        /// CURRENTLY NOT BEING USED, ONLY SAVE DATA AS TEXT
-        /// </summary>
-        private void DoSaveRobotScanDat(string filePath)
-        {
-
-            FileStream writer = null;
-            BinaryWriter bwrtFile;
-
-            try
-            {
-
-                writer = new FileStream(filePath, FileMode.OpenOrCreate);
-                bwrtFile = new BinaryWriter(writer);
-                WriteData(bwrtFile, writer);
-            }
-            catch (Exception eFile)
-            {
-                System.Windows.Forms.MessageBox.Show(eFile.Message);
-            }
-            finally
-            {
-                if (writer != null)
-                {
-                    writer.Close();
-                }
-            }
-        }
-
-        /// <summary>
         /// Save the raw data for one image of the 3D scan: 
         /// essentially copied from DoSaveRaw but with the .dat part pulled out
         /// and reads the image from the saved BytArray
+        /// 
+        /// Only used to call SaveBmpFromRaw
         /// </summary>
         /// <param name="fileName"></param>
         void DoSaveRobotScanRaw(string rawFileName, string bmpFileName, string jpgFileName, int imageIndex)
@@ -4202,6 +4063,7 @@ namespace SDK_Example
             }
         }
         #endregion
+
         #region ROBOT MANUAL
         //need code to update position
 
@@ -4352,6 +4214,8 @@ namespace SDK_Example
             
         } // end partial class formScan2D : Form
         #endregion
+
+        #region EVENT HANDLERS
 
         private void TextRadius_MouseClick(object sender, MouseEventArgs e)
         {
@@ -4925,7 +4789,7 @@ namespace SDK_Example
 
         private void ProtoTrackBarRobotSpeed_Scroll(object sender, EventArgs e)
         {
-            double speed = protoTrackBarRobotSpeed.Value / 2.5;
+            double speed = protoTrackBarRobotSpeed.Value;
             setRobotSpeed((int)speed);
         }
 
@@ -4936,4 +4800,5 @@ namespace SDK_Example
             CineloopSlide();
         }
     }
+    #endregion
 }///namespace SDK_EXAMPLE

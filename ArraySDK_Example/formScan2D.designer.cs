@@ -93,6 +93,7 @@ namespace SDK_Example
             this.uctrlDepth = new SDK_Example.UserControlDepth();
             this.uctrlScan = new SDK_Example.UserControlScan();
             this.protoTrackBarCine = new TrackBar.Dotnetrix.Controls.TrackBar();
+            this.labelRobotState = new System.Windows.Forms.Label();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
@@ -618,7 +619,7 @@ namespace SDK_Example
             // 
             this.robotStateIndicator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(240)))));
             this.robotStateIndicator.Image = ((System.Drawing.Image)(resources.GetObject("robotStateIndicator.Image")));
-            this.robotStateIndicator.Location = new System.Drawing.Point(780, 205);
+            this.robotStateIndicator.Location = new System.Drawing.Point(778, 203);
             this.robotStateIndicator.Name = "robotStateIndicator";
             this.robotStateIndicator.Size = new System.Drawing.Size(38, 38);
             this.robotStateIndicator.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -795,6 +796,18 @@ namespace SDK_Example
             this.protoTrackBarCine.TabIndex = 83;
             this.protoTrackBarCine.Scroll += new System.EventHandler(this.ProtoTrackBarCine_Scroll);
             // 
+            // labelRobotState
+            // 
+            this.labelRobotState.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(240)))));
+            this.labelRobotState.Font = new System.Drawing.Font("Lato", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRobotState.ForeColor = System.Drawing.Color.White;
+            this.labelRobotState.Location = new System.Drawing.Point(776, 159);
+            this.labelRobotState.Name = "labelRobotState";
+            this.labelRobotState.Size = new System.Drawing.Size(110, 23);
+            this.labelRobotState.TabIndex = 84;
+            this.labelRobotState.Text = "No Robot";
+            this.labelRobotState.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // formScan2D
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -803,6 +816,7 @@ namespace SDK_Example
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(50)))), ((int)(((byte)(63)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1170, 806);
+            this.Controls.Add(this.labelRobotState);
             this.Controls.Add(this.protoTrackBarCine);
             this.Controls.Add(this.protoTrackBarRobotSpeed);
             this.Controls.Add(this.protoTBarTgc3);
@@ -951,6 +965,7 @@ namespace SDK_Example
         private TrackBar.Dotnetrix.Controls.TrackBar protoTBarTgc3;
         private TrackBar.Dotnetrix.Controls.TrackBar protoTrackBarRobotSpeed;
         private TrackBar.Dotnetrix.Controls.TrackBar protoTrackBarCine;
+        private Label labelRobotState;
     }
 }
 
