@@ -614,7 +614,6 @@ namespace SDK_Example
                 TgcCurve();
                 bInitDone = false;
             }
-
         }
 
         /// <summary>
@@ -735,8 +734,8 @@ namespace SDK_Example
         {
             if (bSoftRFData)
             {
-                trackBarCine.Maximum = ushortArrayList.Count() - 1;
-                trackBarCine.Value = ushortArrayList.Count() - 1;
+                protoTrackBarCine.Maximum = ushortArrayList.Count() - 1;
+                protoTrackBarCine.Value = ushortArrayList.Count() - 1;
                 iCineCounter = ushortArrayList.Count() - 1;
             }
             else if (Scan2D.CFMData)
@@ -744,23 +743,23 @@ namespace SDK_Example
 
                 if (bGetRawCfm == true)
                 {
-                    trackBarCine.Maximum = ushortUniArrayList.Count() - 1;
-                    trackBarCine.Value = ushortUniArrayList.Count() - 1;
+                    protoTrackBarCine.Maximum = ushortUniArrayList.Count() - 1;
+                    protoTrackBarCine.Value = ushortUniArrayList.Count() - 1;
                     iCineCounter = ushortUniArrayList.Count() - 1;
                 }
                 else
                 {
                     //#else
                     //#else
-                    trackBarCine.Maximum = ByteUniArrayList.Count() - 1;
-                    trackBarCine.Value = ByteUniArrayList.Count() - 1;
+                    protoTrackBarCine.Maximum = ByteUniArrayList.Count() - 1;
+                    protoTrackBarCine.Value = ByteUniArrayList.Count() - 1;
                     iCineCounter = ByteUniArrayList.Count() - 1;
                 }
             }
             else
             {
-                trackBarCine.Maximum = ByteArrayList.Count() - 1;
-                trackBarCine.Value = ByteArrayList.Count() - 1;
+                protoTrackBarCine.Maximum = ByteArrayList.Count() - 1;
+                protoTrackBarCine.Value = ByteArrayList.Count() - 1;
                 iCineCounter = ByteArrayList.Count() - 1;
             }
 
@@ -1009,20 +1008,20 @@ namespace SDK_Example
             MyMarshalToForm(ControlEnum.buttonScan, "Scan"); //UscanGuide
             if (bSoftRFData)
             {
-                trackBarCine.Maximum = ushortArrayList.Count() - 1;
-                trackBarCine.Value = ushortArrayList.Count() - 1;
+                protoTrackBarCine.Maximum = ushortArrayList.Count() - 1;
+                protoTrackBarCine.Value = ushortArrayList.Count() - 1;
                 iCineCounter = ushortArrayList.Count() - 1;
             }
             else
             {
-                trackBarCine.Maximum = ByteArrayList.Count() - 1;
-                trackBarCine.Value = ByteArrayList.Count() - 1;
+                protoTrackBarCine.Maximum = ByteArrayList.Count() - 1;
+                protoTrackBarCine.Value = ByteArrayList.Count() - 1;
                 iCineCounter = ByteArrayList.Count() - 1;
             }
             // christine this to keep the tick frequency more or less constant
             // not that the possible size of the maximum can be very large
             // (to accomodate the large number of images in a robot scan)
-            trackBarCine.TickFrequency = Math.Max((trackBarCine.Maximum + 39) / 40, 1);
+            protoTrackBarCine.TickFrequency = Math.Max((protoTrackBarCine.Maximum + 39) / 40, 1);
             MyMarshalToForm(ControlEnum.UpdateTrackBar, "");
 
         }
@@ -1102,31 +1101,6 @@ namespace SDK_Example
             if (bRestart == true)
                 StartThreadScan();// Start Scan
         }
-        private void tBarTgc1_Scroll(object sender, EventArgs e)
-        {
-            if ((asbytTgcValue[0] >= DIG_GAIN_MAX)
-                || (asbytTgcValue[0] <= DIG_GAIN_MIN))
-                return;
-            asbytTgcValue[0] = (sbyte)(tBarTgc1.Value * bytTgcStep);
-            TgcCurve();
-        }
-        private void tBarTgc2_Scroll(object sender, EventArgs e)
-        {
-            if ((asbytTgcValue[1] >= DIG_GAIN_MAX)
-                || (asbytTgcValue[1] <= DIG_GAIN_MIN))
-                return;
-            asbytTgcValue[1] = (sbyte)(tBarTgc2.Value * bytTgcStep);
-            TgcCurve();
-        }
-        private void tBarTgc3_Scroll(object sender, EventArgs e)
-        {
-            if ((asbytTgcValue[2] >= DIG_GAIN_MAX)
-                || (asbytTgcValue[2] <= DIG_GAIN_MIN))
-                return;
-            asbytTgcValue[2] = (sbyte)(tBarTgc3.Value * bytTgcStep);
-            TgcCurve();
-        }
-
         private void MainGainPlus()
         {
             if (bSoftCFMData)
@@ -1723,7 +1697,7 @@ namespace SDK_Example
                     buttonCine.Text = formText;
                     break;
                 case ControlEnum.TrackBarCounter:
-                    trackBarCine.Value = iCineCounter;
+                    protoTrackBarCine.Value = iCineCounter;
                     break;
                 case ControlEnum.buttonProbe1:
                     // buttonProbe1.Text = formText;
@@ -2228,7 +2202,7 @@ namespace SDK_Example
         private void buttonNext_Click(object sender, EventArgs e)
         {
             NextImage();
-            trackBarCine.Value = iCineCounter;
+            protoTrackBarCine.Value = iCineCounter;
         }
         /// <summary>
         /// Command to previous image
@@ -2238,20 +2212,9 @@ namespace SDK_Example
         private void buttonPrevious_Click(object sender, EventArgs e)
         {
             PreviousImage();
-            trackBarCine.Value = iCineCounter;
+            protoTrackBarCine.Value = iCineCounter;
         }
-        /// <summary>
-        /// To display the image that is pointed by the track bar
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void trackBarCine_Scroll(object sender, EventArgs e)
-        {
-            StopCineloop();
-            iCineCounter = trackBarCine.Value;
-            CineloopSlide();
-
-        }
+        
         #endregion
         #region INTERFACE
         /// <summary>
@@ -3836,13 +3799,6 @@ namespace SDK_Example
 
             SetButtonForRobotState(RobotState);
         }
-        #endregion
-        #region ROBOT SPEED
-        private void trackBarRobotSpeed_Scroll(object sender, EventArgs e)
-        {
-            double speed = trackBarRobotSpeed.Value / 2.5;
-            setRobotSpeed((int) speed);
-        }
 
         // set motor speed to a percentage of maximum
         private void setRobotSpeed(int percent)
@@ -4878,7 +4834,7 @@ namespace SDK_Example
         private void ProtoButtonPrevious_Click(object sender, EventArgs e)
         {
             PreviousImage();
-            trackBarCine.Value = iCineCounter;
+            protoTrackBarCine.Value = iCineCounter;
         }
 
         /// <summary>
@@ -4931,7 +4887,7 @@ namespace SDK_Example
         private void ProtoButtonNext_Click(object sender, EventArgs e)
         {
             NextImage();
-            trackBarCine.Value = iCineCounter;
+            protoTrackBarCine.Value = iCineCounter;
         }
 
         private void AnkleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -4940,5 +4896,44 @@ namespace SDK_Example
             referenceFoot.Show();
         }
 
+        private void ProtoTBarTgc1_Scroll_1(object sender, EventArgs e)
+        {
+            if ((asbytTgcValue[0] >= DIG_GAIN_MAX)
+               || (asbytTgcValue[0] <= DIG_GAIN_MIN))
+                return;
+            asbytTgcValue[0] = (sbyte)(protoTBarTgc1.Value * bytTgcStep);
+            TgcCurve();
+        }
+
+        private void ProtoTBarTgc2_Scroll_1(object sender, EventArgs e)
+        {
+            if ((asbytTgcValue[1] >= DIG_GAIN_MAX)
+                          || (asbytTgcValue[1] <= DIG_GAIN_MIN))
+                return;
+            asbytTgcValue[1] = (sbyte)(protoTBarTgc2.Value * bytTgcStep);
+            TgcCurve();
+        }
+
+        private void ProtoTBarTgc3_Scroll_1(object sender, EventArgs e)
+        {
+            if ((asbytTgcValue[2] >= DIG_GAIN_MAX)
+                           || (asbytTgcValue[2] <= DIG_GAIN_MIN))
+                return;
+            asbytTgcValue[2] = (sbyte)(protoTBarTgc3.Value * bytTgcStep);
+            TgcCurve();
+        }
+
+        private void ProtoTrackBarRobotSpeed_Scroll(object sender, EventArgs e)
+        {
+            double speed = protoTrackBarRobotSpeed.Value / 2.5;
+            setRobotSpeed((int)speed);
+        }
+
+        private void ProtoTrackBarCine_Scroll(object sender, EventArgs e)
+        {
+            StopCineloop();
+            iCineCounter = protoTrackBarCine.Value;
+            CineloopSlide();
+        }
     }
 }///namespace SDK_EXAMPLE

@@ -33,7 +33,7 @@
             // UserControlDepth
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(50)))), ((int)(((byte)(63)))));
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Name = "UserControlDepth";
             this.Size = new System.Drawing.Size(30, 512);
             this.Load += new System.EventHandler(this.UserControlDepth_Load);

@@ -41,7 +41,6 @@ namespace SDK_Example
             this.labelRobotSpeed = new System.Windows.Forms.Label();
             this.labelMainGain = new System.Windows.Forms.Label();
             this.labelHighVolt = new System.Windows.Forms.Label();
-            this.trackBarCine = new System.Windows.Forms.TrackBar();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelFpga = new System.Windows.Forms.ToolStripStatusLabel();
@@ -50,10 +49,6 @@ namespace SDK_Example
             this.labelTgc3 = new System.Windows.Forms.Label();
             this.labelTgc2 = new System.Windows.Forms.Label();
             this.labelTgc1 = new System.Windows.Forms.Label();
-            this.tBarTgc1 = new System.Windows.Forms.TrackBar();
-            this.tBarTgc2 = new System.Windows.Forms.TrackBar();
-            this.tBarTgc3 = new System.Windows.Forms.TrackBar();
-            this.trackBarRobotSpeed = new System.Windows.Forms.TrackBar();
             this.labelFocus = new System.Windows.Forms.Label();
             this.butCfmMode = new System.Windows.Forms.Button();
             this.buttonProbe2 = new System.Windows.Forms.Button();
@@ -82,6 +77,11 @@ namespace SDK_Example
             this.buttonPrevious = new System.Windows.Forms.PictureBox();
             this.buttonCine = new System.Windows.Forms.PictureBox();
             this.buttonNext = new System.Windows.Forms.PictureBox();
+            this.robotStateIndicator = new System.Windows.Forms.PictureBox();
+            this.protoTBarTgc1 = new TrackBar.Dotnetrix.Controls.TrackBar();
+            this.protoTBarTgc2 = new TrackBar.Dotnetrix.Controls.TrackBar();
+            this.protoTBarTgc3 = new TrackBar.Dotnetrix.Controls.TrackBar();
+            this.protoTrackBarRobotSpeed = new TrackBar.Dotnetrix.Controls.TrackBar();
             this.protoUCtrlPMDynamic = new SDK_Example.UserControlPlusMinus();
             this.protoUCtrlPMGalGain = new SDK_Example.UserControlPlusMinus();
             this.protoUCtrlPMHighVoltage = new SDK_Example.UserControlPlusMinus();
@@ -92,13 +92,8 @@ namespace SDK_Example
             this.uctrlGrayScale = new SDK_Example.UserControlGrayScale();
             this.uctrlDepth = new SDK_Example.UserControlDepth();
             this.uctrlScan = new SDK_Example.UserControlScan();
-            this.robotStateIndicator = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarCine)).BeginInit();
+            this.protoTrackBarCine = new TrackBar.Dotnetrix.Controls.TrackBar();
             this.statusStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tBarTgc1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBarTgc2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBarTgc3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarRobotSpeed)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonRobotScan)).BeginInit();
@@ -110,6 +105,11 @@ namespace SDK_Example
             ((System.ComponentModel.ISupportInitialize)(this.buttonCine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonNext)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.robotStateIndicator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.protoTBarTgc1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.protoTBarTgc2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.protoTBarTgc3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.protoTrackBarRobotSpeed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.protoTrackBarCine)).BeginInit();
             this.SuspendLayout();
             // 
             // labelImaging
@@ -214,17 +214,6 @@ namespace SDK_Example
             this.labelHighVolt.Text = "High Volt";
             this.labelHighVolt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // trackBarCine
-            // 
-            this.trackBarCine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(50)))), ((int)(((byte)(63)))));
-            this.trackBarCine.Location = new System.Drawing.Point(767, 508);
-            this.trackBarCine.Maximum = 512;
-            this.trackBarCine.Name = "trackBarCine";
-            this.trackBarCine.Size = new System.Drawing.Size(360, 45);
-            this.trackBarCine.TabIndex = 5;
-            this.trackBarCine.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
-            this.trackBarCine.Scroll += new System.EventHandler(this.trackBarCine_Scroll);
-            // 
             // statusStrip
             // 
             this.statusStrip.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -287,7 +276,7 @@ namespace SDK_Example
             this.labelTgc3.BackColor = System.Drawing.Color.Transparent;
             this.labelTgc3.Font = new System.Drawing.Font("Lato", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTgc3.ForeColor = System.Drawing.Color.White;
-            this.labelTgc3.Location = new System.Drawing.Point(1109, 712);
+            this.labelTgc3.Location = new System.Drawing.Point(1109, 711);
             this.labelTgc3.Name = "labelTgc3";
             this.labelTgc3.Size = new System.Drawing.Size(21, 13);
             this.labelTgc3.TabIndex = 56;
@@ -317,55 +306,6 @@ namespace SDK_Example
             this.labelTgc1.TabIndex = 54;
             this.labelTgc1.Text = "Near";
             this.labelTgc1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tBarTgc1
-            // 
-            this.tBarTgc1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(50)))), ((int)(((byte)(63)))));
-            this.tBarTgc1.Location = new System.Drawing.Point(767, 619);
-            this.tBarTgc1.Maximum = 15;
-            this.tBarTgc1.Minimum = -15;
-            this.tBarTgc1.Name = "tBarTgc1";
-            this.tBarTgc1.Size = new System.Drawing.Size(370, 45);
-            this.tBarTgc1.TabIndex = 53;
-            this.tBarTgc1.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
-            this.tBarTgc1.Scroll += new System.EventHandler(this.tBarTgc1_Scroll);
-            // 
-            // tBarTgc2
-            // 
-            this.tBarTgc2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(50)))), ((int)(((byte)(63)))));
-            this.tBarTgc2.Location = new System.Drawing.Point(767, 673);
-            this.tBarTgc2.Maximum = 15;
-            this.tBarTgc2.Minimum = -15;
-            this.tBarTgc2.Name = "tBarTgc2";
-            this.tBarTgc2.Size = new System.Drawing.Size(370, 45);
-            this.tBarTgc2.TabIndex = 46;
-            this.tBarTgc2.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
-            this.tBarTgc2.Scroll += new System.EventHandler(this.tBarTgc2_Scroll);
-            // 
-            // tBarTgc3
-            // 
-            this.tBarTgc3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(50)))), ((int)(((byte)(63)))));
-            this.tBarTgc3.Location = new System.Drawing.Point(766, 728);
-            this.tBarTgc3.Maximum = 15;
-            this.tBarTgc3.Minimum = -15;
-            this.tBarTgc3.Name = "tBarTgc3";
-            this.tBarTgc3.Size = new System.Drawing.Size(370, 45);
-            this.tBarTgc3.TabIndex = 47;
-            this.tBarTgc3.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
-            this.tBarTgc3.Scroll += new System.EventHandler(this.tBarTgc3_Scroll);
-            // 
-            // trackBarRobotSpeed
-            // 
-            this.trackBarRobotSpeed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(50)))), ((int)(((byte)(63)))));
-            this.trackBarRobotSpeed.Location = new System.Drawing.Point(768, 260);
-            this.trackBarRobotSpeed.Margin = new System.Windows.Forms.Padding(2);
-            this.trackBarRobotSpeed.Maximum = 100;
-            this.trackBarRobotSpeed.Name = "trackBarRobotSpeed";
-            this.trackBarRobotSpeed.Size = new System.Drawing.Size(370, 45);
-            this.trackBarRobotSpeed.TabIndex = 53;
-            this.trackBarRobotSpeed.TickFrequency = 5;
-            this.trackBarRobotSpeed.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
-            this.trackBarRobotSpeed.Scroll += new System.EventHandler(this.trackBarRobotSpeed_Scroll);
             // 
             // labelFocus
             // 
@@ -674,6 +614,61 @@ namespace SDK_Example
             this.buttonNext.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ProtoButtonNext_MouseDown);
             this.buttonNext.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ProtoButtonNext_MouseUp);
             // 
+            // robotStateIndicator
+            // 
+            this.robotStateIndicator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(240)))));
+            this.robotStateIndicator.Image = ((System.Drawing.Image)(resources.GetObject("robotStateIndicator.Image")));
+            this.robotStateIndicator.Location = new System.Drawing.Point(780, 205);
+            this.robotStateIndicator.Name = "robotStateIndicator";
+            this.robotStateIndicator.Size = new System.Drawing.Size(38, 38);
+            this.robotStateIndicator.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.robotStateIndicator.TabIndex = 78;
+            this.robotStateIndicator.TabStop = false;
+            // 
+            // protoTBarTgc1
+            // 
+            this.protoTBarTgc1.BackColor = System.Drawing.Color.Transparent;
+            this.protoTBarTgc1.Location = new System.Drawing.Point(767, 619);
+            this.protoTBarTgc1.Maximum = 15;
+            this.protoTBarTgc1.Minimum = -15;
+            this.protoTBarTgc1.Name = "protoTBarTgc1";
+            this.protoTBarTgc1.Size = new System.Drawing.Size(370, 45);
+            this.protoTBarTgc1.TabIndex = 79;
+            this.protoTBarTgc1.Scroll += new System.EventHandler(this.ProtoTBarTgc1_Scroll_1);
+            // 
+            // protoTBarTgc2
+            // 
+            this.protoTBarTgc2.BackColor = System.Drawing.Color.Transparent;
+            this.protoTBarTgc2.Location = new System.Drawing.Point(767, 673);
+            this.protoTBarTgc2.Maximum = 15;
+            this.protoTBarTgc2.Minimum = -15;
+            this.protoTBarTgc2.Name = "protoTBarTgc2";
+            this.protoTBarTgc2.Size = new System.Drawing.Size(370, 45);
+            this.protoTBarTgc2.TabIndex = 80;
+            this.protoTBarTgc2.Scroll += new System.EventHandler(this.ProtoTBarTgc2_Scroll_1);
+            // 
+            // protoTBarTgc3
+            // 
+            this.protoTBarTgc3.BackColor = System.Drawing.Color.Transparent;
+            this.protoTBarTgc3.Location = new System.Drawing.Point(767, 727);
+            this.protoTBarTgc3.Maximum = 15;
+            this.protoTBarTgc3.Minimum = -15;
+            this.protoTBarTgc3.Name = "protoTBarTgc3";
+            this.protoTBarTgc3.Size = new System.Drawing.Size(370, 45);
+            this.protoTBarTgc3.TabIndex = 81;
+            this.protoTBarTgc3.Scroll += new System.EventHandler(this.ProtoTBarTgc3_Scroll_1);
+            // 
+            // protoTrackBarRobotSpeed
+            // 
+            this.protoTrackBarRobotSpeed.BackColor = System.Drawing.Color.Transparent;
+            this.protoTrackBarRobotSpeed.Location = new System.Drawing.Point(767, 259);
+            this.protoTrackBarRobotSpeed.Maximum = 100;
+            this.protoTrackBarRobotSpeed.Name = "protoTrackBarRobotSpeed";
+            this.protoTrackBarRobotSpeed.Size = new System.Drawing.Size(370, 45);
+            this.protoTrackBarRobotSpeed.TabIndex = 82;
+            this.protoTrackBarRobotSpeed.TickFrequency = 5;
+            this.protoTrackBarRobotSpeed.Scroll += new System.EventHandler(this.ProtoTrackBarRobotSpeed_Scroll);
+            // 
             // protoUCtrlPMDynamic
             // 
             this.protoUCtrlPMDynamic.BackColor = System.Drawing.Color.Transparent;
@@ -790,16 +785,15 @@ namespace SDK_Example
             this.uctrlScan.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.uctrlScan_MouseDoubleClick);
             this.uctrlScan.MouseMove += new System.Windows.Forms.MouseEventHandler(this.uctrlScan_MouseMove);
             // 
-            // robotStateIndicator
+            // protoTrackBarCine
             // 
-            this.robotStateIndicator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(240)))));
-            this.robotStateIndicator.Image = ((System.Drawing.Image)(resources.GetObject("robotStateIndicator.Image")));
-            this.robotStateIndicator.Location = new System.Drawing.Point(780, 205);
-            this.robotStateIndicator.Name = "robotStateIndicator";
-            this.robotStateIndicator.Size = new System.Drawing.Size(38, 38);
-            this.robotStateIndicator.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.robotStateIndicator.TabIndex = 78;
-            this.robotStateIndicator.TabStop = false;
+            this.protoTrackBarCine.BackColor = System.Drawing.Color.Transparent;
+            this.protoTrackBarCine.Location = new System.Drawing.Point(767, 510);
+            this.protoTrackBarCine.Maximum = 512;
+            this.protoTrackBarCine.Name = "protoTrackBarCine";
+            this.protoTrackBarCine.Size = new System.Drawing.Size(370, 45);
+            this.protoTrackBarCine.TabIndex = 83;
+            this.protoTrackBarCine.Scroll += new System.EventHandler(this.ProtoTrackBarCine_Scroll);
             // 
             // formScan2D
             // 
@@ -809,6 +803,9 @@ namespace SDK_Example
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(50)))), ((int)(((byte)(63)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1170, 806);
+            this.Controls.Add(this.protoTrackBarCine);
+            this.Controls.Add(this.protoTrackBarRobotSpeed);
+            this.Controls.Add(this.protoTBarTgc3);
             this.Controls.Add(this.robotStateIndicator);
             this.Controls.Add(this.protoUCtrlPMDynamic);
             this.Controls.Add(this.protoUCtrlPMGalGain);
@@ -832,7 +829,6 @@ namespace SDK_Example
             this.Controls.Add(this.labelTgc);
             this.Controls.Add(this.textRadius);
             this.Controls.Add(this.butCfmMode);
-            this.Controls.Add(this.trackBarCine);
             this.Controls.Add(this.labelFocus);
             this.Controls.Add(this.labelDynamic);
             this.Controls.Add(this.labelMainGain);
@@ -844,16 +840,14 @@ namespace SDK_Example
             this.Controls.Add(this.labelTgc2);
             this.Controls.Add(this.labelPosition);
             this.Controls.Add(this.labelTgc1);
-            this.Controls.Add(this.tBarTgc1);
-            this.Controls.Add(this.tBarTgc2);
-            this.Controls.Add(this.tBarTgc3);
-            this.Controls.Add(this.trackBarRobotSpeed);
             this.Controls.Add(this.labelFileName);
             this.Controls.Add(this.uctrlGrayScale);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.uctrlDepth);
             this.Controls.Add(this.uctrlScan);
+            this.Controls.Add(this.protoTBarTgc1);
+            this.Controls.Add(this.protoTBarTgc2);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.DimGray;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -867,13 +861,8 @@ namespace SDK_Example
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formScan2D_FormClosed);
             this.Load += new System.EventHandler(this.formScan2D_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.formScan2D_Paint);
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarCine)).EndInit();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tBarTgc1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBarTgc2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBarTgc3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarRobotSpeed)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).EndInit();
@@ -886,6 +875,11 @@ namespace SDK_Example
             ((System.ComponentModel.ISupportInitialize)(this.buttonCine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonNext)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.robotStateIndicator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.protoTBarTgc1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.protoTBarTgc2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.protoTBarTgc3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.protoTrackBarRobotSpeed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.protoTrackBarCine)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -902,12 +896,8 @@ namespace SDK_Example
         private System.Windows.Forms.Label labelHighVolt;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
-        private System.Windows.Forms.TrackBar trackBarCine;
         private System.Windows.Forms.Label labelFileName;
         private System.Windows.Forms.Label labelDynamic;
-        private System.Windows.Forms.TrackBar tBarTgc2;
-        private System.Windows.Forms.TrackBar tBarTgc3;
-        private System.Windows.Forms.TrackBar tBarTgc1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelFpga;
         private System.Windows.Forms.Label labelTgc2;
         private System.Windows.Forms.Label labelTgc1;
@@ -919,7 +909,6 @@ namespace SDK_Example
         // public System.Windows.Forms.Button butRFMode;
         public System.Windows.Forms.Button butCfmMode;
         private System.Windows.Forms.Label labelRobotSpeed;
-        private System.Windows.Forms.TrackBar trackBarRobotSpeed;
         public System.Windows.Forms.Button buttonProbe2; //not used
         private System.Windows.Forms.Label labelPosition;
         private System.Windows.Forms.TextBox textRadius;
@@ -957,6 +946,11 @@ namespace SDK_Example
         private ToolStripMenuItem referenceImagesToolStripMenuItem;
         private ToolStripMenuItem ankleToolStripMenuItem;
         private PictureBox robotStateIndicator;
+        private TrackBar.Dotnetrix.Controls.TrackBar protoTBarTgc1;
+        private TrackBar.Dotnetrix.Controls.TrackBar protoTBarTgc2;
+        private TrackBar.Dotnetrix.Controls.TrackBar protoTBarTgc3;
+        private TrackBar.Dotnetrix.Controls.TrackBar protoTrackBarRobotSpeed;
+        private TrackBar.Dotnetrix.Controls.TrackBar protoTrackBarCine;
     }
 }
 

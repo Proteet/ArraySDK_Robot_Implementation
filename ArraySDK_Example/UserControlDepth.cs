@@ -53,7 +53,6 @@ namespace SDK_Example
             drawFont = new Font(drawFont, FontStyle.Bold);
             SolidBrush drawBrush = new SolidBrush(Color.White);
             // Color background = new Color();
-            // background = Color.FromArgb(34, 50, 63);
             this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             gScale.Clear(Color.Transparent);
             

@@ -33,7 +33,7 @@
             // UserControlScan
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "UserControlScan";
             this.ResumeLayout(false);

@@ -34,7 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(50)))), ((int)(((byte)(63)))));
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Name = "UserControlGrayScale";
             this.Size = new System.Drawing.Size(8, 512);
             this.ResumeLayout(false);
