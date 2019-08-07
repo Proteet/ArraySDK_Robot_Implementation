@@ -234,6 +234,21 @@
             File Version
             </summary>
         </member>
+        <member name="M:SDK_Example.formScan2D.EnableIdle">
+            <summary>
+            Enables idle mode
+            </summary>
+        </member>
+        <member name="M:SDK_Example.formScan2D.DisableIdle">
+            <summary>
+            Disables idle mode
+            </summary>
+        </member>
+        <member name="M:SDK_Example.formScan2D.SetSelectedProbe">
+            <summary>
+            Sets up the probe that has been connected to the computer. 
+            </summary>
+        </member>
         <member name="M:SDK_Example.formScan2D.UpdateCineloopGroup(System.Boolean)">
             <summary>
             To enable or disable Cineloop buttons
@@ -242,17 +257,22 @@
         </member>
         <member name="M:SDK_Example.formScan2D.UpdateButtons">
             <summary>
-            to update buttons 
+            Updates all the buttons.
             </summary>
         </member>
         <member name="M:SDK_Example.formScan2D.UpdateLabels">
             <summary>
-            to update all the labels
+            To update all the labels
             </summary>
         </member>
         <member name="M:SDK_Example.formScan2D.ResetLabels">
             <summary>
-            to reset all the labels, no value displayed, just the title
+            To reset all the labels, no value displayed, just the title
+            </summary>
+        </member>
+        <member name="M:SDK_Example.formScan2D.UpdateTrackBar">
+            <summary>
+            Updates the Track bars
             </summary>
         </member>
         <member name="M:SDK_Example.formScan2D.InitControlPlusMinus">
@@ -291,12 +311,12 @@
         </member>
         <member name="M:SDK_Example.formScan2D.StartScan">
             <summary>
-            call to Start
+            Call to start scan
             </summary>
         </member>
         <member name="M:SDK_Example.formScan2D.StopScan">
             <summary>
-            call to stop
+            Call to stop scan
             </summary>
         </member>
         <member name="M:SDK_Example.formScan2D.StartThreadScan">
@@ -308,6 +328,17 @@
             <summary>
             to Stop the Acquisition and scan
             </summary>
+        </member>
+        <member name="M:SDK_Example.formScan2D.TgcCurve">
+            <summary>
+            Defines the Time Gain Compensation.
+            </summary>
+        </member>
+        <member name="M:SDK_Example.formScan2D.ApplyTgc(System.Byte[0:,0:])">
+            <summary>
+            Applies Time Gain Compensation for the probe.
+            </summary>
+            <param name="arrayByte"></param>
         </member>
         <member name="M:SDK_Example.formScan2D.DepthPlus">
             <summary>
@@ -341,13 +372,20 @@
         </member>
         <member name="M:SDK_Example.formScan2D.ImageRefresh(System.Object,System.EventArgs)">
             <summary>
-            NewImageHandler (First Version)
+            Starts a new thread when a new thread is available
             </summary>
-            <param name="e"></param>
+        </member>
+        <member name="M:SDK_Example.formScan2D.StartRefresh">
+            <summary>
+            Capturing the current image.
+            Calls DoRefresh to draw the graphics.
+            Calls AddToCine to save the images into ByteArrayList
+            </summary>
         </member>
         <member name="M:SDK_Example.formScan2D.DoRefresh">
             <summary>
-            to refresh uctrlscan, container of the US image
+            To refresh uctrlscan, container of the US image.
+            Drawing the graphics.
             </summary>
         </member>
         <member name="M:SDK_Example.formScan2D.DrawCurve(System.Int32,System.Int32,System.Int32)">
@@ -389,7 +427,7 @@
         </member>
         <member name="M:SDK_Example.formScan2D.uctrlGrayScale_Paint(System.Object,System.Windows.Forms.PaintEventArgs)">
             <summary>
-            To display GrayScale
+            To display GrayScale.
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
@@ -464,6 +502,7 @@
         <member name="M:SDK_Example.formScan2D.AddToCine(System.Byte[0:,0:])">
             <summary>
             When scanning, to Add the last Raw data to the List( i.e. cineloop)
+            Adds all of the images taken during the scan to ByteArrayList
             </summary>
             <param name="arrayByte"></param>
         </member>
@@ -485,31 +524,30 @@
             </summary>
             <param name="arrayUshort"></param>
         </member>
-        <member name="M:SDK_Example.formScan2D.buttonCine_Click(System.Object,System.EventArgs)">
-            <summary>
-            Command to start/stop the cineloop
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
         <member name="M:SDK_Example.formScan2D.StartCineloop">
             <summary>
-            to Start the cineloop
+            To start the cineloop.
             </summary>
         </member>
         <member name="M:SDK_Example.formScan2D.StopCineloop">
             <summary>
-            to stop the cineloop
+            To stop the cineloop.
             </summary>
         </member>
         <member name="M:SDK_Example.formScan2D.CineloopSlide">
             <summary>
-            to display the slide "iCineCounter" of the cineloop, 
+            Displays the slide "iCineCounter" of the cineloop.
             </summary>
+        </member>
+        <member name="M:SDK_Example.formScan2D.DrawOut(System.Int32)">
+            <summary>
+            Draws the graphics for playing back the cine. 
+            </summary>
+            <param name="slide"></param>
         </member>
         <member name="M:SDK_Example.formScan2D.CinePlay(System.Object)">
             <summary>
-            to play the cineloop
+            Plays the cineloop.
             </summary>
             <param name="FrameRateMilliSeconds"> frame Rate of the probe</param>
         </member>
@@ -519,28 +557,9 @@
             </summary>
         </member>
         <member name="M:SDK_Example.formScan2D.PreviousImage">
-            Outside of the thread of the cineloop, to display the previous image
-        </member>
-        <member name="M:SDK_Example.formScan2D.buttonNext_Click(System.Object,System.EventArgs)">
             <summary>
-            Command to NextImage
+            Outside of the thread of the cineloop, to display the previous image.
             </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:SDK_Example.formScan2D.buttonPrevious_Click(System.Object,System.EventArgs)">
-            <summary>
-            Command to previous image
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:SDK_Example.formScan2D.trackBarCine_Scroll(System.Object,System.EventArgs)">
-            <summary>
-            To display the image that is pointed by the track bar
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
         </member>
         <member name="M:SDK_Example.formScan2D.chkboxUpDown_CheckedChanged(System.Object,System.EventArgs)">
             <summary>
@@ -548,16 +567,15 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
-        <member name="M:SDK_Example.formScan2D.buttonSave_Click(System.Object,System.EventArgs)">
+        <member name="M:SDK_Example.formScan2D.SetUItoCFM(System.Boolean)">
             <summary>
-            Command to save image to a file
+            Sets UI into CFM mode.
             </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
+            <param name="bcfm"></param>
         </member>
         <member name="M:SDK_Example.formScan2D.DoSaveScan">
             <summary>
-            to get the bmp to be saved
+            Returns a bitmap to save.
             </summary>
             <returns></returns>
         </member>
@@ -569,18 +587,47 @@
             </summary>
             <param name="fileName"></param>
         </member>
-        <member name="M:SDK_Example.formScan2D.buttonLoad_Click(System.Object,System.EventArgs)">
+        <member name="M:SDK_Example.formScan2D.WriteData(System.IO.BinaryWriter,System.IO.FileStream)">
             <summary>
-            Command to load a image from a file
+            Write a binary file with the values from Depth, Frequency, etc
             </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
+            <param name="bwrtFile"></param>
+            <param name="writer"></param>
         </member>
         <member name="M:SDK_Example.formScan2D.DoLoadRaw(System.String)">
             <summary>
-            Load the raw data
+            Load the raw data.
             </summary>
             <param name="fileName"></param>
+        </member>
+        <member name="M:SDK_Example.formScan2D.ReadData(System.IO.BinaryReader,System.IO.FileStream)">
+            <summary>
+            Reads data.txt file so redraw the depth scale
+            </summary>
+            <param name="brdFile"></param>
+            <param name="reader"></param>
+        </member>
+        <member name="M:SDK_Example.formScan2D.ShowDisplayControls">
+            <summary>
+            Displays the controls when not in idle mode
+            </summary>
+        </member>
+        <member name="M:SDK_Example.formScan2D.HideDisplayControls">
+            <summary>
+            Hides display controls in idle mode
+            </summary>
+        </member>
+        <member name="M:SDK_Example.formScan2D.DoClear">
+            <summary>
+            Sets the graphics object to a new instance
+            </summary>
+        </member>
+        <member name="M:SDK_Example.formScan2D.uctrlDepth_Paint(System.Object,System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Draws the Depth scale.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
         </member>
         <member name="M:SDK_Example.formScan2D.WatchHWButton(IntersonArray.Controls.HWControls,System.EventArgs)">
             <summary>
@@ -588,6 +635,13 @@
             </summary>
             <param name="HwCtrl"></param>
             <param name="e"></param>
+        </member>
+        <member name="M:SDK_Example.formScan2D.ResizeForm(System.Int32)">
+            <summary>
+            Resizes the form.
+            However, currently set up so that the form can't resize.
+            </summary>
+            <param name="i"></param>
         </member>
         <member name="F:SDK_Example.formScan2D.bTimerConnect">
             <summary>
@@ -606,6 +660,24 @@
         <member name="M:SDK_Example.formScan2D.DisableConnect">
             <summary>
             To Stop watching the USB connections
+            </summary>
+        </member>
+        <member name="M:SDK_Example.formScan2D.WatchConnect(System.Object,System.EventArgs)">
+            <summary>
+            Initializes/clears HWControls
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SDK_Example.formScan2D.SwitchProbe(System.Int32)">
+            <summary>
+            Switches from one probe to another if there are multiple probes attached 
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:SDK_Example.formScan2D.UpdateProbesButtons">
+            <summary>
+            Does nothing?
             </summary>
         </member>
         <member name="F:SDK_Example.formScan2D._deviceRemovedWatcher">
@@ -646,6 +718,11 @@
              </summary>
             
         </member>
+        <member name="M:SDK_Example.formScan2D.CheckProbes">
+            <summary>
+            Checks if the probe is currently connected to the computer
+            </summary>
+        </member>
         <member name="F:SDK_Example.formScan2D.bRobotTimerConnect">
             <summary>
             Watch the comPort motor connections:
@@ -666,6 +743,49 @@
             To Stop watching the Serial Port connections
             </summary>
         </member>
+        <member name="M:SDK_Example.formScan2D.portTest">
+            <summary>
+            Calls getComPortList to generate a list of comports
+            </summary>
+        </member>
+        <member name="M:SDK_Example.formScan2D.WatchRobotConnect(System.Object,System.EventArgs)">
+            <summary>
+            Watches for when the robot connects
+            When the robot does connect, it enables the robot listener and disables the robot connect timer
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SDK_Example.formScan2D.checkForQueryResponse">
+            <summary>
+            Copy of robotListenerTimer_Tick but just accepts responses to the initial query
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:SDK_Example.formScan2D.preferredNames">
+            <summary>
+            getComPortList
+            hard-coding of 4, 5 and 7 as preferred comPorts
+            workaround to prevent getting stuck on a virtual comPort
+            this shouldn't be necessary now that we are querying the comport
+            before accepting it as the correct on
+            But no harm in keeping it in?
+            </summary>
+        </member>
+        <member name="M:SDK_Example.formScan2D.getComPortList">
+            <summary>
+            Adds strings of comport names to comPortsList
+            Always returns true
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SDK_Example.formScan2D.openComPort(System.String)">
+            <summary>
+            Opens a comport
+            </summary>
+            <param name="comPortName"></param>
+            <returns></returns>
+        </member>
         <member name="F:SDK_Example.formScan2D.bRobotListenerTimer">
             <summary>
             Timer that listens for communications from the motor
@@ -682,23 +802,80 @@
         </member>
         <member name="M:SDK_Example.formScan2D.DisableRobotListener">
             <summary>
-            To Stop Listening for communications from the robot
+            Stops Listening for communications from the robot
+            </summary>
+        </member>
+        <member name="M:SDK_Example.formScan2D.RobotListenerTimer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            Tells the scanner and robot what to do according to what the Arduino sends to the computer
+            MaxSteps and CurSteps are counted here
+            MaxCine is later set to MaxSteps, size of the ArrayList holding all of the images in a scan is set to MaxCine
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SDK_Example.formScan2D.writeResponseCodes">
+            <summary>
+            Saves a log file of what the Arduino sends back to the computer
+            </summary>
+        </member>
+        <member name="M:SDK_Example.formScan2D.SetButtonForRobotState(SDK_Example.formScan2D.RobotStateEnum)">
+            <summary>
+            Changes the circle indicator on the button "Robot Scan" when the state of the robot changes
+            </summary>
+            <param name="robotState"></param>
+        </member>
+        <member name="M:SDK_Example.formScan2D.StopRobot">
+            <summary>
+            Sends a "l" to the Arduino to stop the robot
+            </summary>
+        </member>
+        <member name="M:SDK_Example.formScan2D.queryRobotState">
+            <summary>
+            Sends a "D" to the Arduino to check the robot's state
+            </summary>
+        </member>
+        <member name="M:SDK_Example.formScan2D.StartRobot">
+            <summary>
+            Sends an "m" to the Arduino to start the robot
+            </summary>
+        </member>
+        <member name="M:SDK_Example.formScan2D.rewindRobot">
+            <summary>
+            Rewinds the robot
+            </summary>
+        </member>
+        <member name="M:SDK_Example.formScan2D.robotConnectionLost">
+            <summary>
+            All the things we have to do when the robot disconnects
+            But we are not shutting down the robot
+            
+            Closes the comports
+            Sets the robot state to disconnected
+            Disables the robot listener
+            </summary>
+        </member>
+        <member name="M:SDK_Example.formScan2D.setRobotSpeed(System.Int32)">
+            <summary>
+             Set motor speed to a percentage of maximum
+             Max speed is 70 rpm while scanning
+             RPM = 2 * Robot_Speed + 20 rpm
             </summary>
         </member>
         <!-- Badly formed XML comment ignored for member "F:SDK_Example.formScan2D.baseFileName" -->
-        <member name="M:SDK_Example.formScan2D.DoSaveRobotScanDat(System.String)">
+        <member name="M:SDK_Example.formScan2D.DoSaveRobotScanDataAsText(System.String)">
             <summary>
-            Save the raw  .dat with the minimum charateristics to retrieve 
-            the images: depth, up/down, left/right, size of ScanConverter, (Index of ScanConverter), ProbeID
-            Essentially copied from DoSaveRaw since I only need one for all the entire 3D scan
-            CURRENTLY NOT BEING USED, ONLY SAVE DATA AS TEXT
+            Saves a .txt file that has the values used for Depth, Frequency, High Voltage, Main Gain, Dynamic, Etc
             </summary>
+            <param name="filePath"></param>
         </member>
         <member name="M:SDK_Example.formScan2D.DoSaveRobotScanRaw(System.String,System.String,System.String,System.Int32)">
             <summary>
             Save the raw data for one image of the 3D scan: 
             essentially copied from DoSaveRaw but with the .dat part pulled out
             and reads the image from the saved BytArray
+            
+            Only used to call SaveBmpFromRaw
             </summary>
             <param name="fileName"></param>
         </member>

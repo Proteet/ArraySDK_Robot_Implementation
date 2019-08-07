@@ -801,9 +801,9 @@ namespace SDK_Example
             this.labelRobotState.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(240)))));
             this.labelRobotState.Font = new System.Drawing.Font("Lato", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRobotState.ForeColor = System.Drawing.Color.White;
-            this.labelRobotState.Location = new System.Drawing.Point(776, 159);
+            this.labelRobotState.Location = new System.Drawing.Point(776, 151);
             this.labelRobotState.Name = "labelRobotState";
-            this.labelRobotState.Size = new System.Drawing.Size(110, 23);
+            this.labelRobotState.Size = new System.Drawing.Size(110, 40);
             this.labelRobotState.TabIndex = 84;
             this.labelRobotState.Text = "No Robot";
             this.labelRobotState.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
