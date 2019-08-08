@@ -3564,7 +3564,7 @@ namespace SDK_Example
                     break;
                 case RobotStateEnum.emergencyStopped:
                     buttonRobotScan.Enabled = true;
-                    labelRobotState.Text = "Emergency Stopped";
+                    labelRobotState.Text = "Robot Stopped";
                     robotStateIndicator.Load("Images/emergencyStopped.png");
                     break;
                 case RobotStateEnum.rewinding:
@@ -4798,6 +4798,26 @@ namespace SDK_Example
             StopCineloop();
             iCineCounter = protoTrackBarCine.Value;
             CineloopSlide();
+        }
+
+        private void PictureBoxIcon_Click_1(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.ultrascanguide.com");
+        }
+
+        private void LabelTgc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
     #endregion
