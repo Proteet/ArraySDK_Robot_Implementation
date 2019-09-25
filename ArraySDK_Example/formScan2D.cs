@@ -4819,6 +4819,36 @@ namespace SDK_Example
         {
 
         }
+
+        private void PictureBox1_MouseDown(object sender, EventArgs e)
+        {
+            try
+            {
+                // stop the robot
+                comPort.Write("r");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                robotConnectionLost();
+                return;
+            }
+        }
+
+        private void PictureBox2_MouseDown(object sender, EventArgs e)
+        {
+            try
+            {
+                // stop the robot
+                comPort.Write("q");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                robotConnectionLost();
+                return;
+            }
+        }
     }
     #endregion
 }///namespace SDK_EXAMPLE
