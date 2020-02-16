@@ -134,7 +134,6 @@ C:\Users\Austen\Documents\GitHub\ArraySDK_Robot_Implementation\ArraySDK_Example\
 C:\Users\jeffg\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_Example\bin\Debug\ArraySDK_Example.exe.config
 C:\Users\jeffg\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_Example\bin\Debug\ArraySDK_Example.exe
 C:\Users\jeffg\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_Example\bin\Debug\ArraySDK_Example.pdb
-C:\Users\jeffg\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_Example\obj\Debug\ArraySDK_Example.csprojAssemblyReference.cache
 C:\Users\jeffg\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_Example\obj\Debug\ArraySDK_Example.formFoot.resources
 C:\Users\jeffg\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_Example\obj\Debug\SDK_Example.FormMessage.resources
 C:\Users\jeffg\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_Example\obj\Debug\SDK_Example.formScan2D.resources
