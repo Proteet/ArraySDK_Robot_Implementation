@@ -147,3 +147,4 @@ C:\Users\jeffg\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_E
 C:\Users\jeffg\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_Example\obj\Debug\ArraySDK_Example.csproj.CopyComplete
 C:\Users\jeffg\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_Example\obj\Debug\ArraySDK_Example.exe
 C:\Users\jeffg\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_Example\obj\Debug\ArraySDK_Example.pdb
+C:\Users\jeffg\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_Example\obj\Debug\ArraySDK_Example.csprojAssemblyReference.cache
