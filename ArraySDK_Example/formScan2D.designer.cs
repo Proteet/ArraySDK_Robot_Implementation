@@ -121,7 +121,7 @@ namespace SDK_Example
             this.labelImaging.BackColor = System.Drawing.Color.Transparent;
             this.labelImaging.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelImaging.ForeColor = System.Drawing.Color.White;
-            this.labelImaging.Location = new System.Drawing.Point(234, 516);
+            this.labelImaging.Location = new System.Drawing.Point(225, 515);
             this.labelImaging.Name = "labelImaging";
             this.labelImaging.Size = new System.Drawing.Size(71, 16);
             this.labelImaging.TabIndex = 54;
@@ -135,7 +135,7 @@ namespace SDK_Example
             this.labelTgc.BackColor = System.Drawing.Color.Transparent;
             this.labelTgc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTgc.ForeColor = System.Drawing.Color.White;
-            this.labelTgc.Location = new System.Drawing.Point(765, 499);
+            this.labelTgc.Location = new System.Drawing.Point(765, 502);
             this.labelTgc.Name = "labelTgc";
             this.labelTgc.Size = new System.Drawing.Size(208, 16);
             this.labelTgc.TabIndex = 54;
@@ -358,7 +358,7 @@ namespace SDK_Example
             this.labelSaveReview.BackColor = System.Drawing.Color.Transparent;
             this.labelSaveReview.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSaveReview.ForeColor = System.Drawing.Color.White;
-            this.labelSaveReview.Location = new System.Drawing.Point(765, 264);
+            this.labelSaveReview.Location = new System.Drawing.Point(765, 267);
             this.labelSaveReview.Name = "labelSaveReview";
             this.labelSaveReview.Size = new System.Drawing.Size(112, 16);
             this.labelSaveReview.TabIndex = 58;
@@ -372,7 +372,7 @@ namespace SDK_Example
             this.labelRobotCtrls.BackColor = System.Drawing.Color.Transparent;
             this.labelRobotCtrls.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRobotCtrls.ForeColor = System.Drawing.Color.White;
-            this.labelRobotCtrls.Location = new System.Drawing.Point(765, 31);
+            this.labelRobotCtrls.Location = new System.Drawing.Point(765, 33);
             this.labelRobotCtrls.Name = "labelRobotCtrls";
             this.labelRobotCtrls.Size = new System.Drawing.Size(147, 16);
             this.labelRobotCtrls.TabIndex = 59;
