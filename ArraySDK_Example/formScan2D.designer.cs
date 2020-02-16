@@ -135,7 +135,7 @@ namespace SDK_Example
             this.labelTgc.BackColor = System.Drawing.Color.Transparent;
             this.labelTgc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTgc.ForeColor = System.Drawing.Color.White;
-            this.labelTgc.Location = new System.Drawing.Point(765, 504);
+            this.labelTgc.Location = new System.Drawing.Point(765, 499);
             this.labelTgc.Name = "labelTgc";
             this.labelTgc.Size = new System.Drawing.Size(208, 16);
             this.labelTgc.TabIndex = 54;
@@ -226,7 +226,7 @@ namespace SDK_Example
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel,
             this.toolStripStatusLabelFpga});
-            this.statusStrip.Location = new System.Drawing.Point(0, 689);
+            this.statusStrip.Location = new System.Drawing.Point(0, 679);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(1170, 22);
             this.statusStrip.TabIndex = 35;
@@ -622,7 +622,7 @@ namespace SDK_Example
             // protoTBarTgc1
             // 
             this.protoTBarTgc1.BackColor = System.Drawing.Color.Transparent;
-            this.protoTBarTgc1.Location = new System.Drawing.Point(767, 527);
+            this.protoTBarTgc1.Location = new System.Drawing.Point(767, 522);
             this.protoTBarTgc1.Maximum = 15;
             this.protoTBarTgc1.Minimum = -15;
             this.protoTBarTgc1.Name = "protoTBarTgc1";
@@ -633,7 +633,7 @@ namespace SDK_Example
             // protoTBarTgc2
             // 
             this.protoTBarTgc2.BackColor = System.Drawing.Color.Transparent;
-            this.protoTBarTgc2.Location = new System.Drawing.Point(767, 581);
+            this.protoTBarTgc2.Location = new System.Drawing.Point(767, 576);
             this.protoTBarTgc2.Maximum = 15;
             this.protoTBarTgc2.Minimum = -15;
             this.protoTBarTgc2.Name = "protoTBarTgc2";
@@ -644,7 +644,7 @@ namespace SDK_Example
             // protoTBarTgc3
             // 
             this.protoTBarTgc3.BackColor = System.Drawing.Color.Transparent;
-            this.protoTBarTgc3.Location = new System.Drawing.Point(767, 635);
+            this.protoTBarTgc3.Location = new System.Drawing.Point(767, 630);
             this.protoTBarTgc3.Maximum = 15;
             this.protoTBarTgc3.Minimum = -15;
             this.protoTBarTgc3.Name = "protoTBarTgc3";
@@ -847,7 +847,7 @@ namespace SDK_Example
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(50)))), ((int)(((byte)(63)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1170, 711);
+            this.ClientSize = new System.Drawing.Size(1170, 701);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelRobotState);
