@@ -96,8 +96,6 @@ namespace SDK_Example
             this.uctrlDepth = new SDK_Example.UserControlDepth();
             this.uctrlScan = new SDK_Example.UserControlScan();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
@@ -115,8 +113,6 @@ namespace SDK_Example
             ((System.ComponentModel.ISupportInitialize)(this.protoTBarTgc3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.protoTrackBarRobotSpeed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.protoTrackBarCine)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // labelImaging
@@ -125,7 +121,7 @@ namespace SDK_Example
             this.labelImaging.BackColor = System.Drawing.Color.Transparent;
             this.labelImaging.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelImaging.ForeColor = System.Drawing.Color.White;
-            this.labelImaging.Location = new System.Drawing.Point(234, 596);
+            this.labelImaging.Location = new System.Drawing.Point(233, 536);
             this.labelImaging.Name = "labelImaging";
             this.labelImaging.Size = new System.Drawing.Size(71, 16);
             this.labelImaging.TabIndex = 54;
@@ -139,7 +135,7 @@ namespace SDK_Example
             this.labelTgc.BackColor = System.Drawing.Color.Transparent;
             this.labelTgc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTgc.ForeColor = System.Drawing.Color.White;
-            this.labelTgc.Location = new System.Drawing.Point(765, 596);
+            this.labelTgc.Location = new System.Drawing.Point(765, 527);
             this.labelTgc.Name = "labelTgc";
             this.labelTgc.Size = new System.Drawing.Size(208, 16);
             this.labelTgc.TabIndex = 54;
@@ -151,7 +147,7 @@ namespace SDK_Example
             // 
             this.textRadius.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textRadius.ForeColor = System.Drawing.Color.DimGray;
-            this.textRadius.Location = new System.Drawing.Point(952, 95);
+            this.textRadius.Location = new System.Drawing.Point(952, 53);
             this.textRadius.Name = "textRadius";
             this.textRadius.Size = new System.Drawing.Size(123, 22);
             this.textRadius.TabIndex = 0;
@@ -165,7 +161,7 @@ namespace SDK_Example
             this.labelDepth.BackColor = System.Drawing.Color.Transparent;
             this.labelDepth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDepth.ForeColor = System.Drawing.Color.White;
-            this.labelDepth.Location = new System.Drawing.Point(241, 748);
+            this.labelDepth.Location = new System.Drawing.Point(236, 687);
             this.labelDepth.Name = "labelDepth";
             this.labelDepth.Size = new System.Drawing.Size(60, 16);
             this.labelDepth.TabIndex = 26;
@@ -178,7 +174,7 @@ namespace SDK_Example
             this.labelFrequency.BackColor = System.Drawing.Color.Transparent;
             this.labelFrequency.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFrequency.ForeColor = System.Drawing.Color.White;
-            this.labelFrequency.Location = new System.Drawing.Point(316, 748);
+            this.labelFrequency.Location = new System.Drawing.Point(311, 687);
             this.labelFrequency.Name = "labelFrequency";
             this.labelFrequency.Size = new System.Drawing.Size(72, 16);
             this.labelFrequency.TabIndex = 27;
@@ -190,7 +186,7 @@ namespace SDK_Example
             this.labelRobotSpeed.AutoSize = true;
             this.labelRobotSpeed.BackColor = System.Drawing.Color.Transparent;
             this.labelRobotSpeed.ForeColor = System.Drawing.Color.White;
-            this.labelRobotSpeed.Location = new System.Drawing.Point(917, 243);
+            this.labelRobotSpeed.Location = new System.Drawing.Point(917, 201);
             this.labelRobotSpeed.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelRobotSpeed.Name = "labelRobotSpeed";
             this.labelRobotSpeed.Size = new System.Drawing.Size(70, 13);
@@ -202,7 +198,7 @@ namespace SDK_Example
             this.labelMainGain.BackColor = System.Drawing.Color.Transparent;
             this.labelMainGain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMainGain.ForeColor = System.Drawing.Color.White;
-            this.labelMainGain.Location = new System.Drawing.Point(554, 748);
+            this.labelMainGain.Location = new System.Drawing.Point(549, 687);
             this.labelMainGain.Name = "labelMainGain";
             this.labelMainGain.Size = new System.Drawing.Size(73, 16);
             this.labelMainGain.TabIndex = 32;
@@ -215,7 +211,7 @@ namespace SDK_Example
             this.labelHighVolt.BackColor = System.Drawing.Color.Transparent;
             this.labelHighVolt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHighVolt.ForeColor = System.Drawing.Color.White;
-            this.labelHighVolt.Location = new System.Drawing.Point(486, 748);
+            this.labelHighVolt.Location = new System.Drawing.Point(481, 687);
             this.labelHighVolt.Name = "labelHighVolt";
             this.labelHighVolt.Size = new System.Drawing.Size(62, 16);
             this.labelHighVolt.TabIndex = 34;
@@ -230,7 +226,7 @@ namespace SDK_Example
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel,
             this.toolStripStatusLabelFpga});
-            this.statusStrip.Location = new System.Drawing.Point(0, 784);
+            this.statusStrip.Location = new System.Drawing.Point(0, 707);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(1170, 22);
             this.statusStrip.TabIndex = 35;
@@ -270,7 +266,7 @@ namespace SDK_Example
             this.labelDynamic.BackColor = System.Drawing.Color.Transparent;
             this.labelDynamic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDynamic.ForeColor = System.Drawing.Color.White;
-            this.labelDynamic.Location = new System.Drawing.Point(647, 748);
+            this.labelDynamic.Location = new System.Drawing.Point(642, 687);
             this.labelDynamic.Name = "labelDynamic";
             this.labelDynamic.Size = new System.Drawing.Size(61, 16);
             this.labelDynamic.TabIndex = 44;
@@ -284,7 +280,7 @@ namespace SDK_Example
             this.labelTgc3.BackColor = System.Drawing.Color.Transparent;
             this.labelTgc3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTgc3.ForeColor = System.Drawing.Color.White;
-            this.labelTgc3.Location = new System.Drawing.Point(1109, 711);
+            this.labelTgc3.Location = new System.Drawing.Point(1109, 642);
             this.labelTgc3.Name = "labelTgc3";
             this.labelTgc3.Size = new System.Drawing.Size(22, 13);
             this.labelTgc3.TabIndex = 56;
@@ -296,7 +292,7 @@ namespace SDK_Example
             this.labelTgc2.BackColor = System.Drawing.Color.Transparent;
             this.labelTgc2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTgc2.ForeColor = System.Drawing.Color.White;
-            this.labelTgc2.Location = new System.Drawing.Point(1094, 657);
+            this.labelTgc2.Location = new System.Drawing.Point(1094, 588);
             this.labelTgc2.Name = "labelTgc2";
             this.labelTgc2.Size = new System.Drawing.Size(38, 13);
             this.labelTgc2.TabIndex = 55;
@@ -308,7 +304,7 @@ namespace SDK_Example
             this.labelTgc1.BackColor = System.Drawing.Color.Transparent;
             this.labelTgc1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTgc1.ForeColor = System.Drawing.Color.White;
-            this.labelTgc1.Location = new System.Drawing.Point(1102, 603);
+            this.labelTgc1.Location = new System.Drawing.Point(1102, 534);
             this.labelTgc1.Name = "labelTgc1";
             this.labelTgc1.Size = new System.Drawing.Size(30, 13);
             this.labelTgc1.TabIndex = 54;
@@ -321,7 +317,7 @@ namespace SDK_Example
             this.labelFocus.BackColor = System.Drawing.Color.Transparent;
             this.labelFocus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFocus.ForeColor = System.Drawing.Color.White;
-            this.labelFocus.Location = new System.Drawing.Point(402, 748);
+            this.labelFocus.Location = new System.Drawing.Point(397, 687);
             this.labelFocus.Name = "labelFocus";
             this.labelFocus.Size = new System.Drawing.Size(45, 16);
             this.labelFocus.TabIndex = 46;
@@ -360,7 +356,7 @@ namespace SDK_Example
             this.labelPosition.AutoSize = true;
             this.labelPosition.BackColor = System.Drawing.Color.Transparent;
             this.labelPosition.ForeColor = System.Drawing.Color.White;
-            this.labelPosition.Location = new System.Drawing.Point(1002, 178);
+            this.labelPosition.Location = new System.Drawing.Point(1002, 136);
             this.labelPosition.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPosition.Name = "labelPosition";
             this.labelPosition.Size = new System.Drawing.Size(44, 13);
@@ -375,7 +371,7 @@ namespace SDK_Example
             this.labelSaveReview.BackColor = System.Drawing.Color.Transparent;
             this.labelSaveReview.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSaveReview.ForeColor = System.Drawing.Color.White;
-            this.labelSaveReview.Location = new System.Drawing.Point(765, 338);
+            this.labelSaveReview.Location = new System.Drawing.Point(765, 264);
             this.labelSaveReview.Name = "labelSaveReview";
             this.labelSaveReview.Size = new System.Drawing.Size(112, 16);
             this.labelSaveReview.TabIndex = 58;
@@ -389,7 +385,7 @@ namespace SDK_Example
             this.labelRobotCtrls.BackColor = System.Drawing.Color.Transparent;
             this.labelRobotCtrls.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRobotCtrls.ForeColor = System.Drawing.Color.White;
-            this.labelRobotCtrls.Location = new System.Drawing.Point(765, 73);
+            this.labelRobotCtrls.Location = new System.Drawing.Point(765, 31);
             this.labelRobotCtrls.Name = "labelRobotCtrls";
             this.labelRobotCtrls.Size = new System.Drawing.Size(147, 16);
             this.labelRobotCtrls.TabIndex = 59;
@@ -507,7 +503,7 @@ namespace SDK_Example
             // 
             this.pictureBoxIcon.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxIcon.Image")));
-            this.pictureBoxIcon.Location = new System.Drawing.Point(53, 601);
+            this.pictureBoxIcon.Location = new System.Drawing.Point(52, 541);
             this.pictureBoxIcon.Name = "pictureBoxIcon";
             this.pictureBoxIcon.Size = new System.Drawing.Size(153, 144);
             this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -519,7 +515,7 @@ namespace SDK_Example
             // 
             this.buttonRobotScan.BackColor = System.Drawing.Color.Transparent;
             this.buttonRobotScan.Image = ((System.Drawing.Image)(resources.GetObject("buttonRobotScan.Image")));
-            this.buttonRobotScan.Location = new System.Drawing.Point(768, 95);
+            this.buttonRobotScan.Location = new System.Drawing.Point(768, 53);
             this.buttonRobotScan.Name = "buttonRobotScan";
             this.buttonRobotScan.Size = new System.Drawing.Size(128, 160);
             this.buttonRobotScan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -533,7 +529,7 @@ namespace SDK_Example
             // 
             this.butManRev.BackColor = System.Drawing.Color.Transparent;
             this.butManRev.Image = ((System.Drawing.Image)(resources.GetObject("butManRev.Image")));
-            this.butManRev.Location = new System.Drawing.Point(906, 141);
+            this.butManRev.Location = new System.Drawing.Point(906, 99);
             this.butManRev.Name = "butManRev";
             this.butManRev.Size = new System.Drawing.Size(78, 90);
             this.butManRev.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -546,7 +542,7 @@ namespace SDK_Example
             // 
             this.protoButManFwd.BackColor = System.Drawing.Color.Transparent;
             this.protoButManFwd.Image = ((System.Drawing.Image)(resources.GetObject("protoButManFwd.Image")));
-            this.protoButManFwd.Location = new System.Drawing.Point(1049, 141);
+            this.protoButManFwd.Location = new System.Drawing.Point(1049, 99);
             this.protoButManFwd.Name = "protoButManFwd";
             this.protoButManFwd.Size = new System.Drawing.Size(78, 90);
             this.protoButManFwd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -559,7 +555,7 @@ namespace SDK_Example
             // 
             this.buttonLoad.BackColor = System.Drawing.Color.Transparent;
             this.buttonLoad.Image = ((System.Drawing.Image)(resources.GetObject("buttonLoad.Image")));
-            this.buttonLoad.Location = new System.Drawing.Point(768, 361);
+            this.buttonLoad.Location = new System.Drawing.Point(768, 287);
             this.buttonLoad.Name = "buttonLoad";
             this.buttonLoad.Size = new System.Drawing.Size(178, 70);
             this.buttonLoad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -573,7 +569,7 @@ namespace SDK_Example
             // 
             this.buttonSaveCine.BackColor = System.Drawing.Color.Transparent;
             this.buttonSaveCine.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveCine.Image")));
-            this.buttonSaveCine.Location = new System.Drawing.Point(952, 361);
+            this.buttonSaveCine.Location = new System.Drawing.Point(952, 287);
             this.buttonSaveCine.Name = "buttonSaveCine";
             this.buttonSaveCine.Size = new System.Drawing.Size(178, 70);
             this.buttonSaveCine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -587,7 +583,7 @@ namespace SDK_Example
             // 
             this.buttonPrevious.BackColor = System.Drawing.Color.Transparent;
             this.buttonPrevious.Image = ((System.Drawing.Image)(resources.GetObject("buttonPrevious.Image")));
-            this.buttonPrevious.Location = new System.Drawing.Point(768, 437);
+            this.buttonPrevious.Location = new System.Drawing.Point(768, 363);
             this.buttonPrevious.Name = "buttonPrevious";
             this.buttonPrevious.Size = new System.Drawing.Size(118, 70);
             this.buttonPrevious.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -601,7 +597,7 @@ namespace SDK_Example
             // 
             this.buttonCine.BackColor = System.Drawing.Color.Transparent;
             this.buttonCine.Image = ((System.Drawing.Image)(resources.GetObject("buttonCine.Image")));
-            this.buttonCine.Location = new System.Drawing.Point(890, 437);
+            this.buttonCine.Location = new System.Drawing.Point(890, 363);
             this.buttonCine.Name = "buttonCine";
             this.buttonCine.Size = new System.Drawing.Size(118, 70);
             this.buttonCine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -615,7 +611,7 @@ namespace SDK_Example
             // 
             this.buttonNext.BackColor = System.Drawing.Color.Transparent;
             this.buttonNext.Image = ((System.Drawing.Image)(resources.GetObject("buttonNext.Image")));
-            this.buttonNext.Location = new System.Drawing.Point(1012, 437);
+            this.buttonNext.Location = new System.Drawing.Point(1012, 363);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(118, 70);
             this.buttonNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -629,7 +625,7 @@ namespace SDK_Example
             // 
             this.robotStateIndicator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(240)))));
             this.robotStateIndicator.Image = ((System.Drawing.Image)(resources.GetObject("robotStateIndicator.Image")));
-            this.robotStateIndicator.Location = new System.Drawing.Point(778, 203);
+            this.robotStateIndicator.Location = new System.Drawing.Point(778, 161);
             this.robotStateIndicator.Name = "robotStateIndicator";
             this.robotStateIndicator.Size = new System.Drawing.Size(38, 38);
             this.robotStateIndicator.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -639,7 +635,7 @@ namespace SDK_Example
             // protoTBarTgc1
             // 
             this.protoTBarTgc1.BackColor = System.Drawing.Color.Transparent;
-            this.protoTBarTgc1.Location = new System.Drawing.Point(767, 619);
+            this.protoTBarTgc1.Location = new System.Drawing.Point(767, 550);
             this.protoTBarTgc1.Maximum = 15;
             this.protoTBarTgc1.Minimum = -15;
             this.protoTBarTgc1.Name = "protoTBarTgc1";
@@ -650,7 +646,7 @@ namespace SDK_Example
             // protoTBarTgc2
             // 
             this.protoTBarTgc2.BackColor = System.Drawing.Color.Transparent;
-            this.protoTBarTgc2.Location = new System.Drawing.Point(767, 673);
+            this.protoTBarTgc2.Location = new System.Drawing.Point(767, 604);
             this.protoTBarTgc2.Maximum = 15;
             this.protoTBarTgc2.Minimum = -15;
             this.protoTBarTgc2.Name = "protoTBarTgc2";
@@ -661,7 +657,7 @@ namespace SDK_Example
             // protoTBarTgc3
             // 
             this.protoTBarTgc3.BackColor = System.Drawing.Color.Transparent;
-            this.protoTBarTgc3.Location = new System.Drawing.Point(767, 727);
+            this.protoTBarTgc3.Location = new System.Drawing.Point(767, 658);
             this.protoTBarTgc3.Maximum = 15;
             this.protoTBarTgc3.Minimum = -15;
             this.protoTBarTgc3.Name = "protoTBarTgc3";
@@ -672,7 +668,7 @@ namespace SDK_Example
             // protoTrackBarRobotSpeed
             // 
             this.protoTrackBarRobotSpeed.BackColor = System.Drawing.Color.Transparent;
-            this.protoTrackBarRobotSpeed.Location = new System.Drawing.Point(767, 259);
+            this.protoTrackBarRobotSpeed.Location = new System.Drawing.Point(767, 217);
             this.protoTrackBarRobotSpeed.Maximum = 100;
             this.protoTrackBarRobotSpeed.Name = "protoTrackBarRobotSpeed";
             this.protoTrackBarRobotSpeed.Size = new System.Drawing.Size(370, 45);
@@ -683,7 +679,7 @@ namespace SDK_Example
             // protoTrackBarCine
             // 
             this.protoTrackBarCine.BackColor = System.Drawing.Color.Transparent;
-            this.protoTrackBarCine.Location = new System.Drawing.Point(767, 510);
+            this.protoTrackBarCine.Location = new System.Drawing.Point(767, 436);
             this.protoTrackBarCine.Maximum = 512;
             this.protoTrackBarCine.Name = "protoTrackBarCine";
             this.protoTrackBarCine.Size = new System.Drawing.Size(370, 45);
@@ -695,7 +691,7 @@ namespace SDK_Example
             this.labelRobotState.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(240)))));
             this.labelRobotState.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRobotState.ForeColor = System.Drawing.Color.White;
-            this.labelRobotState.Location = new System.Drawing.Point(776, 151);
+            this.labelRobotState.Location = new System.Drawing.Point(776, 109);
             this.labelRobotState.Name = "labelRobotState";
             this.labelRobotState.Size = new System.Drawing.Size(110, 40);
             this.labelRobotState.TabIndex = 84;
@@ -708,7 +704,7 @@ namespace SDK_Example
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(903, 546);
+            this.label1.Location = new System.Drawing.Point(903, 477);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 16);
             this.label1.TabIndex = 85;
@@ -722,7 +718,7 @@ namespace SDK_Example
             this.protoUCtrlPMDynamic.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("protoUCtrlPMDynamic.BackgroundImage")));
             this.protoUCtrlPMDynamic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.protoUCtrlPMDynamic.ForeColor = System.Drawing.Color.Black;
-            this.protoUCtrlPMDynamic.Location = new System.Drawing.Point(630, 619);
+            this.protoUCtrlPMDynamic.Location = new System.Drawing.Point(629, 559);
             this.protoUCtrlPMDynamic.Margin = new System.Windows.Forms.Padding(0);
             this.protoUCtrlPMDynamic.Name = "protoUCtrlPMDynamic";
             this.protoUCtrlPMDynamic.Size = new System.Drawing.Size(75, 128);
@@ -734,7 +730,7 @@ namespace SDK_Example
             this.protoUCtrlPMGalGain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("protoUCtrlPMGalGain.BackgroundImage")));
             this.protoUCtrlPMGalGain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.protoUCtrlPMGalGain.ForeColor = System.Drawing.Color.Black;
-            this.protoUCtrlPMGalGain.Location = new System.Drawing.Point(550, 619);
+            this.protoUCtrlPMGalGain.Location = new System.Drawing.Point(549, 559);
             this.protoUCtrlPMGalGain.Margin = new System.Windows.Forms.Padding(0);
             this.protoUCtrlPMGalGain.Name = "protoUCtrlPMGalGain";
             this.protoUCtrlPMGalGain.Size = new System.Drawing.Size(75, 128);
@@ -746,7 +742,7 @@ namespace SDK_Example
             this.protoUCtrlPMHighVoltage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("protoUCtrlPMHighVoltage.BackgroundImage")));
             this.protoUCtrlPMHighVoltage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.protoUCtrlPMHighVoltage.ForeColor = System.Drawing.Color.Black;
-            this.protoUCtrlPMHighVoltage.Location = new System.Drawing.Point(470, 619);
+            this.protoUCtrlPMHighVoltage.Location = new System.Drawing.Point(469, 559);
             this.protoUCtrlPMHighVoltage.Margin = new System.Windows.Forms.Padding(0);
             this.protoUCtrlPMHighVoltage.Name = "protoUCtrlPMHighVoltage";
             this.protoUCtrlPMHighVoltage.Size = new System.Drawing.Size(75, 128);
@@ -758,7 +754,7 @@ namespace SDK_Example
             this.protoUCtrlPMFocus.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("protoUCtrlPMFocus.BackgroundImage")));
             this.protoUCtrlPMFocus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.protoUCtrlPMFocus.ForeColor = System.Drawing.Color.Black;
-            this.protoUCtrlPMFocus.Location = new System.Drawing.Point(390, 619);
+            this.protoUCtrlPMFocus.Location = new System.Drawing.Point(389, 559);
             this.protoUCtrlPMFocus.Margin = new System.Windows.Forms.Padding(0);
             this.protoUCtrlPMFocus.Name = "protoUCtrlPMFocus";
             this.protoUCtrlPMFocus.Size = new System.Drawing.Size(75, 128);
@@ -770,7 +766,7 @@ namespace SDK_Example
             this.protoUCtrlPMFrequency.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("protoUCtrlPMFrequency.BackgroundImage")));
             this.protoUCtrlPMFrequency.Cursor = System.Windows.Forms.Cursors.Hand;
             this.protoUCtrlPMFrequency.ForeColor = System.Drawing.Color.Black;
-            this.protoUCtrlPMFrequency.Location = new System.Drawing.Point(310, 619);
+            this.protoUCtrlPMFrequency.Location = new System.Drawing.Point(309, 559);
             this.protoUCtrlPMFrequency.Margin = new System.Windows.Forms.Padding(0);
             this.protoUCtrlPMFrequency.Name = "protoUCtrlPMFrequency";
             this.protoUCtrlPMFrequency.Size = new System.Drawing.Size(75, 128);
@@ -782,7 +778,7 @@ namespace SDK_Example
             this.protoUCtrlPMDepth.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("protoUCtrlPMDepth.BackgroundImage")));
             this.protoUCtrlPMDepth.Cursor = System.Windows.Forms.Cursors.Hand;
             this.protoUCtrlPMDepth.ForeColor = System.Drawing.Color.Black;
-            this.protoUCtrlPMDepth.Location = new System.Drawing.Point(230, 619);
+            this.protoUCtrlPMDepth.Location = new System.Drawing.Point(229, 559);
             this.protoUCtrlPMDepth.Margin = new System.Windows.Forms.Padding(0);
             this.protoUCtrlPMDepth.Name = "protoUCtrlPMDepth";
             this.protoUCtrlPMDepth.Size = new System.Drawing.Size(75, 128);
@@ -822,7 +818,7 @@ namespace SDK_Example
             this.uctrlScan.BackColor = System.Drawing.Color.Transparent;
             this.uctrlScan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.uctrlScan.ForeColor = System.Drawing.Color.Transparent;
-            this.uctrlScan.Location = new System.Drawing.Point(64, 83);
+            this.uctrlScan.Location = new System.Drawing.Point(63, 53);
             this.uctrlScan.Name = "uctrlScan";
             this.uctrlScan.Size = new System.Drawing.Size(640, 480);
             this.uctrlScan.TabIndex = 9;
@@ -837,36 +833,12 @@ namespace SDK_Example
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(986, 78);
+            this.label2.Location = new System.Drawing.Point(986, 36);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 86;
             this.label2.Text = "Radius (cm)";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1080, 27);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(78, 44);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 87;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PictureBox1_MouseDown);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1080, 73);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(78, 44);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 88;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PictureBox2_MouseDown);
             // 
             // formScan2D
             // 
@@ -875,9 +847,7 @@ namespace SDK_Example
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(50)))), ((int)(((byte)(63)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1170, 806);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(1170, 729);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelRobotState);
@@ -958,8 +928,6 @@ namespace SDK_Example
             ((System.ComponentModel.ISupportInitialize)(this.protoTBarTgc3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.protoTrackBarRobotSpeed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.protoTrackBarCine)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1034,8 +1002,6 @@ namespace SDK_Example
         private Label labelRobotState;
         private Label label1;
         private Label label2;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
     }
 }
 
