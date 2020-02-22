@@ -67,7 +67,7 @@ namespace SDK_Example
             this.menuWebsite = new System.Windows.Forms.ToolStripMenuItem();
             this.referenceImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ankleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
+            this.ultraScanButton = new System.Windows.Forms.PictureBox();
             this.buttonRobotScan = new System.Windows.Forms.PictureBox();
             this.butManRev = new System.Windows.Forms.PictureBox();
             this.protoButManFwd = new System.Windows.Forms.PictureBox();
@@ -99,7 +99,7 @@ namespace SDK_Example
             this.uctrlScan = new SDK_Example.UserControlScan();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ultraScanButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonRobotScan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.butManRev)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.protoButManFwd)).BeginInit();
@@ -488,17 +488,19 @@ namespace SDK_Example
             this.ankleToolStripMenuItem.Text = "Foot";
             this.ankleToolStripMenuItem.Click += new System.EventHandler(this.AnkleToolStripMenuItem_Click);
             // 
-            // pictureBoxIcon
+            // ultraScanButton
             // 
-            this.pictureBoxIcon.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxIcon.Image")));
-            this.pictureBoxIcon.Location = new System.Drawing.Point(53, 527);
-            this.pictureBoxIcon.Name = "pictureBoxIcon";
-            this.pictureBoxIcon.Size = new System.Drawing.Size(153, 144);
-            this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxIcon.TabIndex = 1;
-            this.pictureBoxIcon.TabStop = false;
-            this.pictureBoxIcon.Click += new System.EventHandler(this.PictureBoxIcon_Click_1);
+            this.ultraScanButton.BackColor = System.Drawing.Color.Transparent;
+            this.ultraScanButton.Image = ((System.Drawing.Image)(resources.GetObject("ultraScanButton.Image")));
+            this.ultraScanButton.Location = new System.Drawing.Point(69, 520);
+            this.ultraScanButton.Name = "ultraScanButton";
+            this.ultraScanButton.Size = new System.Drawing.Size(147, 149);
+            this.ultraScanButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.ultraScanButton.TabIndex = 1;
+            this.ultraScanButton.TabStop = false;
+            this.ultraScanButton.Click += new System.EventHandler(this.UltraScanButton_Click);
+            this.ultraScanButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.UltraScanButton_MouseDown);
+            this.ultraScanButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.UltraScanButton_MouseUp);
             // 
             // buttonRobotScan
             // 
@@ -884,7 +886,7 @@ namespace SDK_Example
             this.Controls.Add(this.butManRev);
             this.Controls.Add(this.buttonRobotScan);
             this.Controls.Add(this.userControlDepth1);
-            this.Controls.Add(this.pictureBoxIcon);
+            this.Controls.Add(this.ultraScanButton);
             this.Controls.Add(this.labelRobotCtrls);
             this.Controls.Add(this.labelSaveReview);
             this.Controls.Add(this.labelImaging);
@@ -906,10 +908,10 @@ namespace SDK_Example
             this.Controls.Add(this.uctrlGrayScale);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.uctrlDepth);
             this.Controls.Add(this.uctrlScan);
             this.Controls.Add(this.protoTBarTgc1);
             this.Controls.Add(this.protoTBarTgc2);
+            this.Controls.Add(this.uctrlDepth);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.DimGray;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -927,7 +929,7 @@ namespace SDK_Example
             this.statusStrip.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ultraScanButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonRobotScan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.butManRev)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.protoButManFwd)).EndInit();
@@ -987,7 +989,7 @@ namespace SDK_Example
         private ToolStripMenuItem editToolStripMenuItem;
         private ToolStripMenuItem menuCompound;
         private ToolStripMenuItem menuDoubler;
-        private PictureBox pictureBoxIcon;
+        private PictureBox ultraScanButton;
         private ToolStripMenuItem aboutToolStripMenuItem;
         private ToolStripMenuItem menuWebsite;
         private PictureBox buttonRobotScan;

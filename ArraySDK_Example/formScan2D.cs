@@ -4800,7 +4800,7 @@ namespace SDK_Example
             CineloopSlide();
         }
 
-        private void PictureBoxIcon_Click_1(object sender, EventArgs e)
+        private void UltraScanButton_Click(object sender, EventArgs e)
         {
             // System.Diagnostics.Process.Start("http://www.ultrascanguide.com");
             axWindowsMediaPlayer1.Visible = true;
@@ -4853,6 +4853,17 @@ namespace SDK_Example
             }
         }
 
+        private void UltraScanButton_MouseDown(object sender, MouseEventArgs e)
+        {
+            PictureBox image = (PictureBox)sender;
+            image.Load("Images/Pressed/Ultrascan.png");
+        }
+
+        private void UltraScanButton_MouseUp(object sender, MouseEventArgs e)
+        {
+            PictureBox image = (PictureBox)sender;
+            image.Load("Images/Unpressed/Ultrascan.png");
+        }
     }
     #endregion
 }///namespace SDK_EXAMPLE
