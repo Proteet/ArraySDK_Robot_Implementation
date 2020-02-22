@@ -4802,7 +4802,10 @@ namespace SDK_Example
 
         private void PictureBoxIcon_Click_1(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("http://www.ultrascanguide.com");
+            // System.Diagnostics.Process.Start("http://www.ultrascanguide.com");
+            axWindowsMediaPlayer1.Visible = true;
+            axWindowsMediaPlayer1.URL = @"C:\Users\jeffg\Downloads\test1.mp4";
+
         }
 
         private void LabelTgc_Click(object sender, EventArgs e)
@@ -4849,6 +4852,7 @@ namespace SDK_Example
                 return;
             }
         }
+
     }
     #endregion
 }///namespace SDK_EXAMPLE

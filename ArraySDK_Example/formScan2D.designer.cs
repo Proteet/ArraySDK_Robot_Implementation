@@ -84,6 +84,9 @@ namespace SDK_Example
             this.protoTrackBarCine = new TrackBar.Dotnetrix.Controls.TrackBar();
             this.labelRobotState = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelFileName = new System.Windows.Forms.Label();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.protoUCtrlPMDynamic = new SDK_Example.UserControlPlusMinus();
             this.protoUCtrlPMGalGain = new SDK_Example.UserControlPlusMinus();
             this.protoUCtrlPMHighVoltage = new SDK_Example.UserControlPlusMinus();
@@ -94,8 +97,6 @@ namespace SDK_Example
             this.uctrlGrayScale = new SDK_Example.UserControlGrayScale();
             this.uctrlDepth = new SDK_Example.UserControlDepth();
             this.uctrlScan = new SDK_Example.UserControlScan();
-            this.label2 = new System.Windows.Forms.Label();
-            this.labelFileName = new System.Windows.Forms.Label();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
@@ -113,6 +114,7 @@ namespace SDK_Example
             ((System.ComponentModel.ISupportInitialize)(this.protoTBarTgc3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.protoTrackBarRobotSpeed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.protoTrackBarCine)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelImaging
@@ -211,7 +213,7 @@ namespace SDK_Example
             this.labelHighVolt.BackColor = System.Drawing.Color.Transparent;
             this.labelHighVolt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHighVolt.ForeColor = System.Drawing.Color.White;
-            this.labelHighVolt.Location = new System.Drawing.Point(482, 660);
+            this.labelHighVolt.Location = new System.Drawing.Point(474, 660);
             this.labelHighVolt.Name = "labelHighVolt";
             this.labelHighVolt.Size = new System.Drawing.Size(62, 16);
             this.labelHighVolt.TabIndex = 34;
@@ -253,7 +255,7 @@ namespace SDK_Example
             this.labelDynamic.BackColor = System.Drawing.Color.Transparent;
             this.labelDynamic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDynamic.ForeColor = System.Drawing.Color.White;
-            this.labelDynamic.Location = new System.Drawing.Point(643, 660);
+            this.labelDynamic.Location = new System.Drawing.Point(635, 660);
             this.labelDynamic.Name = "labelDynamic";
             this.labelDynamic.Size = new System.Drawing.Size(61, 16);
             this.labelDynamic.TabIndex = 44;
@@ -304,7 +306,7 @@ namespace SDK_Example
             this.labelFocus.BackColor = System.Drawing.Color.Transparent;
             this.labelFocus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFocus.ForeColor = System.Drawing.Color.White;
-            this.labelFocus.Location = new System.Drawing.Point(398, 660);
+            this.labelFocus.Location = new System.Drawing.Point(404, 660);
             this.labelFocus.Name = "labelFocus";
             this.labelFocus.Size = new System.Drawing.Size(45, 16);
             this.labelFocus.TabIndex = 46;
@@ -612,7 +614,7 @@ namespace SDK_Example
             // 
             this.robotStateIndicator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(240)))));
             this.robotStateIndicator.Image = ((System.Drawing.Image)(resources.GetObject("robotStateIndicator.Image")));
-            this.robotStateIndicator.Location = new System.Drawing.Point(778, 161);
+            this.robotStateIndicator.Location = new System.Drawing.Point(779, 161);
             this.robotStateIndicator.Name = "robotStateIndicator";
             this.robotStateIndicator.Size = new System.Drawing.Size(38, 38);
             this.robotStateIndicator.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -698,6 +700,42 @@ namespace SDK_Example
             this.label1.Text = "Image Control";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.Label1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(986, 36);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.TabIndex = 86;
+            this.label2.Text = "Radius (cm)";
+            // 
+            // labelFileName
+            // 
+            this.labelFileName.AutoSize = true;
+            this.labelFileName.BackColor = System.Drawing.Color.Transparent;
+            this.labelFileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFileName.ForeColor = System.Drawing.Color.White;
+            this.labelFileName.Location = new System.Drawing.Point(208, 28);
+            this.labelFileName.Name = "labelFileName";
+            this.labelFileName.Size = new System.Drawing.Size(75, 16);
+            this.labelFileName.TabIndex = 39;
+            this.labelFileName.Text = "FileName";
+            this.labelFileName.Visible = false;
+            this.labelFileName.Click += new System.EventHandler(this.LabelFileName_Click);
+            // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(63, 30);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(640, 480);
+            this.axWindowsMediaPlayer1.TabIndex = 87;
+            this.axWindowsMediaPlayer1.Visible = false;
             // 
             // protoUCtrlPMDynamic
             // 
@@ -815,31 +853,6 @@ namespace SDK_Example
             this.uctrlScan.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.uctrlScan_MouseDoubleClick);
             this.uctrlScan.MouseMove += new System.Windows.Forms.MouseEventHandler(this.uctrlScan_MouseMove);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(986, 36);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
-            this.label2.TabIndex = 86;
-            this.label2.Text = "Radius (cm)";
-            // 
-            // labelFileName
-            // 
-            this.labelFileName.AutoSize = true;
-            this.labelFileName.BackColor = System.Drawing.Color.Transparent;
-            this.labelFileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFileName.ForeColor = System.Drawing.Color.White;
-            this.labelFileName.Location = new System.Drawing.Point(208, 28);
-            this.labelFileName.Name = "labelFileName";
-            this.labelFileName.Size = new System.Drawing.Size(75, 16);
-            this.labelFileName.TabIndex = 39;
-            this.labelFileName.Text = "FileName";
-            this.labelFileName.Click += new System.EventHandler(this.LabelFileName_Click);
-            // 
             // formScan2D
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -848,6 +861,7 @@ namespace SDK_Example
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(50)))), ((int)(((byte)(63)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1170, 701);
+            this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelRobotState);
@@ -928,6 +942,7 @@ namespace SDK_Example
             ((System.ComponentModel.ISupportInitialize)(this.protoTBarTgc3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.protoTrackBarRobotSpeed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.protoTrackBarCine)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1002,6 +1017,7 @@ namespace SDK_Example
         private Label label1;
         private Label label2;
         private Label labelFileName;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
     }
 }
 

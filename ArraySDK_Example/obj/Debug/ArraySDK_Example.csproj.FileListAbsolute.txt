@@ -148,3 +148,8 @@ C:\Users\jeffg\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_E
 C:\Users\jeffg\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_Example\obj\Debug\ArraySDK_Example.exe
 C:\Users\jeffg\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_Example\obj\Debug\ArraySDK_Example.pdb
 C:\Users\jeffg\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_Example\obj\Debug\ArraySDK_Example.csprojAssemblyReference.cache
+C:\Users\jeffg\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_Example\bin\Debug\Interop.WMPLib.dll
+C:\Users\jeffg\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_Example\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\jeffg\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_Example\obj\Debug\Interop.WMPLib.dll
+C:\Users\jeffg\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_Example\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\jeffg\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_Example\obj\Debug\ArraySDK_Example.csproj.ResolveComReference.cache
