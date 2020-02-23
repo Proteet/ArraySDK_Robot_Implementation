@@ -153,3 +153,5 @@ C:\Users\jeffg\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_E
 C:\Users\jeffg\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_Example\obj\Debug\Interop.WMPLib.dll
 C:\Users\jeffg\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_Example\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\jeffg\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_Example\obj\Debug\ArraySDK_Example.csproj.ResolveComReference.cache
+C:\Users\jeffg\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_Example\obj\Debug\ArraySDK_Example.FormKnee.resources
+C:\Users\jeffg\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_Example\obj\Debug\ArraySDK_Example.FormElbow.resources

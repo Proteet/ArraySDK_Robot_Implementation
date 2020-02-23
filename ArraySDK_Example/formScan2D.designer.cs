@@ -97,6 +97,8 @@ namespace SDK_Example
             this.uctrlGrayScale = new SDK_Example.UserControlGrayScale();
             this.uctrlDepth = new SDK_Example.UserControlDepth();
             this.uctrlScan = new SDK_Example.UserControlScan();
+            this.kneeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.elbowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ultraScanButton)).BeginInit();
@@ -476,7 +478,9 @@ namespace SDK_Example
             // referenceImagesToolStripMenuItem
             // 
             this.referenceImagesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ankleToolStripMenuItem});
+            this.ankleToolStripMenuItem,
+            this.kneeToolStripMenuItem,
+            this.elbowToolStripMenuItem});
             this.referenceImagesToolStripMenuItem.Name = "referenceImagesToolStripMenuItem";
             this.referenceImagesToolStripMenuItem.Size = new System.Drawing.Size(112, 20);
             this.referenceImagesToolStripMenuItem.Text = "Reference Images";
@@ -855,6 +859,20 @@ namespace SDK_Example
             this.uctrlScan.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.uctrlScan_MouseDoubleClick);
             this.uctrlScan.MouseMove += new System.Windows.Forms.MouseEventHandler(this.uctrlScan_MouseMove);
             // 
+            // kneeToolStripMenuItem
+            // 
+            this.kneeToolStripMenuItem.Name = "kneeToolStripMenuItem";
+            this.kneeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.kneeToolStripMenuItem.Text = "Knee";
+            this.kneeToolStripMenuItem.Click += new System.EventHandler(this.KneeToolStripMenuItem_Click);
+            // 
+            // elbowToolStripMenuItem
+            // 
+            this.elbowToolStripMenuItem.Name = "elbowToolStripMenuItem";
+            this.elbowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.elbowToolStripMenuItem.Text = "Elbow";
+            this.elbowToolStripMenuItem.Click += new System.EventHandler(this.ElbowToolStripMenuItem_Click);
+            // 
             // formScan2D
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1020,6 +1038,8 @@ namespace SDK_Example
         private Label label2;
         private Label labelFileName;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
+        private ToolStripMenuItem kneeToolStripMenuItem;
+        private ToolStripMenuItem elbowToolStripMenuItem;
     }
 }
 

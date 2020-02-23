@@ -93,11 +93,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="formFoot.cs">
+    <Compile Include="FormElbow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formFoot.Designer.cs">
-      <DependentUpon>formFoot.cs</DependentUpon>
+    <Compile Include="FormElbow.Designer.cs">
+      <DependentUpon>FormElbow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKnee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKnee.Designer.cs">
+      <DependentUpon>FormKnee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFoot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFoot.Designer.cs">
+      <DependentUpon>FormFoot.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMessage.cs">
       <SubType>Form</SubType>
@@ -114,9 +126,15 @@
     <Compile Include="MessageClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="formFoot.resx">
-      <DependentUpon>formFoot.cs</DependentUpon>
+    <EmbeddedResource Include="FormElbow.resx">
+      <DependentUpon>FormElbow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFoot.resx">
+      <DependentUpon>FormFoot.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKnee.resx">
+      <DependentUpon>FormKnee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMessage.resx">
       <DependentUpon>FormMessage.cs</DependentUpon>

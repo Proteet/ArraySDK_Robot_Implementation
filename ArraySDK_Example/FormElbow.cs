@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ArraySDK_Example
 {
-    public partial class FormFoot : Form
+    public partial class FormElbow : Form
     {
-        public FormFoot()
+        public FormElbow()
         {
             InitializeComponent();
         }

@@ -4756,7 +4756,7 @@ namespace SDK_Example
 
         private void AnkleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formFoot referenceFoot = new formFoot();
+            FormFoot referenceFoot = new FormFoot();
             referenceFoot.Show();
         }
 
@@ -4863,6 +4863,18 @@ namespace SDK_Example
         {
             PictureBox image = (PictureBox)sender;
             image.Load("Images/Unpressed/Ultrascan.png");
+        }
+
+        private void KneeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormKnee referenceKnee = new FormKnee();
+            referenceKnee.Show();
+        }
+
+        private void ElbowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormElbow referenceElbow = new FormElbow();
+            referenceElbow.Show();
         }
     }
     #endregion
