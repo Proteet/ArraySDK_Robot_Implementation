@@ -67,6 +67,8 @@ namespace SDK_Example
             this.menuWebsite = new System.Windows.Forms.ToolStripMenuItem();
             this.referenceImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ankleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kneeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.elbowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ultraScanButton = new System.Windows.Forms.PictureBox();
             this.buttonRobotScan = new System.Windows.Forms.PictureBox();
             this.butManRev = new System.Windows.Forms.PictureBox();
@@ -87,6 +89,8 @@ namespace SDK_Example
             this.label2 = new System.Windows.Forms.Label();
             this.labelFileName = new System.Windows.Forms.Label();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.presetsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.maxedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.protoUCtrlPMDynamic = new SDK_Example.UserControlPlusMinus();
             this.protoUCtrlPMGalGain = new SDK_Example.UserControlPlusMinus();
             this.protoUCtrlPMHighVoltage = new SDK_Example.UserControlPlusMinus();
@@ -95,10 +99,8 @@ namespace SDK_Example
             this.protoUCtrlPMDepth = new SDK_Example.UserControlPlusMinus();
             this.userControlDepth1 = new SDK_Example.UserControlDepth();
             this.uctrlGrayScale = new SDK_Example.UserControlGrayScale();
-            this.uctrlDepth = new SDK_Example.UserControlDepth();
             this.uctrlScan = new SDK_Example.UserControlScan();
-            this.kneeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.elbowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uctrlDepth = new SDK_Example.UserControlDepth();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ultraScanButton)).BeginInit();
@@ -439,7 +441,8 @@ namespace SDK_Example
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuCompound,
-            this.menuDoubler});
+            this.menuDoubler,
+            this.presetsToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
@@ -447,7 +450,7 @@ namespace SDK_Example
             // menuCompound
             // 
             this.menuCompound.Name = "menuCompound";
-            this.menuCompound.Size = new System.Drawing.Size(135, 22);
+            this.menuCompound.Size = new System.Drawing.Size(180, 22);
             this.menuCompound.Text = "Compound";
             this.menuCompound.Click += new System.EventHandler(this.MenuCompound_Click);
             // 
@@ -456,7 +459,7 @@ namespace SDK_Example
             this.menuDoubler.Checked = true;
             this.menuDoubler.CheckState = System.Windows.Forms.CheckState.Checked;
             this.menuDoubler.Name = "menuDoubler";
-            this.menuDoubler.Size = new System.Drawing.Size(135, 22);
+            this.menuDoubler.Size = new System.Drawing.Size(180, 22);
             this.menuDoubler.Text = "Doubler";
             this.menuDoubler.Click += new System.EventHandler(this.MenuDoubler_Click);
             // 
@@ -488,9 +491,23 @@ namespace SDK_Example
             // ankleToolStripMenuItem
             // 
             this.ankleToolStripMenuItem.Name = "ankleToolStripMenuItem";
-            this.ankleToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.ankleToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.ankleToolStripMenuItem.Text = "Foot";
             this.ankleToolStripMenuItem.Click += new System.EventHandler(this.AnkleToolStripMenuItem_Click);
+            // 
+            // kneeToolStripMenuItem
+            // 
+            this.kneeToolStripMenuItem.Name = "kneeToolStripMenuItem";
+            this.kneeToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            this.kneeToolStripMenuItem.Text = "Knee";
+            this.kneeToolStripMenuItem.Click += new System.EventHandler(this.KneeToolStripMenuItem_Click);
+            // 
+            // elbowToolStripMenuItem
+            // 
+            this.elbowToolStripMenuItem.Name = "elbowToolStripMenuItem";
+            this.elbowToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            this.elbowToolStripMenuItem.Text = "Elbow";
+            this.elbowToolStripMenuItem.Click += new System.EventHandler(this.ElbowToolStripMenuItem_Click);
             // 
             // ultraScanButton
             // 
@@ -743,6 +760,21 @@ namespace SDK_Example
             this.axWindowsMediaPlayer1.TabIndex = 87;
             this.axWindowsMediaPlayer1.Visible = false;
             // 
+            // presetsToolStripMenuItem
+            // 
+            this.presetsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.maxedToolStripMenuItem});
+            this.presetsToolStripMenuItem.Name = "presetsToolStripMenuItem";
+            this.presetsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.presetsToolStripMenuItem.Text = "Presets";
+            // 
+            // maxedToolStripMenuItem
+            // 
+            this.maxedToolStripMenuItem.Name = "maxedToolStripMenuItem";
+            this.maxedToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.maxedToolStripMenuItem.Text = "Maxed";
+            this.maxedToolStripMenuItem.Click += new System.EventHandler(this.AchillesToolStripMenuItem_Click);
+            // 
             // protoUCtrlPMDynamic
             // 
             this.protoUCtrlPMDynamic.BackColor = System.Drawing.Color.Transparent;
@@ -835,15 +867,6 @@ namespace SDK_Example
             this.uctrlGrayScale.Visible = false;
             this.uctrlGrayScale.Paint += new System.Windows.Forms.PaintEventHandler(this.uctrlGrayScale_Paint);
             // 
-            // uctrlDepth
-            // 
-            this.uctrlDepth.BackColor = System.Drawing.Color.Transparent;
-            this.uctrlDepth.Location = new System.Drawing.Point(33, 73);
-            this.uctrlDepth.Name = "uctrlDepth";
-            this.uctrlDepth.Size = new System.Drawing.Size(30, 522);
-            this.uctrlDepth.TabIndex = 13;
-            this.uctrlDepth.Paint += new System.Windows.Forms.PaintEventHandler(this.uctrlDepth_Paint);
-            // 
             // uctrlScan
             // 
             this.uctrlScan.BackColor = System.Drawing.Color.Transparent;
@@ -859,19 +882,14 @@ namespace SDK_Example
             this.uctrlScan.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.uctrlScan_MouseDoubleClick);
             this.uctrlScan.MouseMove += new System.Windows.Forms.MouseEventHandler(this.uctrlScan_MouseMove);
             // 
-            // kneeToolStripMenuItem
+            // uctrlDepth
             // 
-            this.kneeToolStripMenuItem.Name = "kneeToolStripMenuItem";
-            this.kneeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.kneeToolStripMenuItem.Text = "Knee";
-            this.kneeToolStripMenuItem.Click += new System.EventHandler(this.KneeToolStripMenuItem_Click);
-            // 
-            // elbowToolStripMenuItem
-            // 
-            this.elbowToolStripMenuItem.Name = "elbowToolStripMenuItem";
-            this.elbowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.elbowToolStripMenuItem.Text = "Elbow";
-            this.elbowToolStripMenuItem.Click += new System.EventHandler(this.ElbowToolStripMenuItem_Click);
+            this.uctrlDepth.BackColor = System.Drawing.Color.Transparent;
+            this.uctrlDepth.Location = new System.Drawing.Point(33, 73);
+            this.uctrlDepth.Name = "uctrlDepth";
+            this.uctrlDepth.Size = new System.Drawing.Size(30, 522);
+            this.uctrlDepth.TabIndex = 13;
+            this.uctrlDepth.Paint += new System.Windows.Forms.PaintEventHandler(this.uctrlDepth_Paint);
             // 
             // formScan2D
             // 
@@ -1040,6 +1058,8 @@ namespace SDK_Example
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
         private ToolStripMenuItem kneeToolStripMenuItem;
         private ToolStripMenuItem elbowToolStripMenuItem;
+        private ToolStripMenuItem presetsToolStripMenuItem;
+        private ToolStripMenuItem maxedToolStripMenuItem;
     }
 }
 

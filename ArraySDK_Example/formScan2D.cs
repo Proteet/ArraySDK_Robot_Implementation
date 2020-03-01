@@ -4822,8 +4822,9 @@ namespace SDK_Example
 
             // Start a external program
             Process ExternalProcess = new Process();
+            // Make sure to put this file into Debug and Release
             ExternalProcess.StartInfo.FileName = "Test";
-            ExternalProcess.StartInfo.WindowStyle = ProcessWindowStyle.Maximized;
+            ExternalProcess.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
             ExternalProcess.Start();
             ExternalProcess.WaitForExit();
 
@@ -4900,6 +4901,35 @@ namespace SDK_Example
         {
             FormElbow referenceElbow = new FormElbow();
             referenceElbow.Show();
+        }
+
+        private void AchillesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            // Maxed Depth
+            iDepthIndex = 4;
+            RebuildScanConverter();
+
+            // Maxed Frequency and Focus
+            StopThreadScan();
+            bytFreqIndex = 2;
+            bytFocusIndex = 2;
+            HWControls.SetFrequencyAndFocus(bytFreqIndex, bytFocusIndex, iSteering);
+            StartThreadScan();
+
+            // Maxed Voltage
+            iHighIndex = 3;
+            HWControls.SendHighVoltage(abytHighVoltage[iHighIndex], abytHighVoltageCFM[iHighIndex]);
+
+            // Maxed Main Gain
+            // bytCfmGain = 30;
+            // UpdateCfmGain();
+
+            // Maxed Dynamic Setting
+            iDynamicIndex = 7;
+            HWControls.SendDynamic(abytDynamicValue[iDynamicIndex]);
+
+            UpdateLabels();
         }
     }
     #endregion
