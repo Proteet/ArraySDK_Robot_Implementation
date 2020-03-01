@@ -4819,6 +4819,15 @@ namespace SDK_Example
         private void UltraScanButton_Click(object sender, EventArgs e)
         {
             // System.Diagnostics.Process.Start("http://www.ultrascanguide.com");
+
+            // Start a external program
+            Process ExternalProcess = new Process();
+            ExternalProcess.StartInfo.FileName = "Test";
+            ExternalProcess.StartInfo.WindowStyle = ProcessWindowStyle.Maximized;
+            ExternalProcess.Start();
+            ExternalProcess.WaitForExit();
+
+            // MP4 player
             axWindowsMediaPlayer1.Visible = true;
             axWindowsMediaPlayer1.URL = @"C:\Users\jeffg\Downloads\test1.mp4";
 
