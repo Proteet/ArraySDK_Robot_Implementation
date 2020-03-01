@@ -4285,11 +4285,17 @@ namespace SDK_Example
 
         private void MenuLoad_Click(object sender, EventArgs e)
         {
-            if (Scan2D.ScanOn == true)
+            try
             {
-                StopThreadScan();
-                MyMarshalToForm(ControlEnum.buttonScan, "Scan");
-                bInitDone = false;
+                if (Scan2D.ScanOn == true)
+                {
+                    StopThreadScan();
+                    MyMarshalToForm(ControlEnum.buttonScan, "Scan");
+                    bInitDone = false;
+
+                }
+            } catch (System.NullReferenceException error)
+            {
 
             }
 
@@ -4573,12 +4579,15 @@ namespace SDK_Example
 
         private void ProtoButtonLoad_Click(object sender, EventArgs e)
         {
-            if (Scan2D.ScanOn == true)
-            {
-                StopThreadScan();
-                MyMarshalToForm(ControlEnum.buttonScan, "Scan");
-                bInitDone = false;
+            try {
+                if (Scan2D.ScanOn == true)
+                {
+                    StopThreadScan();
+                    MyMarshalToForm(ControlEnum.buttonScan, "Scan");
+                    bInitDone = false;
 
+                }
+            } catch (System.NullReferenceException error) {
             }
 
             HideDisplayControls();
