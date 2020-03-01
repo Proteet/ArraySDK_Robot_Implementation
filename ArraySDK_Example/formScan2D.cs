@@ -2071,6 +2071,8 @@ namespace SDK_Example
             DrawOut(iCineCounter);
         }
 
+
+
         /// <summary>
         /// Draws the graphics for playing back the cine. 
         /// </summary>
@@ -2079,6 +2081,9 @@ namespace SDK_Example
         {
             if (bmpOut == null) // So Idle mode, so use iIdleIndexSC
                 bmpOut = new Bitmap(aiWidth[iIdleIndexSC], aiHeigth[iIdleIndexSC], System.Drawing.Imaging.PixelFormat.Format32bppPArgb);
+
+            Bitmap bmpOutTest = new Bitmap(aiWidth[iIndexSC], aiHeigth[iIndexSC], System.Drawing.Imaging.PixelFormat.Format8bppIndexed);
+
 
             Graphics g = uctrlScan.CreateGraphics();
             Rectangle destRect = uctrlScan.ClientRectangle;
@@ -2143,27 +2148,29 @@ namespace SDK_Example
                 //}
 
                 if (bSoftCFMData == false)
-                    ImageBuilding.Build2D(ref bmpOut, bytRawImage, bytRawImagePrevious, ScanConv);// build 
+                    ImageBuilding.Build2D(ref bmpOutTest, bytRawImage, bytRawImagePrevious, ScanConv);// build 
                 else
                 {
                     //                    if (ByteUniArrayList.Count != 0)
                     if (ByteUniArrayList.Count == ByteArrayList.Count)
                         Array.Copy(ByteUniArrayList.ElementAt(slide), abytRawCFM, inbDataCfm);
 
-                    ImageBuilding.Build2D(ref bmpOut, bytRawImage, abytRawCFM, ScanConv);
-                    ImageBuilding.DrawCFMBox(ref bmpOut, ScanConv, iDepthCfmBox, colBox);
+                    ImageBuilding.Build2D(ref bmpOutTest, bytRawImage, abytRawCFM, ScanConv);
+                    ImageBuilding.DrawCFMBox(ref bmpOutTest, ScanConv, iDepthCfmBox, colBox);
 
                 }
 
                 {
-                    destRect = new Rectangle(0, 0, bmpOut.Width, bmpOut.Height);
+                    int width = bmpOutTest.Width;
+                    int height = bmpOutTest.Height;
+                    destRect = new Rectangle(0, 0, width, height);
                     srcRect = new Rectangle(iZoomX, iZoomY, (int)(destRect.Width / fltZoomFactor), (int)(destRect.Height / fltZoomFactor));
                 }
 
 
                 g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
 
-                g.DrawImage(bmpOut, destRect, srcRect, GraphicsUnit.Pixel);
+                g.DrawImage(bmpOutTest, destRect, srcRect, GraphicsUnit.Pixel);
                 g.Dispose();
             }
 
