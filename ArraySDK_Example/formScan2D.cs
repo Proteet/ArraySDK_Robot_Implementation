@@ -2792,7 +2792,7 @@ namespace SDK_Example
 
         #region Probe De/Connect
         /// <summary>
-        /// Watch the USB connections:
+        /// Watch the USB connections
         /// The timer is disabled when scanning, then enabled when idle.
         /// The interval of the timer is 500ms
         /// This example has two buttons to reflect the connections of the USB connectors. 
@@ -4903,7 +4903,7 @@ namespace SDK_Example
             referenceElbow.Show();
         }
 
-        private void AchillesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MaxedToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
             // Maxed Depth
@@ -4930,6 +4930,26 @@ namespace SDK_Example
             HWControls.SendDynamic(abytDynamicValue[iDynamicIndex]);
 
             UpdateLabels();
+        }
+
+        private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // using (System.IO.StreamWriter file = new StreamWriter(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().CodeBase) + "\save.txt")
+            // {
+            //     file.WriteLine("Test");
+            // });
+
+            String path = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+            String pathname = path + "\\save.txt";
+            String localpath = new Uri(pathname).LocalPath;
+            using (System.IO.StreamWriter file =
+                new System.IO.StreamWriter(localpath)) {
+                file.WriteLine("iDepthIndex: " + iDepthIndex);
+                file.WriteLine("bytFreqIndex: " + bytFreqIndex);
+                file.WriteLine("bytFocusIndex: " + bytFocusIndex);
+                file.WriteLine("iHighIndex: " + iHighIndex);
+                file.WriteLine("iDynamicIndex: " + iDynamicIndex);
+            }
         }
     }
     #endregion

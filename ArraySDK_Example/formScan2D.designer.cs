@@ -63,6 +63,8 @@ namespace SDK_Example
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCompound = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDoubler = new System.Windows.Forms.ToolStripMenuItem();
+            this.presetsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.maxedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuWebsite = new System.Windows.Forms.ToolStripMenuItem();
             this.referenceImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -89,8 +91,6 @@ namespace SDK_Example
             this.label2 = new System.Windows.Forms.Label();
             this.labelFileName = new System.Windows.Forms.Label();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
-            this.presetsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.maxedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.protoUCtrlPMDynamic = new SDK_Example.UserControlPlusMinus();
             this.protoUCtrlPMGalGain = new SDK_Example.UserControlPlusMinus();
             this.protoUCtrlPMHighVoltage = new SDK_Example.UserControlPlusMinus();
@@ -101,6 +101,11 @@ namespace SDK_Example
             this.uctrlGrayScale = new SDK_Example.UserControlGrayScale();
             this.uctrlScan = new SDK_Example.UserControlScan();
             this.uctrlDepth = new SDK_Example.UserControlDepth();
+            this.achillesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.plantersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveLoadPresetsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ultraScanButton)).BeginInit();
@@ -463,6 +468,24 @@ namespace SDK_Example
             this.menuDoubler.Text = "Doubler";
             this.menuDoubler.Click += new System.EventHandler(this.MenuDoubler_Click);
             // 
+            // presetsToolStripMenuItem
+            // 
+            this.presetsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.maxedToolStripMenuItem,
+            this.achillesToolStripMenuItem,
+            this.plantersToolStripMenuItem,
+            this.saveLoadPresetsToolStripMenuItem});
+            this.presetsToolStripMenuItem.Name = "presetsToolStripMenuItem";
+            this.presetsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.presetsToolStripMenuItem.Text = "Presets";
+            // 
+            // maxedToolStripMenuItem
+            // 
+            this.maxedToolStripMenuItem.Name = "maxedToolStripMenuItem";
+            this.maxedToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.maxedToolStripMenuItem.Text = "Maxed";
+            this.maxedToolStripMenuItem.Click += new System.EventHandler(this.MaxedToolStripMenuItem_Click);
+            // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -760,21 +783,6 @@ namespace SDK_Example
             this.axWindowsMediaPlayer1.TabIndex = 87;
             this.axWindowsMediaPlayer1.Visible = false;
             // 
-            // presetsToolStripMenuItem
-            // 
-            this.presetsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.maxedToolStripMenuItem});
-            this.presetsToolStripMenuItem.Name = "presetsToolStripMenuItem";
-            this.presetsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.presetsToolStripMenuItem.Text = "Presets";
-            // 
-            // maxedToolStripMenuItem
-            // 
-            this.maxedToolStripMenuItem.Name = "maxedToolStripMenuItem";
-            this.maxedToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.maxedToolStripMenuItem.Text = "Maxed";
-            this.maxedToolStripMenuItem.Click += new System.EventHandler(this.AchillesToolStripMenuItem_Click);
-            // 
             // protoUCtrlPMDynamic
             // 
             this.protoUCtrlPMDynamic.BackColor = System.Drawing.Color.Transparent;
@@ -890,6 +898,40 @@ namespace SDK_Example
             this.uctrlDepth.Size = new System.Drawing.Size(30, 522);
             this.uctrlDepth.TabIndex = 13;
             this.uctrlDepth.Paint += new System.Windows.Forms.PaintEventHandler(this.uctrlDepth_Paint);
+            // 
+            // achillesToolStripMenuItem
+            // 
+            this.achillesToolStripMenuItem.Name = "achillesToolStripMenuItem";
+            this.achillesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.achillesToolStripMenuItem.Text = "Achilles";
+            // 
+            // plantersToolStripMenuItem
+            // 
+            this.plantersToolStripMenuItem.Name = "plantersToolStripMenuItem";
+            this.plantersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.plantersToolStripMenuItem.Text = "Planters";
+            // 
+            // saveLoadPresetsToolStripMenuItem
+            // 
+            this.saveLoadPresetsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveToolStripMenuItem,
+            this.loadToolStripMenuItem});
+            this.saveLoadPresetsToolStripMenuItem.Name = "saveLoadPresetsToolStripMenuItem";
+            this.saveLoadPresetsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveLoadPresetsToolStripMenuItem.Text = "Save/Load Presets";
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
+            // 
+            // loadToolStripMenuItem
+            // 
+            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadToolStripMenuItem.Text = "Load";
             // 
             // formScan2D
             // 
@@ -1060,6 +1102,11 @@ namespace SDK_Example
         private ToolStripMenuItem elbowToolStripMenuItem;
         private ToolStripMenuItem presetsToolStripMenuItem;
         private ToolStripMenuItem maxedToolStripMenuItem;
+        private ToolStripMenuItem achillesToolStripMenuItem;
+        private ToolStripMenuItem plantersToolStripMenuItem;
+        private ToolStripMenuItem saveLoadPresetsToolStripMenuItem;
+        private ToolStripMenuItem saveToolStripMenuItem;
+        private ToolStripMenuItem loadToolStripMenuItem;
     }
 }
 
