@@ -372,6 +372,12 @@ namespace SDK_Example
 
         // Checks if the textRadius textbox has been clicked
         bool hasBeenClicked = false;
+
+        /// <summary>
+        /// Camera Form for taking a picture of the leg
+        /// Used as a reference when looking at the ultrasound probe
+        /// </summary>
+        FormCamera camera; 
         #endregion
 
         #region FORMSCAN
@@ -3553,6 +3559,11 @@ namespace SDK_Example
                     buttonRobotScan.Enabled = true;
                     labelRobotState.Text = "Ready to Scan";
                     robotStateIndicator.Load("Images/readyToScan.png");
+
+                    // Show the Camera
+                    camera = new FormCamera();
+                    camera.Show();
+
                     break;
                 case RobotStateEnum.homing:
                     buttonRobotScan.Enabled = true;
@@ -3568,6 +3579,10 @@ namespace SDK_Example
                     buttonRobotScan.Enabled = true;
                     labelRobotState.Text = "End of Travel";
                     robotStateIndicator.Load("Images/endOfTravel.png");
+
+                    // Stop Camera
+                    camera.Close();
+
                     break;
                 case RobotStateEnum.emergencyStopped:
                     buttonRobotScan.Enabled = true;
