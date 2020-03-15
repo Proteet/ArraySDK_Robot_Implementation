@@ -3795,6 +3795,9 @@ namespace SDK_Example
 
                     Directory.CreateDirectory(path);
 
+                    // Moves the temp camera files from TempCameraImages to recently created directory
+                    MoveTempCameraFiles(path);
+
                     datFilePath = path + Path.DirectorySeparatorChar + baseFileName + "_data.txt";
 
                     Settings.Default.SaveRobotScanFolder = fbd.SelectedPath;
@@ -3850,6 +3853,18 @@ namespace SDK_Example
                                 jpgPath + '/' + fileName,
                                 i);
 
+            }
+        }
+
+        /// <summary>
+        /// Moves the temp camera files from Application.StartupPath\Images\TempCameraImages to 
+        /// </summary>
+        private void MoveTempCameraFiles(String path) {
+
+            System.IO.DirectoryInfo di = new DirectoryInfo(Application.StartupPath + @"\Images\TempCameraImages");
+
+            foreach (FileInfo file in di.GetFiles()) {
+                file.MoveTo(path + "\\" + file.Name);
             }
         }
 

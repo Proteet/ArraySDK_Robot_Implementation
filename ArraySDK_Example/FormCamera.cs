@@ -62,9 +62,9 @@ namespace ArraySDK_Example
             myCamera.Stop();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void ButtonSave_Click(object sender, EventArgs e)
         {
-            string filename = Application.StartupPath + @"\" + "Image" + count.ToString();
+            string filename = Application.StartupPath + @"\Images\TempCameraImages\" + "Image_" + count.ToString();
             myCamera.Capture(filename);
             count++;
         }

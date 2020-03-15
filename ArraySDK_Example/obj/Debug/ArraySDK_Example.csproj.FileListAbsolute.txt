@@ -184,4 +184,3 @@ C:\Users\Jeff\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_Ex
 C:\Users\Jeff\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_Example\bin\Debug\AForge.Video.DirectShow.dll
 C:\Users\Jeff\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_Example\bin\Debug\AForge.Video.dll
 C:\Users\Jeff\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_Example\bin\Debug\DarrenLee.Media.dll
-C:\Users\Jeff\Documents\UltraScanGuide\ArraySDK_Robot_Implementation\ArraySDK_Example\obj\Debug\ArraySDK_Example.FormOzekiCamera.resources
